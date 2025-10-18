@@ -26,6 +26,22 @@ export const load: PageServerLoad = async ({ params }) => {
   const segments = params.segments ? params.segments.split('/') : [];
   const currentNode = findNodeByPath(tree, segments);
 
+  const currentDir = segments.length > 0 ? segments[segments.length - 1] : 'root';
+  const parentHref = segments.length > 0 ? '/' + segments.slice(0, -1).join('/') : null;
+
+  if (currentNode?.type === 'file') {
+    const parts = currentNode.path.split('/');
+    const name = parts[parts.length - 1];
+    return {
+      file: {
+        name,
+        path: currentNode.path,
+        content: currentNode.content ?? [],
+        parentHref   // ⬅️ 추가
+      }
+    };
+  }
+
   let directories: { name: string; href: string }[] = [];
   let files: { name: string; href: string }[] = [];
 
@@ -45,21 +61,6 @@ export const load: PageServerLoad = async ({ params }) => {
         const name = parts[parts.length - 1];
         return { name, href: '/' + [...segments, name].join('/') };
       });
-  }
-
-  const currentDir = segments.length > 0 ? segments[segments.length - 1] : 'root';
-  const parentHref = segments.length > 0 ? '/' + segments.slice(0, -1).join('/') : null;
-  
-  if (currentNode?.type === 'file') {
-    const parts = currentNode.path.split('/');
-    const name = parts[parts.length - 1];
-    return {
-      file: {
-        name,
-        path: currentNode.path,
-        content: currentNode.content ?? []
-      }
-    };
   }
 
   return { currentDir, parentHref, directories, files } satisfies PageData;

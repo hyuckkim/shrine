@@ -120,7 +120,7 @@
                               "key": "TXT_KEY_GENERIC_SHARE_APPROACH_FRIENDLY_1",
                               "text": "{1_PlayerName:textkey} is a true friend and can be trusted. (Friendly)",
                               "movedFrom": "TXT_KEY_GENERIC_SHARE_OPINION_FRIENDLY_1",
-                              "translated": null
+                              "translated": "{1_PlayerName:textkey}{@1_PlayerName: plural 1?은; 2?는;} 믿을 수 있는 진정한 친구입니다. (우호적)"
                             },
                             {
                               "key": "TXT_KEY_GENERIC_SHARE_APPROACH_FRIENDLY_2",
@@ -314,7 +314,7 @@
                           "key": "TXT_KEY_GAME_OPTION_CHILL_BARBARIANS",
                           "text": "Chill Barbarians",
                           "movedFrom": "TXT_KEY_GAMEOPTION_CHILL_BARBARIANS",
-                          "translated": null
+                          "translated": "Chill한 야만인"
                         },
                         {
                           "key": "TXT_KEY_GAME_OPTION_KEEP_UNMET_PLAYERS_UNKNOWN",
@@ -326,7 +326,7 @@
                           "key": "TXT_KEY_GAME_OPTION_KEEP_UNMET_PLAYERS_UNKNOWN_HELP",
                           "text": "In Game Setup, do not show the leader/civ details of other human players on other teams (if they are not choosing Random Leader).[NEWLINE]When loading a savegame, do not show the leader/civ details for players on other teams that you have not met in-game.",
                           "movedFrom": "TXT_KEY_GAMEOPTION_KEEP_UNMET_PLAYERS_UNKNOWN_HELP",
-                          "translated": null
+                          "translated": "게임 설정에서, 다른 팀의 다른 인간 플레이어의 지도자/문명 세부 정보를 표시하지 마세요(무작위 지도자를 선택하지 않은 경우).[NEWLINE]저장한 게임을 불러올 때, 게임 내에서 만나지 않은 다른 팀의 플레이어의 지도자/문명 세부 정보를 표시하지 마세요."
                         }
                       ]
                     },
@@ -492,19 +492,19 @@
                               "key": "TXT_KEY_DENOUNCE_HUMAN",
                               "text": "Denounce",
                               "movedFrom": "TXT_KEY_CBP_DENOUNCE_HUMAN",
-                              "translated": null
+                              "translated": "비난"
                             },
                             {
                               "key": "TXT_KEY_DENOUNCE_HUMAN_TT",
                               "text": "Clicking this button will [COLOR_NEGATIVE_TEXT]DENOUNCE[ENDCOLOR] the other player.",
                               "movedFrom": "TXT_KEY_CBP_DENOUNCE_HUMAN_TT",
-                              "translated": null
+                              "translated": "지도자를 [COLOR_NEGATIVE_TEXT]비난[ENDCOLOR]합니다."
                             },
                             {
                               "key": "TXT_KEY_DIPLO_DISCUSS_MESSAGE_SHARE_APPROACH",
                               "text": "What do you think of...",
                               "movedFrom": "TXT_KEY_DIPLO_DISCUSS_MESSAGE_SHARE_OPINION",
-                              "translated": null
+                              "translated": "...에 대해 어떻게 생각하십니까?"
                             }
                           ]
                         },
@@ -1896,79 +1896,79 @@
                               "key": "TXT_KEY_BUILDING_INDEPENDENCE_HALL",
                               "text": "Independence Hall",
                               "movedFrom": "TXT_KEY_BUILDING_AMERICA_INDEPENDENCEHALL",
-                              "translated": null
+                              "translated": "독립 기념관"
                             },
                             {
                               "key": "TXT_KEY_BUILDING_INDEPENDENCE_HALL_TEXT",
                               "text": "Originally constructed as the state house of Pennsylvannia, Independence Hall is where the United States Declaration of Independence and Constitution were debated and formally adopted, making it the birthplace of the American nation. Today, Independence Hall is a museum and the centre of the Independence National Park in the heart of Philadelphia.",
                               "movedFrom": "TXT_KEY_BUILDING_AMERICA_INDEPENDENCEHALL_TEXT",
-                              "translated": null
+                              "translated": "원래 펜실베니아 주의 저택으로 지어진 독립 기념관은 미국 독립 선언과 헌법 선언이 논의되고 공식적으로 채택되어 미국의 탄생지가 된 곳입니다. 오늘날 독립 기념관은 박물관이자 필라델피아 중심부에 있는 독립 국립공원의 중심입니다."
                             },
                             {
                               "key": "TXT_KEY_INDEPENDENCE_HALL_THEMING_BONUS_HELP",
                               "text": "To maximize your bonus, make sure the Great Work Slots are all filled with Art from your Civilization.",
                               "movedFrom": "TXT_KEY_THEMING_BONUS_INDEPENDENCEHALL_HELP",
-                              "translated": null
+                              "translated": "보너스를 극대화 하려면 모든 걸작 슬롯을 [COLOR_POSITIVE_TEXT]당신 문명[ENDCOLOR]이 만든 [COLOR_YELLOW]예술품[ENDCOLOR]으로 채우십시오."
                             },
                             {
                               "key": "TXT_KEY_BUILDING_SMITHSONIAN_INSTITUTION_TEXT",
                               "text": "The Smithsonian Institution, originally established in 1846 as the United States National Museum is a group of museums and research centers administered by the Government of the United States. Lovingly called \"the nation's attic\" for its eclectic holdings of 138 million items, the Institution's nineteen museums, nine research centers, and zoo include historical and architectural landmarks, mostly located in the District of Columbia. Additional facilities are located in Arizona, Maryland, Massachusetts, New York City, Virginia, and Panama. A further 170 museums are Smithsonian Affiliates. The Institution's thirty million annual visitors are admitted without charge; funding comes from the Institution's endowment, private, corporate, and government contributions, membership dues, as well as retail, concession and licensing revenues. Institution publications include Smithsonian and Air and Space magazines.",
                               "movedFrom": "TXT_KEY_CIV5_BUILDINGS_MOMA_TEXT",
-                              "translated": null
+                              "translated": "1846년 \"지식의 증가와 확산을 위해\" 설립된 스미스소니언 협회는 미국 정부에 의해 운영되는 박물관과 연구 센터들의 모임입니다. 원래 \"미국 국립 박물관\"으로 조직된 그 이름은 1967년에 행정 기관으로서 존재하지 않게 되었습니다. 1억 3천 8백만 점의 다양한 소장품들로 인해 \"국가의 다락방\"이라고 불리는 이 연구소의 19개의 박물관, 9개의 연구 센터, 그리고 동물원은 대부분 콜롬비아 특별구에 위치한 역사적, 건축적 랜드마크를 포함합니다. 애리조나, 메릴랜드, 매사추세츠, 뉴욕, 버지니아 및 파나마에 추가 시설이 있습니다. 추가로 170개의 박물관이 스미스소니언 제휴사입니다. 그 기관의 연간 3천만 명의 방문객은 무료로 입장할 수 있습니다. 기금은 기관의 기부금, 개인 및 기업 기부금, 회비, 정부 지원, 소매, 양허 및 라이센스 수익에서 나옵니다. 기관 간행물에는 스미스소니언과 항공 우주 잡지가 포함되어 있습니다."
                             },
                             {
                               "key": "TXT_KEY_BUILDING_WEST_POINT",
                               "text": "West Point",
                               "movedFrom": "TXT_KEY_BUILDING_AMERICA_WESTPOINT",
-                              "translated": null
+                              "translated": "웨스트 포인트"
                             },
                             {
                               "key": "TXT_KEY_BUILDING_WEST_POINT_TEXT",
                               "text": "The United States Military Academy, informally known as West Point, is the oldest service academy, educating cadets to become commissioned officers for the United States Army. The academy is notable for producing some of the most renowned generals in modern history in addition to numerous heads of state, both foreign and domestic. The campus is the oldest continuously operating American army post, originally built as a river fort to overlook and control shipping along the Hudson River. As a result, the campus is a national landmark, dotted with numerous monuments and statues representing its long and storied history.",
                               "movedFrom": "TXT_KEY_CIVILOPEDIA_BUILDINGS_AMERICA_WESTPOINT_TEXT",
-                              "translated": null
+                              "translated": "비공식적으로 웨스트 포인트로 알려진 미국 육군사관학교는 생도들이 미국 육군의 임관 장교가 되도록 교육하는 가장 오래된 사관학교입니다. 이 아카데미는 외국과 국내의 수많은 국가 원수와 더불어 현대사에서 가장 유명한 장군들을 배출한 것으로 유명합니다. 이 캠퍼스는 허드슨 강을 따라 항해하는 것을 내려다보고 통제하기 위해 강 요새로 지어진, 지속적으로 운영되는 가장 오래된 미군 기지입니다. 결과적으로, 그 캠퍼스는 길고 오래된 역사를 대표하는 수많은 기념물과 조각상들로 점철된 국가적인 랜드마크입니다."
                             },
                             {
                               "key": "TXT_KEY_BUILDING_SLATER_MILL",
                               "text": "Slater Mill",
                               "movedFrom": "TXT_KEY_BUILDING_AMERICA_SLATERMILL",
-                              "translated": null
+                              "translated": "슬레이터 밀"
                             },
                             {
                               "key": "TXT_KEY_BUILDING_SLATER_MILL_TEXT",
                               "text": "A National Historic Landmark, the Slater Mill is located next to the Blackstone River in Pawtucket, Rhode Island. Modeled after cotton spinning mills first established in England, the Slater Mill is the first water-powered cotton spinning mill in North America to utilize the Arkwright system of cotton spinning as developed by Richard Arkwright. Samuel Slater, the mill's founder, apprenticed as a young man in Belper, England with industrialist Jedediah Strutt. Shortly after immigrating to the United States, Slater was hired by Moses Brown of Providence, Rhode Island to produce a working set of machines necessary to spin cotton yarn using water-power. Construction of the machines, as well as a dam, waterway, waterwheel and mill was completed in 1793. Manufacturing was based on Richard Arkwright's cotton spinning system which included carding, drawing, and spinning machines. Slater initially hired children and families to work in his mill, establishing a pattern that was replicated throughout the Blackstone Valley and known as the \"Rhode Island System\". It was later eclipsed by Francis Cabot Lowell's Waltham System. Slater Mill was the first property to be listed on the National Register of Historic Places, and was designated a National Historic Landmark on November 13, 1966.",
                               "movedFrom": "TXT_KEY_CIVILOPEDIA_BUILDINGS_AMERICA_SLATERMILL_TEXT",
-                              "translated": null
+                              "translated": "국가 역사 랜드마크인 슬레이터 밀은 로드아일랜드의 포투켓에 있는 블랙스톤 강 옆에 위치해 있습니다. 영국에 처음 설립된 면방적 공장을 본떠 만든 슬레이터 밀은 리처드 아크라이트가 개발한 면방적 아크라이트 시스템을 활용한 북미 최초의 수력 면방적 공장입니다. 제분소의 설립자인 새뮤얼 슬레이터는 영국 벨퍼에서 산업가 제다이아 스트럿과 함께 젊은 시절 견습생으로 일했습니다. 미국으로 이민 온 직후, 슬레이터는 로드 아일랜드 프로비던스의 모세 브라운에 고용되어 수력을 사용하여 면사를 방적하는 데 필요한 작업 기계를 생산했습니다. 댐, 수로, 물레방아, 방앗간뿐만 아니라 기계들의 건설은 1793년에 완료되었습니다. 제조는 카드, 드로잉, 그리고 방적 기계를 포함하는 리차드 아크라이트의 면방적 시스템을 기반으로 했습니다. 슬레이터는 처음에 아이들과 가족들을 고용하여 그의 방앗간에서 일하게 했고, 블랙스톤 계곡 전체에 복제되어 \"로드 아일랜드 시스템\"으로 알려진 패턴을 확립했습니다. 그것은 나중에 프랜시스 카봇 로웰의 월섬 시스템에 의해 가려졌습니다. 슬레이터 밀은 미국 국립 사적지에 등재된 첫 번째 재산이었고, 1966년 11월 13일 미국 국립 역사 랜드마크로 지정되었습니다."
                             },
                             {
                               "key": "TXT_KEY_UNIT_BANDEIRANTE_TEXT",
                               "text": "The Bandeirantes (\"those who carry the flag\") were 17th-century Portuguese settlers in Brazil and fortune hunters. They led expeditions called bandeiras (\"flags\") which penetrated the interior of Brazil far south and west of the Tordesillas Line of 1494, which officially divided the Castilian or later Spanish (west) domain from the Portuguese (east) domain in South America. Though they originally aimed to capture and force Indigenous Americans into slavery, the bandeirantes later began to focus their expeditions on finding gold, silver, and diamond mines. As they ventured into unmapped regions in search of profit and adventure, they expanded the effective borders of the Brazilian colony.",
                               "movedFrom": "TXT_KEY_UNIT_BANDEIRANTES_TEXT",
-                              "translated": null
+                              "translated": "반다이란테스(국기를 들고 다니는 사람들)는 17세기 브라질에 정착한 포르투갈인 정착민이자 행운의 사냥꾼이었습니다. 그들은 공식적으로 카스티야 또는 후에 스페인 (서쪽) 영토를 남아메리카의 포르투갈 (동쪽) 영토로부터 분할한 1494년 토르데시야스 선의 남쪽과 서쪽 멀리 브라질 내륙을 관통하는 반데이라스 (\"깃발\")라고 불리는 탐험대를 이끌었습니다. 비록 그들이 원래 아메리카 원주민들을 사로잡고 노예로 강제하는 것을 목표로 했지만, 밴더란테들은 나중에 금, 은, 그리고 다이아몬드 광산을 찾는 데 그들의 탐험에 초점을 맞추기 시작했습니다. 그들이 이윤과 모험을 찾아 지도에 없는 지역으로 모험을 떠나면서, 그들은 브라질 식민지의 효과적인 국경을 확장했습니다."
                             },
                             {
                               "key": "TXT_KEY_UNIT_BANDEIRANTE_HELP",
                               "text": "Unique Brazilian {TXT_KEY_UNIT_EXPLORER} that can construct {TXT_KEY_IMPROVEMENT_MINE}, {TXT_KEY_CIV5_IMPROVEMENTS_QUARRY}, {TXT_KEY_CIV5_IMPROVEMENTS_FORT}, and {TXT_KEY_IMPROVEMENT_BRAZILWOOD_CAMP}; and generate [ICON_GOLD] Gold, [ICON_RESEARCH] Science, and [ICON_CULTURE] Culture when revealing tiles with this unit. Starts with [COLOR_POSITIVE_TEXT]{TXT_KEY_PROMOTION_SURVIVALISM_3}[ENDCOLOR].",
                               "movedFrom": "TXT_KEY_UNIT_BANDEIRANTES_HELP",
-                              "translated": null
+                              "translated": "{TXT_KEY_UNIT_EXPLORER}를 대체하는 브라질의 고유 유닛입니다. {TXT_KEY_IMPROVEMENT_MINE}, {TXT_KEY_CIV5_IMPROVEMENTS_QUARRY}, {TXT_KEY_CIV5_IMPROVEMENTS_FORT}, {TXT_KEY_IMPROVEMENT_BRAZILWOOD_CAMP}를 건설할 수 있습니다. 새 타일을 드러낼 시 [ICON_GOLD] 골드, [ICON_RESEARCH] 과학, [ICON_CULTURE] 문화를 얻습니다.[COLOR_POSITIVE_TEXT]{TXT_KEY_PROMOTION_SURVIVALISM_3}[ENDCOLOR] 진급을 보유합니다."
                             },
                             {
                               "key": "TXT_KEY_BUILDING_TETRACONCH",
                               "text": "Tetraconch",
                               "movedFrom": "TXT_KEY_BUILDING_BASILICA_DESC",
-                              "translated": null
+                              "translated": "테트라콘치"
                             },
                             {
                               "key": "TXT_KEY_BUILDING_TETRACONCH_TEXT",
                               "text": "Over many centuries, Byzantine architecture gradually drifted away from older Roman forms. Byzantine-style buildings are often noted for their high domes and intricate mosaic work, and far greater use of stone and brick construction. The tetraconch churches, meaning \"four shells\" in Greek, represent the highest achievement of Byzantine architecture. The floorplan of these buildings incorporates four domed apses, giving the building the shape of a cross, with the central space capped by a high dome. The form was widely used in mausoleums and baptisteries and informed later Ottoman and Renaissance architectural traditions that followed.",
                               "movedFrom": "TXT_KEY_CIV5_BUILDINGS_BASILICA_TEXT",
-                              "translated": null
+                              "translated": "수세기에 걸쳐, 비잔틴 건축은 점차 더 오래된 로마 양식에서 멀어져 갔습니다. 비잔틴 양식의 건물들은 종종 높은 돔과 복잡한 모자이크 작업과 훨씬 더 많은 돌과 벽돌 건축물로 유명합니다. 그리스어로 \"네 개의 껍질\"을 의미하는 테트라콘 교회들은 비잔틴 건축의 가장 높은 업적을 나타냅니다. 이 건물들의 평면도는 4개의 돔형 아파스를 포함하고 있으며, 중앙 공간은 높은 돔으로 덮인 십자가 모양을 하고 있습니다. 그 형태는 무덤과 세례원에서 널리 사용되었고 이후의 오스만과 르네상스의 건축 전통을 알렸습니다."
                             },
                             {
                               "key": "TXT_KEY_BUILDING_GREAT_COTHON_TEXT",
                               "text": "A cothon is an artificial, protected inner harbor such as that in Carthage during the Punic Wars around 200 BC. The cothon at Carthage was divided into a rectangular merchant harbor followed by an inner protected harbor reserved for military use only. This inner harbor was circular and surrounded by an outer ring of structures divided into a series of docking bays for ship maintenance, along with an island structure at its centre that also housed navy ships. Each individual docking bay featured a raised slipway. Above the raised docking bays was a second level consisting of warehouses where oars and rigging were kept along with supplies such as wood and canvas. On the island structure there existed a raised 'cabin' where the admiral in command could observe the whole harbor along with the surrounding sea. Altogether the inner docking complex could house up to 220 ships. The entire harbor was protected by an outer wall and the main entrance could be closed off with iron chains.",
                               "movedFrom": "TXT_KEY_BUILDING_GREAT_COTHON_PEDIA",
-                              "translated": null
+                              "translated": "코톤은 기원전 200년 경 포에니 전쟁 동안 카르타고에 있었던 것과 같은 인공적이고 보호된 내부 항구입니다. 카르타고의 코톤은 직사각형 모양의 상항으로 나뉘었고 군사용으로만 사용 가능한 내부 보호 항구가 이어졌습니다. 이 내부 항구는 원형이었고 선박 정비를 위한 일련의 도킹 베이로 분할된 구조의 외부 링으로 둘러싸여 있었고, 그 중심에는 해군 선박도 수용된 섬 구조물이 있었습니다. 각각의 도킹 베이는 상승된 슬립웨이를 특징으로 합니다. 높이 솟은 도킹 베이 위에는 나무와 캔버스 같은 보급품과 함께 노와 장비들이 보관되어 있는 창고로 구성된 2층이 있었습니다. 섬 구조에는 사령관이 주변 바다와 함께 항만 전체를 관찰할 수 있는 높은 오두막이 있었습니다. 내부 도킹 단지는 모두 합쳐서 최대 220척의 선박을 수용할 수 있습니다. 전체 항구는 외벽으로 보호되었고 주요 입구는 쇠사슬로 막을 수 있었습니다."
                             },
                             {
                               "key": "TXT_KEY_BUILDING_GREAT_COTHON_STRATEGY",
@@ -1986,25 +1986,25 @@
                               "key": "TXT_KEY_BUILDING_RUNESTONE",
                               "text": "Runestone",
                               "movedFrom": "TXT_KEY_BUILDING_JELLING_STONES",
-                              "translated": null
+                              "translated": "룬스톤"
                             },
                             {
                               "key": "TXT_KEY_BUILDING_RUNESTONE_TEXT",
                               "text": "A runestone is typically a raised stone with a runic inscription, but the term can also be applied to inscriptions on boulders and on bedrock. The tradition began in the 4th century and lasted into the 12th century, but most of the runestones date from the late Viking Age. Most runestones are located in Scandinavia, but there are also scattered runestones in locations that were visited by Norsemen during the Viking Age. Runestones are often memorials to dead men. Runestones were usually brightly coloured when erected, though this is no longer evident as the colour has worn off.",
                               "movedFrom": "TXT_KEY_BUILDING_JELLING_STONES_PEDIA",
-                              "translated": null
+                              "translated": "룬스톤은 일반적으로 룬 문자가 새겨진 돌출된 돌이지만, 이 용어는 바위와 암반에 새겨진 글에도 적용될 수 있습니다. 그 전통은 4세기에 시작되었고 12세기까지 지속되었지만, 대부분의 룬돌들은 바이킹 시대 후기로 거슬러 올라갑니다. 대부분의 룬돌은 스칸디나비아에 있지만, 바이킹 시대에 노르드인들이 방문했던 장소에도 산재해 있습니다. 룬돌은 종종 죽은 사람의 기념물입니다. 룬돌은 세울 때 대개 밝은 색을 띠었지만, 색이 닳아 더 이상 뚜렷하지 않습니다."
                             },
                             {
                               "key": "TXT_KEY_BUILDING_RUNESTONE_HELP",
                               "text": "When a Unit [COLOR_POSITIVE_TEXT]created by this City[ENDCOLOR] pillages a Tile, gain 30 [ICON_CULTURE] Culture in this City, scaling with Era.[NEWLINE][NEWLINE]+25% [ICON_PRODUCTION] Production towards Melee, Gunpowder, and Naval Melee Units.[NEWLINE][NEWLINE]+2 [ICON_FOOD] Food and +1 [ICON_GOLD] Gold from Coast and Ocean tiles. Internal [ICON_INTERNATIONAL_TRADE] Trade Routes from this City generate +4 [ICON_FOOD] Food.[NEWLINE][NEWLINE]Forms a [ICON_CONNECTED] City Connection with other Cities via water if they also have Runestones.",
                               "movedFrom": "TXT_KEY_BUILDING_JELLING_STONES_HELP",
-                              "translated": null
+                              "translated": "이 도시에서 생산하는 유닛이 타일을 약탈할 때 [ICON_CULTURE]문화를 [COLOR_POSITIVE_TEXT]30[ENDCOLOR] [COLOR:105:105:105:255](시대별 보정)[ENDCOLOR] 제공합니다. 근접, 화약 및 해상 근접 유닛을 생산할 때 [ICON_PRODUCTION]생산 보너스를 [COLOR_POSITIVE_TEXT]25%[ENDCOLOR] 제공합니다.[NEWLINE][NEWLINE]도시 주변 해양 타일의 [ICON_FOOD]식량이 [COLOR_POSITIVE_TEXT]2[ENDCOLOR] [ICON_GOLD]골드가 [COLOR_POSITIVE_TEXT]1[ENDCOLOR] 증가합니다. 이 도시에서 출발하는 국내 [ICON_TURNS_REMAINING]교역로의 [ICON_FOOD]식량이 [COLOR_POSITIVE_TEXT]6[ENDCOLOR] 증가합니다. [ICON_WAR] 군사 유닛 보급 한도 +1[NEWLINE][NEWLINE][ICON_CONNECTED]육상으로 연결되지 않은 도시와 [ICON_CAPITAL]수도를 [ICON_CONNECTED]해안 도시로 연결합니다."
                             },
                             {
                               "key": "TXT_KEY_BUILDING_WHITE_TOWER_TEXT",
                               "text": "The White Tower is the old keep at the Tower of London. It was built by William the Conqueror during the early 1080s, and was later extended. The White Tower was the castle's strongest defensive point, and originally housed the king and his representatives. Throughout its long history, the Tower has been many things to England: A symbol of tyranny, a treasury, a menagerie, a mint, a palace and a prison. Today, the Tower of London is a vast museum which boasts, amongst its many treasures, the Crown Jewels of the English Monarchy.",
                               "movedFrom": "TXT_KEY_CIV5_BUILDINGS_WHITE_TOWER_TEXT",
-                              "translated": null
+                              "translated": "화이트 타워는 런던 타워의 오래된 건물입니다. 그것은 1080년대 초에 정복자 윌리엄에 의해 지어졌고 나중에 확장되었습니다. 하얀 탑은 성의 가장 강력한 방어 지점이었고, 원래 왕과 그의 대리인들을 수용했습니다. 오랜 역사를 통해, 타워는 영국에 많은 것들이 되었습니다. 폭정의 상징, 금고, 관리소, 조폐소, 궁전, 감옥입니다. 오늘날, 런던탑은 많은 보물들 중, 영국 왕실의 왕관 보석을 자랑하는 거대한 박물관입니다."
                             },
                             {
                               "key": "TXT_KEY_BUILDING_WHITE_TOWER_HELP",
@@ -2028,97 +2028,97 @@
                               "key": "TXT_KEY_IMPROVEMENT_EKI_HELP",
                               "text": "Can only be built on flat land tiles without access to Fresh Water. +1 [ICON_PRODUCTION] Production and [ICON_GOLD] Gold if [COLOR_POSITIVE_TEXT]adjacent to two[ENDCOLOR] other Eki. Can be built [COLOR_POSITIVE_TEXT]in or adjacent to[ENDCOLOR] Hunnic territory. When completed, claims the tile beneath it if built in [COLOR_POSITIVE_TEXT]Neutral Territory[ENDCOLOR].",
                               "movedFrom": "TXT_KEY_CIV5_IMPROVEMENTS_EKI_HELP",
-                              "translated": null
+                              "translated": "담수와 인접하지 않은 평지에만 건설할 수 있습니다. 해당 타일의 [ICON_PRODUCTION]생산, [ICON_CULTURE]문화, [ICON_FOOD]식량이 증가합니다. 인접한 에키 2개마다 [ICON_PRODUCTION]생산과 [ICON_GOLD] 골드가 추가로 증가합니다. 훈 영토 내부 또는 영토에 인접한 타일에만 건설할 수 있습니다. [COLOR_POSITIVE_TEXT]중립 영토[ENDCOLOR]에 건설 시 그 타일을 얻습니다."
                             },
                             {
                               "key": "TXT_KEY_BUILDING_HARAPPAN_RESERVOIR",
                               "text": "Harappan Reservoir",
                               "movedFrom": "TXT_KEY_BUILDING_INDUS_CANAL",
-                              "translated": null
+                              "translated": "하라파 저수지"
                             },
                             {
                               "key": "TXT_KEY_BUILDING_HARAPPAN_RESERVOIR_TEXT",
                               "text": "The ancient Harappan and Indus Valley Civilizations of Northwest South Asia, including Pakistan and parts of India, were prominent in hydraulic engineering, and had many water supply and sanitation devices that were the first of their kind. Among other things, they contained the world's earliest known system of flush toilets. These existed in many homes, and were connected to a common sewerage pipe. Most houses also had private wells. City walls functioned as a barrier against floods, and massive reservoirs were often constructed along these walls to collect this floodwater to save for droughts.",
                               "movedFrom": "TXT_KEY_CIV5_BUILDINGS_INDUS_CANAL_TEXT",
-                              "translated": null
+                              "translated": "파키스탄과 인도의 일부를 포함한 서북남아시아의 고대 하라판 및 인더스 계곡 문명은 수력 공학에서 두드러졌고, 최초의 물 공급과 위생 장치를 많이 가지고 있었습니다. 무엇보다도, 그것들은 세계에서 가장 오래된 수세식 화장실 시스템을 포함하고 있었습니다. 이것들은 많은 가정에서 존재했고, 일반적인 하수관과 연결되어 있었습니다. 대부분의 집에는 개인 우물도 있었습니다. 도시 성벽은 홍수에 대한 장벽으로 기능했고, 가뭄을 막기 위해 이 홍수 물을 모으기 위해 거대한 저수지가 종종 이 벽을 따라 건설되었습니다."
                             },
                             {
                               "key": "TXT_KEY_BUILDING_HARAPPAN_RESERVOIR_HELP",
                               "text": "20% of [ICON_FOOD] Food is carried over, and 25% of the [ICON_PRODUCTION] Production of the City is added to the City's current [ICON_PRODUCTION] Production after a new [ICON_CITIZEN] Citizen is born. +2 [ICON_FOOD] Food from Lakes and Oases, and +1 [ICON_FOOD] Food and [ICON_PRODUCTION] Production from Farms worked by this City.[NEWLINE][NEWLINE]+1% [ICON_FOOD] Food for each Follower of this City's Majority [ICON_RELIGION] Religion.[NEWLINE][NEWLINE]-1 [ICON_HAPPINESS_3] Unhappiness from [ICON_GOLD] Poverty.",
                               "movedFrom": "TXT_KEY_BUILDING_INDUS_CANAL_HELP",
-                              "translated": null
+                              "translated": "[ICON_CITIZEN]시민이 증가할 때 사용한 [ICON_FOOD]식량의 [COLOR_POSITIVE_TEXT]20%[ENDCOLOR]가 저장됩니다.  [ICON_CITIZEN]시민이 증가할 때 현재 [ICON_PRODUCTION]생산 산출량의 [COLOR_POSITIVE_TEXT]25%[ENDCOLOR]를 즉시 제공합니다. 도시 주변 오아시스 및 호수 타일의 [ICON_FOOD]식량이 [COLOR_POSITIVE_TEXT]2[ENDCOLOR] 증가합니다. 농장의 [ICON_FOOD]식량 및 [ICON_PRODUCTION]생산이 [COLOR_POSITIVE_TEXT]1[ENDCOLOR] 증가합니다.[NEWLINE][NEWLINE]도시의 [ICON_RELIGION] 대중 종교를 믿는 신도 1명마다 [ICON_FOOD] 식량이 +1% 증가합니다.[NEWLINE][NEWLINE][ICON_GOLD]빈곤에서 오는 [ICON_HAPPINESS_3]불행이 [COLOR_POSITIVE_TEXT]1[ENDCOLOR] 감소합니다."
                             },
                             {
                               "key": "TXT_KEY_BUILDING_DOJO_TEXT",
                               "text": "A dojo is a Japanese term which literally means \"place of the way\". Initially, dojos were adjunct to temples. The term can refer to a formal training place for any of the Japanese do arts but typically it is considered the formal gathering place for students of any Japanese martial arts style such as karate, judo, or samurai, to conduct training, examinations and other related encounters. The concept of a dojo only referring to a training place specifically for Asian martial arts is a Western concept; in Japan, any physical training facility, including professional wrestling schools, may be called dojo because of its close martial arts roots.",
                               "movedFrom": "TXT_KEY_CIV5_BUILDINGS_DOJO_TEXT",
-                              "translated": null
+                              "translated": "도조는 문자 그대로 \"길의 장소\"를 의미하는 일본 용어입니다. 처음에, 도조는 절에 부속된 것이었습니다. 이 용어는 일본의 도예에 대한 공식적인 훈련 장소를 의미할 수 있지만, 일반적으로 가라테, 유도, 사무라이와 같은 모든 일본 무술 스타일의 학생들이 훈련, 시험 및 기타 관련 만남을 수행하는 공식적인 집합 장소로 여겨집니다. 도조의 개념은 서양의 개념이며, 일본에서는 프로레슬링 학교를 포함한 어떤 신체 훈련 시설도 도조라고 불릴 수 있습니다."
                             },
                             {
                               "key": "TXT_KEY_BUILDING_SEOWON_TEXT",
                               "text": "Seowon were the most common educational institution of Korea during the mid- to late-Joseon Dynasty. They were private institutions combining the functions of a Confucian shrine and a preparatory school. In educational terms, the seowon were primarily occupied with preparing students for the national civil service examinations. In most cases, seowon served only pupils of the aristocratic yangban class.",
                               "movedFrom": "TXT_KEY_CIV5_BUILDINGS_SEOWON_TEXT",
-                              "translated": null
+                              "translated": "서원은 조선 중후기에 한국에서 가장 흔한 교육 기관이었습니다. 그들은 사립 기관이었고, 유교 사당과 예비 학교의 기능을 결합했습니다. 교육적인 측면에서, 서원은 주로 국가 공무원 시험을 준비하는 학생들로 채워졌습니다. 대부분의 경우, 서원은 귀족 양반 계급의 학생들만 섬겼습니다."
                             },
                             {
                               "key": "TXT_KEY_IMPROVEMENT_KUNA_HELP",
                               "text": "Can only be constructed in Forests or Jungles, and cannot be adjacent to another Kuna.",
                               "movedFrom": "TXT_KEY_CIV5_IMPROVEMENTS_KUNA_HELP",
-                              "translated": null
+                              "translated": "쿠나는 숲 또는 정글 타일에만 건설할 수 있습니다. 다른 쿠나와 서로 인접하여 건설할 수 없습니다."
                             },
                             {
                               "key": "TXT_KEY_BUILDING_GER",
                               "text": "Ger",
                               "movedFrom": "TXT_KEY_BUILDING_YURT",
-                              "translated": null
+                              "translated": "게르"
                             },
                             {
                               "key": "TXT_KEY_BUILDING_GER_TEXT",
                               "text": "A yurt, called a 'Ger' by Mongolians, is a portable, bent dwelling structure traditionally used by nomads in the steppes of Central Asia as their home. The structure comprises a crown or compression wheel, usually steam bent, supported by roof ribs which are bent down at the end where they meet the lattice wall (again, steam bent). The top of the wall is prevented from spreading by means of a tension band which opposes the force of the roof ribs. The structure is usually covered by layers of fabric and sheep's wool felt for insulation and weatherproofing. The traditional decoration within a yurt is primarily pattern based. These patterns are generally not according to taste, but are derived from sacred ornaments with certain symbolism. Symbols representing strength are among the most common, including the khas (swastika) and four powerful beasts (lion, tiger, garuda and dragon), as well as stylized representations of the five elements (fire, water, earth, metal, and wood), considered to be the fundamental, unchanging elements of the cosmos. Such patterns are commonly used in the home with the belief that they will bring strength and offer protection.",
                               "movedFrom": "TXT_KEY_CIV5_BUILDINGS_YURT_TEXT",
-                              "translated": null
+                              "translated": "몽골 사람들에 의해 '게르'라고 불리는 유르트는 중앙아시아 스텝의 유목민들에 의해 전통적으로 그들의 보금자리로 사용되는 이동 가능하고 구부러진 주거 구조입니다. 구조는 크라운 또는 압축 휠(보통 증기가 휘어짐)로 구성되며, 루프 리브에 의해 지지되며, 루프 리브는 격자 벽과 만나는 단부에서 아래로 휘어집니다(다시 증기가 휘어짐). 루프 리브의 힘에 대항하는 장력 밴드를 사용하여 벽 상단이 퍼지는 것을 방지합니다. 그 구조물은 보통 단열과 내후성을 위해 천과 양의 털 펠트 층으로 덮여 있습니다. 유르트의 전통적인 장식은 주로 패턴에 기반합니다. 이러한 문양은 일반적으로 취향에 따라 만들어진 것이 아니라, 특정한 상징성을 지닌 신성한 장신구에서 파생된 것입니다. 힘을 나타내는 상징은 카(사자, 호랑이, 가루다, 용)와 다섯 가지 요소(불, 물, 흙, 금속, 나무)의 양식화된 표현뿐만 아니라 우주의 기본적이고 변하지 않는 요소라고 여겨지는 카(사자, 호랑이, 가루다, 용)를 포함한 가장 일반적인 것들 중 하나입니다. 이러한 패턴은 힘을 가져오고 보호를 제공한다는 믿음과 함께 가정에서 일반적으로 사용됩니다."
                             },
                             {
                               "key": "TXT_KEY_BUILDING_GER_HELP",
                               "text": "+1 [ICON_PRODUCTION] Production from Camps and Pastures. +40% [ICON_CULTURE_LOCAL] Border Growth and the [ICON_GOLD] Gold cost of acquiring new tiles is reduced by 25% in this City. Gain 5 [ICON_FOOD] Food and [ICON_PRODUCTION] Production in the City when its borders expand, scaling with Era.[NEWLINE][NEWLINE]Nearby [ICON_RES_DEER] Deer: +1 [ICON_FOOD] Food.[NEWLINE]Nearby [ICON_RES_BISON] Bison: +1 [ICON_FOOD] Food.",
                               "movedFrom": "TXT_KEY_BUILDING_YURT_HELP",
-                              "translated": null
+                              "translated": "야영지와 목장에서 [ICON_PRODUCTION] 생산을 +1 얻습니다. 이 도시의 [ICON_CULTURE_LOCAL] 국경 확장 속도가 40% 증가하고 확장에 필요한 [ICON_GOLD] 골드가 25% 감소합니다. 도시 영역이 확장될 때 [ICON_FOOD] 식량과 [ICON_PRODUCTION] 생산을 5 얻습니다. [COLOR:105:105:105:255](시대별 보정)[ENDCOLOR] [NEWLINE][NEWLINE][ICON_RES_DEER] 사슴: [ICON_FOOD] 식량 +1[NEWLINE][ICON_RES_BISON] 들소: [ICON_FOOD] 식량 +1"
                             },
                             {
                               "key": "TXT_KEY_IMPROVEMENT_ORDO",
                               "text": "Ordo",
                               "movedFrom": "TXT_KEY_IMPROVEMENT_MONGOLIA_ORDO",
-                              "translated": null
+                              "translated": "오르도"
                             },
                             {
                               "key": "TXT_KEY_IMPROVEMENT_ORDO_HELP",
                               "text": "Unique Mongolian Great Person Tile Improvement, replacing the {TXT_KEY_IMPROVEMENT_CITADEL}. Can only be constructed by a {TXT_KEY_UNIT_MONGOL_KHAN}.[NEWLINE][NEWLINE]Building an Ordo claims adjacent tiles.[NEWLINE][NEWLINE]+50% [ICON_STRENGTH] Defensive Strength for any Unit stationed in this tile. Units moving onto an Ordo have all their [ICON_MOVES] Movement restored. Contains [COLOR_POSITIVE_TEXT]Fortifications[ENDCOLOR], allowing owned Units to stay stationed in this tile after attacking and a [COLOR_POSITIVE_TEXT]Canal[ENDCOLOR], allowing friendly [COLOR_POSITIVE_TEXT]Sea[ENDCOLOR] Units to traverse through it.",
                               "movedFrom": "TXT_KEY_IMPROVEMENT_MONGOLIA_ORDO_HELP",
-                              "translated": null
+                              "translated": "{TXT_KEY_IMPROVEMENT_CITADEL}를 대체하는 몽골의 위인 타일 시설입니다. {TXT_KEY_UNIT_MONGOL_KHAN}으로만 건설할 수 있습니다.[NEWLINE][NEWLINE]주위로 해당 문명의 영토가 한 타일씩 증가합니다.[NEWLINE][NEWLINE]유닛이 이 타일에 주둔하면 [ICON_STRENGTH]방어력 보너스가 [COLOR_POSITIVE_TEXT]50%[ENDCOLOR] 증가하고 [ICON_MOVES] 이동력을 모두 회복합니다. [COLOR_POSITIVE_TEXT]운하[ENDCOLOR] 역할을 제공해, 아군 [COLOR_POSITIVE_TEXT]해양[ENDCOLOR] 유닛이 이 타일을 통과할 수 있게 합니다."
                             },
                             {
                               "key": "TXT_KEY_BUILD_CONSUMED_HELP_ORDO",
                               "text": "Can only be built in owned territory or adjacent to your own borders in an unowned tile, and cannot be adjacent to other Ordos. Removes any feature on the tile.[NEWLINE][NEWLINE]Constructing the Ordo will expand your Culture borders to surround the Ordo, increase your [ICON_WAR] Military Unit Supply Cap by 1, and will consume this unit. If the new Culture border claims hexes already owned by another civilization, you will incur a diplomatic penalty as a result.[NEWLINE][NEWLINE]+50% [ICON_STRENGTH] Defensive Strength for any Unit stationed in this tile. Restores [ICON_MOVES] Movement for any Unit moving onto this tile. Contains [COLOR_POSITIVE_TEXT]Fortifications[ENDCOLOR], allowing owned Units to stay stationed in this tile after attacking and a [COLOR_POSITIVE_TEXT]Canal[ENDCOLOR], allowing friendly [COLOR_POSITIVE_TEXT]Sea[ENDCOLOR] Units to traverse through it.",
                               "movedFrom": "TXT_KEY_BUILD_MONGOLIA_ORDO_HELP",
-                              "translated": null
+                              "translated": "영토 내의 아무 곳 또는 영토와 인접한 타일에 오르도를 건설할 수 있고, 다른 오르도와 인접할 수 없습니다. 이 타일의 특성이 사라집니다.[NEWLINE][NEWLINE]오르도를 건설하면 유닛을 소모하고, 당신의 [ICON_WAR] 군사 유닛 보급 한도가 1 증가하고, 오르도 주위로 해당 문명의 영토가 한 타일씩 증가합니다. 이런 식으로 다른 문명의 문화 경계를 잠식했다면 해당 문명과의 외교관계가 악화됩니다. [NEWLINE][NEWLINE]이 타일에 주둔한 유닛은 [ICON_STRENGTH] 방어력 +50%를 얻고 [ICON_MOVES] 이동력을 모두 회복합니다. [COLOR_POSITIVE_TEXT]요새[ENDCOLOR] 역할을 제공해, 공격 후에도 그 타일에 계속 주둔할 수 있습니다. [COLOR_POSITIVE_TEXT]운하[ENDCOLOR] 역할을 제공해, 아군 [COLOR_POSITIVE_TEXT]해양[ENDCOLOR] 유닛이 이 타일을 통과할 수 있게 합니다."
                             },
                             {
                               "key": "TXT_KEY_BUILDING_SIEGE_FOUNDRY",
                               "text": "Siege Foundry",
                               "movedFrom": "TXT_KEY_BUILDING_SIEGE_WORKSHOP",
-                              "translated": null
+                              "translated": "공성 주조 공장"
                             },
                             {
                               "key": "TXT_KEY_BUILDING_SIEGE_FOUNDRY_TEXT",
                               "text": "A foundry is a factory that produces metal castings. Metals are cast into shapes by melting them into a liquid, pouring the metal in a mold, and removing the mold material or casting after the metal has solidified as it cools. The most common metals processed are aluminium and cast iron. However, other metals, such as bronze, brass, steel, magnesium, and zinc, are also used to produce castings in foundries. In this process, parts of desired shapes and sizes can be formed. In the context of war, foundries were essential to the production of cannonry and other essential siege equipment.",
                               "movedFrom": "TXT_KEY_CIV5_BUILDINGS_SIEGE_WORKSHOP_TEXT",
-                              "translated": null
+                              "translated": "주조 공장은 금속 주물을 생산하는 공장입니다. 금속은 액체로 녹여 금형에 부은 다음 금속이 냉각되면서 굳어진 후 금형 재료나 주물을 제거함으로써 모양으로 주조됩니다. 가장 일반적으로 가공되는 금속은 알루미늄과 주철입니다. 그러나 청동, 황동, 강철, 마그네슘 및 아연과 같은 다른 금속도 주조 공장에서 주물을 생산하는 데 사용됩니다. 이 과정에서 원하는 모양과 크기의 부품이 형성될 수 있습니다. 전쟁 상황에서 주조 공장은 대포 및 기타 필수 포위 장비 생산에 필수적이었습니다."
                             },
                             {
                               "key": "TXT_KEY_BUILDING_SIEGE_FOUNDRY_HELP",
                               "text": "+1 [ICON_PRODUCTION] Production from Mines worked by this City. +50% [ICON_PRODUCTION] Production towards Siege units, and all Siege units trained in this City receive the [COLOR_POSITIVE_TEXT]{TXT_KEY_PROMOTION_VOLLEY}[ENDCOLOR] Promotion.[NEWLINE][NEWLINE]When you construct a Military Unit in this City, gain [ICON_RESEARCH] Science equal to 20% of the Unit's [ICON_PRODUCTION] Production cost.[NEWLINE][NEWLINE]Nearby [ICON_RES_IRON] Iron: +1 [ICON_PRODUCTION] Production, +1 [ICON_GOLD] Gold.[NEWLINE]Nearby [ICON_RES_COPPER] Copper: +2 [ICON_GOLD] Gold.",
                               "movedFrom": "TXT_KEY_BUILDING_SIEGE_WORKSHOP_HELP",
-                              "translated": null
+                              "translated": "도시의 광산의 [ICON_PRODUCTION]생산이 [COLOR_POSITIVE_TEXT]1[ENDCOLOR] 증가합니다. 공성 유닛을 생산할 때 [ICON_PRODUCTION]생산 보너스를 [COLOR_POSITIVE_TEXT]50%[ENDCOLOR] 제공하고 도시에서 생산하는 모든 공성 유닛에 [COLOR_PLAYER_PURPLE]{TXT_KEY_PROMOTION_VOLLEY}[ENDCOLOR] 진급을 부여합니다.[NEWLINE][NEWLINE]도시에서 유닛을 생산할 때 유닛 [ICON_PRODUCTION]생산 비용의 [COLOR_POSITIVE_TEXT]20%[ENDCOLOR]를 [ICON_RESEARCH]과학으로 전환합니다.[NEWLINE][NEWLINE][ICON_RES_IRON] 철: [ICON_PRODUCTION]생산 +1 [ICON_GOLD]골드 +1[NEWLINE][ICON_RES_COPPER] 구리: [ICON_GOLD]골드 +2"
                             },
                             {
                               "key": "TXT_KEY_IMPROVEMENT_VP_ENCAMPMENT",
@@ -2130,49 +2130,49 @@
                               "key": "TXT_KEY_IMPROVEMENT_VP_ENCAMPMENT_HELP",
                               "text": "Can only be built on flat land tiles, and cannot be adjacent to another Encampment.[NEWLINE][NEWLINE]+15% [ICON_STRENGTH] Defensive Strength for any Unit stationed in this tile. Any enemy unit which ends its turn next to this tile takes 5 damage (damage does not stack with other improvements).[NEWLINE][NEWLINE]If within 2 tiles of an Encampment in Shoshone territory, all Shoshone units gain +20% [ICON_STRENGTH] Combat Strength.",
                               "movedFrom": "TXT_KEY_CIV5_IMPROVEMENTS_ENCAMPMENT_SHOSHONE_HELP",
-                              "translated": null
+                              "translated": "평지 타일에만 건설할 수 있습니다. 다른 티피와 서로 인접하여 건설할 수 없습니다.[NEWLINE][NEWLINE] 시설 위에 주둔한 유닛에 [ICON_STRENGTH]방어력 보너스를 15% 제공하고 인접한 적 유닛에 피해를 [COLOR_POSITIVE_TEXT]5[ENDCOLOR] 입힙니다. (피해는 중첩되지 않습니다) [NEWLINE][NEWLINE]2타일 범위의 모든 쇼쇼니 유닛이 [ICON_STRENGTH]전투력 보너스를 +20% 받습니다."
                             },
                             {
                               "key": "TXT_KEY_BUILD_ENCAMPMENT_HELP",
                               "text": "+15% [ICON_STRENGTH] Defensive Strength for any Unit stationed in this tile. +20% [ICON_STRENGTH] Combat Strength to any nearby Shoshone Units within a 2-tile radius. Any enemy unit which ends its turn next to the Encampment takes 5 damage.[NEWLINE][NEWLINE]Can only be built on flat land tiles, and cannot be adjacent to another Encampment.",
                               "movedFrom": "TXT_KEY_BUILD_ENCAMPMENT_SHOSHONE_HELP",
-                              "translated": null
+                              "translated": "이 타일에 주둔한 유닛의 [ICON_STRENGTH] 전투력이 +15% 증가합니다. 2타일 이내 쇼쇼니 유닛의[ICON_STRENGTH] 전투력이 +20% 증가합니다. 티피 근처 타일에서 턴을 마치는 적은 피해를 5 입습니다. [NEWLINE][NEWLINE]평지 타일에만 건설할 수 있고 다른 티피와 인접하게 건설할 수 없습니다."
                             },
                             {
                               "key": "TXT_KEY_BUILD_ENCAMPMENT_REC",
                               "text": "It will increase [ICON_FOOD] Food, [ICON_PRODUCTION] Production, and [ICON_CULTURE] Culture. Removes any feature on the tile.[NEWLINE]Provides a combat bonus for nearby Shoshone units and a defensive bonus for own units on the tile, and lightly damages adjacent enemy units.",
                               "movedFrom": "TXT_KEY_BUILD_ENCAMPMENT_SHOSHONE_REC",
-                              "translated": null
+                              "translated": "현재 타일의 [ICON_FOOD]식량, [ICON_PRODUCTION]생산, [ICON_CULTURE]문화를 증가시킵니다. 건설 시 모든 타일의 특성을 제거합니다. [NEWLINE]근처 쇼숀 유닛에게 전투력을 제공하고 주둔한 유닛에 방어력 보너스를 제공하며 인접한 적 유닛에 소량의 피해를 입힙니다."
                             },
                             {
                               "key": "TXT_KEY_IMPROVEMENT_HACIENDA",
                               "text": "Hacienda",
                               "movedFrom": "TXT_KEY_IMPROVEMENT_SPAIN_HACIENDA",
-                              "translated": null
+                              "translated": "하시엔다"
                             },
                             {
                               "key": "TXT_KEY_IMPROVEMENT_HACIENDA_HELP",
                               "text": "Cannot be built adjacent to another Hacienda. Gains additional yields for each adjacent Resource:[NEWLINE]+3 [ICON_FOOD] Food from Bonus Resources[NEWLINE]+3 [ICON_PRODUCTION] Production from Strategic Resources[NEWLINE]+3 [ICON_GOLD] Gold from Luxury Resources",
                               "movedFrom": "TXT_KEY_IMPROVEMENT_SPAIN_HACIENDA_HELP",
-                              "translated": null
+                              "translated": "다른 하시엔다와 서로 인접하여 건설할 수 없습니다.\t[ICON_CULTURE] 문화가 증가하고 인접한 다음 타일들이 하시엔다에 추가 산출량을 제공합니다: [NEWLINE]보너스 자원 : +3 [ICON_FOOD]식량[NEWLINE]전략 자원 : +3 [ICON_PRODUCTION]생산[NEWLINE]사치 자원 : +3 [ICON_GOLD]골드"
                             },
                             {
                               "key": "TXT_KEY_BUILD_HACIENDA_HELP",
                               "text": "+3 [ICON_Food] Food for each adjacent Bonus Resource, +3 [ICON_PRODUCTION] Production for each adjacent Strategic Resource, and +3 [ICON_GOLD] Gold for each adjacent Luxury Resource. Cannot be built adjacent to another Hacienda.",
                               "movedFrom": "TXT_KEY_BUILD_SPAIN_HACIENDA_HELP",
-                              "translated": null
+                              "translated": "인접한 보너스 자원마다 [ICON_FOOD]식량 +3, 인접한 전략 자원마다 [ICON_PRODUCTION]생산 +3, 인접한 사치 자원마다 [ICON_GOLD]골드 +3을 제공합니다."
                             },
                             {
                               "key": "TXT_KEY_BUILD_HACIENDA_REC",
                               "text": "It will increase [ICON_CULTURE] Culture. Removes any feature on the tile.[NEWLINE]Provides additional [ICON_FOOD] Food, [ICON_GOLD] Gold, and [ICON_PRODUCTION] Production if adjacent to bonus, strategic and luxury resources respectively.",
                               "movedFrom": "TXT_KEY_BUILD_SPAIN_HACIENDA_REC",
-                              "translated": null
+                              "translated": "현재 타일의 [ICON_CULTURE] 문화를 증가시킵니다.[NEWLINE]보너스 자원과 인접 시 [ICON_FOOD]식량, 전략 자원과 인접 시 [ICON_PRODUCTION]생산, 사치 자원과 인접 시 [ICON_GOLD]골드, 도시와 인접 시 [ICON_CULTURE]문화를 제공합니다."
                             },
                             {
                               "key": "TXT_KEY_BUILDING_PIAZZA_SAN_MARCO_TEXT",
                               "text": "Piazza San Marco (often known in English as St Mark's Square), is the principal public square of Venice, Italy, where it is generally known just as \"the Piazza\" (la Piazza). All other urban spaces in the city (except the Piazzetta and the Piazzale Roma) are called \"campi\" (fields). The Piazzetta (the 'little Piazza') is an extension of the Piazza towards the lagoon in its south east corner (see plan). The two spaces together form the social, religious and political centre of Venice and are commonly considered together.",
                               "movedFrom": "TXT_KEY_CIV5_BUILDING_PIAZZA_SAN_MARCO_TEXT",
-                              "translated": null
+                              "translated": "피아자 산 마르코(산 마르코 광장)는 이탈리아 베네치아의 광장입니다. 도시의 다른 모든 공간은 \"캄피\"(밭)라고 불립니다. 피아제타('작은 광장')는 광장의 남동쪽 구석에 있는 석호를 향해 연장된 것입니다. 이 두 공간은 함께 베네치아의 사회적, 종교적, 정치적 중심지를 형성하며 일반적으로 함께 건설됩니다."
                             },
                             {
                               "key": "TXT_KEY_BUILDING_PIAZZA_SAN_MARCO_STRATEGY",
@@ -2190,31 +2190,31 @@
                               "key": "TXT_KEY_BUILDING_RIALTO_DISTRICT_TEXT",
                               "text": "The Rialto is and has been for many centuries the financial and commercial centre of Venice. It is an area of the San Polo sestiere of Venice, Italy, also known for its markets and for the Rialto Bridge across the Grand Canal. The area was settled by the ninth century, when a small area in the middle of the Realtine Islands on either side of the Rio Businiacus was known as the Rivoaltus, or \"high bank\". Eventually the Businiacus became known as the Grand Canal, and the district the Rialto, referring only to the area on the left bank.",
                               "movedFrom": "TXT_KEY_CIV5_BUILDING_RIALTO_DISTRICT_TEXT",
-                              "translated": null
+                              "translated": "리알토는 수세기 동안 베네치아의 금융과 상업의 중심지였고 지금도 그렇습니다. 리알토는 시장과 대운하를 가로지르는 리알토 다리로도 유명한 이탈리아 베네치아의 산 폴로 세스티에 지역입니다. 이 지역은 리오 부시니아쿠스의 양쪽에 있는 레알티네 제도 중앙의 작은 지역이 리보알투스 또는 \"높은 은행\"으로 알려졌을 때 9세기에 정착했습니다. 결국 부시니아쿠스는 대운하로 알려지게 되었고, 리알토 지역은 왼쪽 둑의 지역만을 지칭하게 되었습니다."
                             },
                             {
                               "key": "TXT_KEY_BUILDING_ARSENALE_DI_VENEZIA",
                               "text": "Arsenale di Venezia",
                               "movedFrom": "TXT_KEY_BUILDING_VENETIAN_ARSENALE",
-                              "translated": null
+                              "translated": "아스넬 디 베네치아"
                             },
                             {
                               "key": "TXT_KEY_BUILDING_ARSENALE_DI_VENEZIA_TEXT",
                               "text": "The Venetian Arsenal is a complex of former shipyards and armories clustered together in the city of Venice in northern Italy. Owned by the state, the Arsenal was responsible for the bulk of the Venetian republic's naval power during the middle part of the second millennium AD. It was one of the earliest large-scale industrial enterprises in history.",
                               "movedFrom": "TXT_KEY_CIV5_BUILDING_VENETIAN_ARSENALE_TEXT",
-                              "translated": null
+                              "translated": "아스넬 디 베네치아는 이탈리아 북부 베네치아 시에 있는 옛 조선소와 무기고가 모여 있는 복합 건물입니다. 국가 소유의 이 건물은 서기 2천년 중반 동안 베네치아 공화국의 해군 전력 대부분을 책임졌습니다. 그것은 역사상 최초의 대규모 산업체 중 하나였습니다."
                             },
                             {
                               "key": "TXT_KEY_BUILDING_ARSENALE_DI_VENEZIA_STRATEGY",
                               "text": "One of three mutually exclusive buildings that Venice can build in its capital after it has completed {TXT_KEY_BUILDING_PIAZZA_SAN_MARCO}. This building boosts [ICON_PRODUCTION] Production and Internal [ICON_INTERNATIONAL_TRADE] Trade Routes; increases [ICON_STRENGTH] City Strength and [ICON_SILVER_FIST] Military Supply from population; and buffs the [ICON_STRENGTH] Combat Strength and [ICON_MOVES] Movement of all naval units.",
                               "movedFrom": "TXT_KEY_BUILDING_VENETIAN_ARSENALE_STRATEGY",
-                              "translated": null
+                              "translated": "수도에 {TXT_KEY_BUILDING_PIAZZA_SAN_MARCO}를 건설하면 셋 중 하나만 건설할 수 있는 베네치아의 고유 건물입니다. [ICON_PRODUCTION] 생산력과 [ICON_INTERNATIONAL_TRADE] 국내 교역을 강화합니다. [ICON_STRENGTH] 도시 전투력과 인구에서 오는 [ICON_SILVER_FIST] 군사 유닛 보급 한도를 증가시킵니다. 모든 해군 유닛의 [ICON_STRENGTH] 전투력과 [ICON_MOVES] 이동력을 강화합니다."
                             },
                             {
                               "key": "TXT_KEY_MURANO_GLASSWORKS_THEMING_BONUS_HELP",
                               "text": "To maximize your bonus, make sure both Great Works were created by the Building Owner.",
                               "movedFrom": "TXT_KEY_BUILDING_MURANO_GLASSWORKS_THEMING_BONUS_HELP",
-                              "translated": null
+                              "translated": "보너스를 극대화 하려면 모든 걸작 슬롯을 [COLOR_POSITIVE_TEXT]건물 소유자[ENDCOLOR]가 만든 [COLOR_YELLOW]예술품[ENDCOLOR]으로 채우십시오."
                             }
                           ]
                         }
@@ -3486,7 +3486,7 @@
                               "key": "TXT_KEY_PROMOTION_HEAVY_FLANKING_HELP",
                               "text": "+25% [COLOR_POSITIVE_TEXT]Flanking bonus[ENDCOLOR].",
                               "movedFrom": "TXT_KEY_PROMOTION_FLANK_ATTACK_BONUS_STRONG_HELP",
-                              "translated": null
+                              "translated": "측면 공격 보너스 [COLOR_POSITIVE_TEXT]+25%[ENDCOLOR]"
                             },
                             {
                               "key": "TXT_KEY_PROMOTION_GIFT_OF_THE_PHARAOH",

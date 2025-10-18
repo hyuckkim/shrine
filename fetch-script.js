@@ -182,7 +182,7 @@ function annotateItems(items, dirPath, { oldIndexes, krIndexes, oldKrIndexes }) 
 
       // movedFrom이면 번역이 동일해도 translated로 처리
       if (item.movedFrom) {
-        return { ...item, translated: krText ?? null };
+        return { ...item, translated: krText ?? oldKrText ?? null };
       }
 
       if (krText && krText === item.text) {
