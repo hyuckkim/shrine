@@ -38,7 +38,7 @@
 {#if file.content && file.content.length > 0}
   <div class="rows">
     {#each file.content as item}
-      <RowInfo {item} />
+      <RowInfo {item} file_path={file.parentHref || '.'} />
     {/each}
   </div>
 {:else}

@@ -167,11 +167,16 @@ function annotateItems(items, dirPath, { oldIndexes, krIndexes, oldKrIndexes }) 
         base.movedFrom = oldKey;
       }
 
+      // 3. 완전히 새로 생긴 경우
+      if (oldText === null && !oldKey) {
+        base.newlyAdded = true;
+      }
+
       return base;
     })
-    // oldText나 movedFrom이 붙은 항목만 남김
-    .filter(item => item.oldText !== undefined || item.movedFrom !== undefined)
-    // 3. 번역 상태 추가
+    // oldText, movedFrom, newlyAdded 중 하나라도 있는 항목만 남김
+    .filter(item => item.oldText !== undefined || item.movedFrom !== undefined || item.newlyAdded)
+    // 4. 번역 상태 추가
     .map(item => {
       const krText = findTextByKey(krIndexes, dirPath, item.key);
       const oldKrText =
@@ -180,9 +185,12 @@ function annotateItems(items, dirPath, { oldIndexes, krIndexes, oldKrIndexes }) 
           ? findTextByKey(oldKrIndexes, dirPath, findKeyByText(oldIndexes, dirPath, item.text))
           : null);
 
-      // movedFrom이면 번역이 동일해도 translated로 처리
       if (item.movedFrom) {
         return { ...item, translated: krText ?? oldKrText ?? null };
+      }
+
+      if (item.newlyAdded) {
+        return { ...item, translated: krText ?? null };
       }
 
       if (krText && krText === item.text) {
@@ -194,8 +202,6 @@ function annotateItems(items, dirPath, { oldIndexes, krIndexes, oldKrIndexes }) 
       }
     });
 }
-
-
 
 // =====================
 // 파서
