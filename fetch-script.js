@@ -192,7 +192,10 @@ function annotateItems(items, dirPath, { oldIndexes, krIndexes, oldKrIndexes }) 
         return { ...item, copied: true };
       }
       if (item.movedFrom) {
-        return { ...item, translated: krTextTrimmed ?? oldKrTextTrimmed ?? null };
+        if (krTextTrimmed) {
+          return { ...item, translated: krTextTrimmed ?? null };
+        }
+        return { ...item, oldText_kr: oldKrTextTrimmed ?? null };
       }
       if (item.newlyAdded) {
         return { ...item, translated: krTextTrimmed ?? null };

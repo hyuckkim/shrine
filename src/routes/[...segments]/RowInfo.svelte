@@ -22,6 +22,7 @@
   let author = ""; // 이름 입력 필드
 
   $: status = (() => {
+    if (item.translated && item.movedFrom) return "rename applied";
     if (item.movedFrom) return "renamed";
     if (item.translated) return "translated";
     if (item.newlyAdded) return "new";
@@ -56,8 +57,9 @@
   .renamed { background: #ffe0b2; color: #e65100; }
   .text-changed { background: #ffcdd2; color: #b71c1c; }
   .translated { background: #c8e6c9; color: #1b5e20; }
+  .rename-applied { background: #c8e6c9; color: #1b5e20; }
   .copied { background: #e0e0e0; color: #424242; }
-  .new { background: #bbdefb; color: #0d47a1; }
+  .new { background: #ffcdd2; color: #b71c1c; }
   .content { display: flex; gap: 1rem; }
   .col { flex: 1; }
   .label { font-size: 0.8rem; color: #666; margin-bottom: 0.3rem; }
