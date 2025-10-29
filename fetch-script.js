@@ -270,6 +270,35 @@ export function parseRowsXML(xml) {
   console.log("parsing current...");
   const data = await walkDirMain("./repos/current", extensions, { oldIndexes, krIndexes, oldKrIndexes });
 
+  function calcTranslationCount(node) {
+    if (node.type === "file" && Array.isArray(node.content)) {
+      const total = node.content.length;
+      const translated = node.content.filter(
+        item => item.translated !== undefined && item.translated !== null && item.translated !== ""
+      ).length;
+      node.translationTotal = total;
+      node.translationDone = translated;
+      return { total, translated };
+    }
+    if (node.type === "directory" && Array.isArray(node.children)) {
+      let total = 0;
+      let translated = 0;
+      for (const child of node.children) {
+        const result = calcTranslationCount(child);
+        if (result) {
+          total += result.total;
+          translated += result.translated;
+        }
+      }
+      node.translationTotal = total;
+      node.translationDone = translated;
+      return { total, translated };
+    }
+    return { total: 0, translated: 0 };
+  }
+
+  calcTranslationCount(data);
+
   await writeFile("src/lib/data.json", JSON.stringify(data, null, 2), "utf-8");
   console.log("done!");
 })();

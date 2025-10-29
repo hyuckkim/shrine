@@ -2,12 +2,30 @@
   import File from './FilePage.svelte';
   import Folder from './FolderPage.svelte';
 
-  export let data: any;
+  type FileData = {
+    file: {
+      name: string;
+      path: string;
+      content: any[];
+      parentHref: string | null;
+    }
+  };
+
+  type FolderData = {
+    currentDir: string;
+    parentHref: string | null;
+    directories: { name: string; href: string }[];
+    files: { name: string; href: string }[];
+  };
+
+  export let data: FileData | FolderData;
+  function isFileData(data: any): data is FileData {
+    return (data as FileData).file !== undefined;
+  }
 </script>
 
-{#if data.file}
+{#if isFileData(data)}
   <File file={data.file} />
 {:else}
-  <!-- 기존 디렉토리 뷰 컴포넌트 -->
   <Folder {data} />
 {/if}

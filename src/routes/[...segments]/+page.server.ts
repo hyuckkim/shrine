@@ -37,7 +37,7 @@ export const load: PageServerLoad = async ({ params }) => {
         name,
         path: currentNode.path,
         content: currentNode.content ?? [],
-        parentHref   // ⬅️ 추가
+        parentHref
       }
     };
   }
@@ -45,13 +45,25 @@ export const load: PageServerLoad = async ({ params }) => {
   let directories: { name: string; href: string }[] = [];
   let files: { name: string; href: string }[] = [];
 
+  let translationTotal = 0;
+  let translationDone = 0;
+  if (currentNode) {
+    translationTotal = currentNode.translationTotal ?? 0;
+    translationDone = currentNode.translationDone ?? 0;
+  }
+
   if (currentNode && currentNode.children) {
     directories = currentNode.children
       .filter((c: any) => c.type === 'directory')
       .map((c: any) => {
         const parts = c.path.split('/');
         const name = parts[parts.length - 1];
-        return { name, href: '/' + [...segments, name].join('/') };
+        return {
+          name,
+          href: '/' + [...segments, name].join('/'),
+          translationTotal: c.translationTotal ?? 0,
+          translationDone: c.translationDone ?? 0
+        };
       });
 
     files = currentNode.children
@@ -59,9 +71,14 @@ export const load: PageServerLoad = async ({ params }) => {
       .map((c: any) => {
         const parts = c.path.split('/');
         const name = parts[parts.length - 1];
-        return { name, href: '/' + [...segments, name].join('/') };
+        return {
+          name,
+          href: '/' + [...segments, name].join('/'),
+          translationTotal: c.translationTotal ?? 0,
+          translationDone: c.translationDone ?? 0
+        };
       });
   }
 
-  return { currentDir, parentHref, directories, files } satisfies PageData;
+  return { currentDir, parentHref, directories, files, translationTotal, translationDone } satisfies PageData & { translationTotal: number; translationDone: number };
 };

@@ -2,8 +2,10 @@
   export let data: {
     currentDir: string;
     parentHref: string | null;
-    directories: { name: string; href: string }[];
-    files: { name: string; href: string }[];
+    directories: { name: string; href: string; translationTotal?: number; translationDone?: number }[];
+    files: { name: string; href: string; translationTotal?: number; translationDone?: number }[];
+    translationTotal?: number;
+    translationDone?: number;
   };
 </script>
 
@@ -54,16 +56,36 @@
 
 <div class="header">📂 {data.currentDir}</div>
 
+{#if typeof data.translationTotal === 'number' && typeof data.translationDone === 'number'}
+  <div style="margin-bottom:1rem;font-size:1.1rem;color:#1a3d8f;">
+    번역 완료: {data.translationDone} / {data.translationTotal}
+  </div>
+{/if}
+
 {#if data.parentHref}
   <a class="back" href={data.parentHref}>⬆️ 상위 디렉토리로</a>
 {/if}
 
 <ul>
   {#each data.directories as dir}
-    <li><a class="dir" href={dir.href}>📂 {dir.name}</a></li>
+    <li>
+      <a class="dir" href={dir.href}>
+        📂 {dir.name}
+        {#if typeof dir.translationTotal === 'number' && typeof dir.translationDone === 'number'}
+          <span style="float:right;font-size:1rem;color:#1a3d8f;">{dir.translationDone} / {dir.translationTotal}</span>
+        {/if}
+      </a>
+    </li>
   {/each}
 
   {#each data.files as file}
-    <li><a class="file" href={file.href}>📄 {file.name}</a></li>
+    <li>
+      <a class="file" href={file.href}>
+        📄 {file.name}
+        {#if typeof file.translationTotal === 'number' && typeof file.translationDone === 'number'}
+          <span style="float:right;font-size:1rem;color:#333;">{file.translationDone} / {file.translationTotal}</span>
+        {/if}
+      </a>
+    </li>
   {/each}
 </ul>
