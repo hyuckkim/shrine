@@ -14,11 +14,12 @@
   };
 
   export let file_path: string;
+  export let suggestions: { id: number; suggested_text: string; author?: string; created_at: string }[] = [];
+  export let onSuggestionAdded: () => void;
 
   let showSuggestions = false;
   let suggestion = "";
   let author = ""; // 이름 입력 필드
-  let suggestions: { id: number; suggested_text: string; author?: string; created_at: string }[] = [];
 
   $: status = (() => {
     if (item.movedFrom) return "renamed";
@@ -28,14 +29,6 @@
     if (item.copied) return "copied";
     return "";
   })();
-
-  async function loadSuggestions() {
-    if (!file_path) return;
-    const res = await fetch(`/api/suggestions?file=${encodeURIComponent(file_path)}&key=${encodeURIComponent(item.key)}`);
-    if (res.ok) {
-      suggestions = await res.json();
-    }
-  }
 
   async function submitSuggestion() {
     if (!suggestion.trim()) return;
@@ -51,12 +44,8 @@
     });
     suggestion = "";
     author = "";
-    await loadSuggestions();
+    onSuggestionAdded();
   }
-
-  onMount(() => {
-    if (showSuggestions) loadSuggestions();
-  });
 </script>
 
 <style>
@@ -98,7 +87,7 @@
       {#if status}
         <div class="status {status.replace(' ', '-')}">{status}</div>
       {/if}
-      <button class="toggle-btn" on:click={() => { showSuggestions = !showSuggestions; if (showSuggestions) loadSuggestions(); }}>
+      <button class="toggle-btn" on:click={() => { showSuggestions = !showSuggestions; }}>
         {showSuggestions ? "−" : "+"}
       </button>
     </div>
@@ -131,20 +120,20 @@
     </div>
   </div>
 
+  <div class="suggestion-block">
   {#if showSuggestions}
-    <div class="suggestion-block">
       <h4>번역 제안하기</h4>
       <input type="text" placeholder="이름 (선택)" bind:value={author} />
       <textarea bind:value={suggestion} placeholder="제안할 번역을 입력하세요..."></textarea>
       <button on:click={submitSuggestion}>저장</button>
 
-      {#if suggestions.length > 0}
-        <ul>
-          {#each suggestions as s}
-            <li>{s.suggested_text} <small>({s.author ?? "익명"}, {new Date(s.created_at).toLocaleString()})</small></li>
-          {/each}
-        </ul>
-      {/if}
-    </div>
   {/if}
+  {#if suggestions.length > 0}
+    <ul>
+      {#each suggestions as s}
+        <li>{s.suggested_text} <small>({s.author ?? "익명"}, {new Date(s.created_at).toLocaleString()})</small></li>
+      {/each}
+    </ul>
+  {/if}
+  </div>
 </div>

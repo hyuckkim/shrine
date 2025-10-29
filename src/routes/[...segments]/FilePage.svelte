@@ -7,6 +7,32 @@
     parentHref: string | null;
     content: any[];
   };
+
+  let allSuggestions: Record<string, Array<{
+    id: number;
+    suggested_text: string;
+    author?: string;
+    created_at: string;
+  }>> = {};
+
+  async function loadAllSuggestions() {
+    const res = await fetch(`/api/suggestions?file=${encodeURIComponent(file.path)}`);
+    if (res.ok) {
+      const suggestions = await res.json();
+      // key별로 suggestions 그룹화
+      allSuggestions = suggestions.reduce((acc: any, s: any) => {
+        if (!acc[s.key]) acc[s.key] = [];
+        acc[s.key].push(s);
+        return acc;
+      }, {});
+    }
+  }
+
+  // 컴포넌트 마운트 시 suggestions 로드
+  import { onMount } from "svelte";
+  onMount(() => {
+    loadAllSuggestions();
+  });
 </script>
 
 <style>
@@ -38,7 +64,12 @@
 {#if file.content && file.content.length > 0}
   <div class="rows">
     {#each file.content as item}
-      <RowInfo {item} file_path={file.parentHref || '.'} />
+      <RowInfo 
+        {item} 
+        file_path={file.path}
+        suggestions={allSuggestions[item.key] ?? []}
+        onSuggestionAdded={loadAllSuggestions}
+      />
     {/each}
   </div>
 {:else}

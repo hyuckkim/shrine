@@ -15,13 +15,15 @@ export const POST: RequestHandler = async ({ request }) => {
 
 export const GET: RequestHandler = async ({ url }) => {
   const file = url.searchParams.get('file');
-  const key = url.searchParams.get('key');
+  if (!file) {
+    return new Response('Missing file parameter', { status: 400 });
+  }
 
   const { rows } = await db.execute({
     sql: `SELECT * FROM translation_suggestions
-          WHERE file_path = ? AND key = ?
+          WHERE file_path = ?
           ORDER BY created_at DESC`,
-    args: [file, key],
+    args: [file],
   });
 
   return new Response(JSON.stringify(rows), { status: 200 });
