@@ -40,6 +40,8 @@
     font-size: 2rem;
     font-weight: bold;
     margin: 1.5rem 0;
+    position: sticky; top: 84px;
+    background: #f9f9f9;
   }
   .back {
     margin-bottom: 1rem;
@@ -55,11 +57,11 @@
   }
 </style>
 
-<div class="header">📄 {file.name}</div>
-
+<div class="header">📄 {file.name}
 {#if file.parentHref}
   <a class="back" href={file.parentHref}>⬆️ 상위 디렉토리로</a>
 {/if}
+</div>
 
 {#if file.content && file.content.length > 0}
   <div class="rows">
