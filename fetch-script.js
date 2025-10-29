@@ -184,22 +184,23 @@ function annotateItems(items, dirPath, { oldIndexes, krIndexes, oldKrIndexes }) 
         (findKeyByText(oldIndexes, dirPath, item.text)
           ? findTextByKey(oldKrIndexes, dirPath, findKeyByText(oldIndexes, dirPath, item.text))
           : null);
-
-      if (item.movedFrom) {
-        return { ...item, translated: krText ?? oldKrText ?? null };
-      }
-
-      if (item.newlyAdded) {
-        return { ...item, translated: krText ?? null };
-      }
-
-      if (krText && krText === item.text) {
+      // 모든 텍스트 비교에 trim 적용
+      const itemTextTrimmed = item.text?.trim();
+      const krTextTrimmed = krText?.trim();
+      const oldKrTextTrimmed = oldKrText?.trim();
+      if (krTextTrimmed && krTextTrimmed === itemTextTrimmed) {
         return { ...item, copied: true };
-      } else if (oldKrText !== krText) {
-        return { ...item, translated: krText ?? null };
-      } else {
-        return { ...item, oldText_kr: oldKrText ?? null };
       }
+      if (item.movedFrom) {
+        return { ...item, translated: krTextTrimmed ?? oldKrTextTrimmed ?? null };
+      }
+      if (item.newlyAdded) {
+        return { ...item, translated: krTextTrimmed ?? null };
+      }
+      if (oldKrTextTrimmed !== krTextTrimmed) {
+        return { ...item, translated: krTextTrimmed ?? null };
+      }
+      return { ...item, oldText_kr: oldKrTextTrimmed ?? null };
     });
 }
 
