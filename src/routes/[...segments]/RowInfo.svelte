@@ -20,16 +20,15 @@
   let showSuggestions = false;
   let suggestion = "";
   let author = ""; // 이름 입력 필드
-
   $: status = (() => {
-    if (item.translated && item.movedFrom) return "rename applied";
+    if (item.translated !== undefined && item.movedFrom) return "rename applied";
     if (item.movedFrom) return "renamed";
-    if (item.translated) return "translated";
+    if (item.translated !== undefined) return "translated";
     if (item.newlyAdded) return "new";
     if (item.oldText) return "text changed";
     if (item.copied) return "copied";
-    return "";
-  })();
+  return "";
+})();
 
   async function submitSuggestion() {
     if (!suggestion.trim()) return;

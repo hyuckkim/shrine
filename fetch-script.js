@@ -188,22 +188,23 @@ function annotateItems(items, dirPath, { oldIndexes, krIndexes, oldKrIndexes }) 
       const itemTextTrimmed = item.text?.trim();
       const krTextTrimmed = krText?.trim();
       const oldKrTextTrimmed = oldKrText?.trim();
+
       if (krTextTrimmed && krTextTrimmed === itemTextTrimmed) {
         return { ...item, copied: true };
       }
       if (item.movedFrom) {
         if (krTextTrimmed) {
-          return { ...item, translated: krTextTrimmed ?? null };
+          return { ...item, translated: krTextTrimmed ?? '' };
         }
-        return { ...item, oldText_kr: oldKrTextTrimmed ?? null };
+        return { ...item, oldText_kr: oldKrTextTrimmed ?? '' };
       }
       if (item.newlyAdded) {
-        return { ...item, translated: krTextTrimmed ?? null };
+        return { ...item, translated: krTextTrimmed ?? '' };
       }
       if (oldKrTextTrimmed !== krTextTrimmed) {
-        return { ...item, translated: krTextTrimmed ?? null };
+        return { ...item, translated: krTextTrimmed ?? '' };
       }
-      return { ...item, oldText_kr: oldKrTextTrimmed ?? null };
+      return { ...item, oldText_kr: oldKrTextTrimmed ?? '' };
     });
 }
 
@@ -273,33 +274,33 @@ export function parseRowsXML(xml) {
 
   console.log("parsing current...");
   const data = await walkDirMain("./repos/current", extensions, { oldIndexes, krIndexes, oldKrIndexes });
-
-  function calcTranslationCount(node) {
-    if (node.type === "file" && Array.isArray(node.content)) {
-      const total = node.content.length;
-      const translated = node.content.filter(
-        item => item.translated !== undefined && item.translated !== null && item.translated !== ""
-      ).length;
-      node.translationTotal = total;
-      node.translationDone = translated;
-      return { total, translated };
-    }
-    if (node.type === "directory" && Array.isArray(node.children)) {
-      let total = 0;
-      let translated = 0;
-      for (const child of node.children) {
-        const result = calcTranslationCount(child);
-        if (result) {
-          total += result.total;
-          translated += result.translated;
-        }
-      }
-      node.translationTotal = total;
-      node.translationDone = translated;
-      return { total, translated };
-    }
-    return { total: 0, translated: 0 };
+function calcTranslationCount(node) {
+  if (node.type === "file" && Array.isArray(node.content)) {
+    const total = node.content.length;
+    const translated = node.content.filter(
+      item => item.translated !== undefined // 빈 문자열도 포함
+    ).length;
+    node.translationTotal = total;
+    node.translationDone = translated;
+    return { total, translated };
   }
+
+  if (node.type === "directory" && Array.isArray(node.children)) {
+    let total = 0;
+    let translated = 0;
+    for (const child of node.children) {
+      const result = calcTranslationCount(child);
+      total += result.total;
+      translated += result.translated;
+    }
+    node.translationTotal = total;
+    node.translationDone = translated;
+    return { total, translated };
+  }
+
+  return { total: 0, translated: 0 };
+}
+
 
   calcTranslationCount(data);
 

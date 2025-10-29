@@ -352,7 +352,7 @@
                           "key": "TXT_KEY_GAME_OPTION_CHILL_BARBARIANS_HELP",
                           "text": "Barbarian spawn rates reduced slightly. Groovy, man.",
                           "newlyAdded": true,
-                          "translated": null
+                          "translated": ""
                         },
                         {
                           "key": "TXT_KEY_GAME_OPTION_DISABLE_AI_VICTORY_COMPETITION",
@@ -416,7 +416,7 @@
                         }
                       ],
                       "translationTotal": 12,
-                      "translationDone": 9
+                      "translationDone": 10
                     },
                     {
                       "type": "directory",
@@ -4738,19 +4738,19 @@
                     }
                   ],
                   "translationTotal": 757,
-                  "translationDone": 401
+                  "translationDone": 402
                 }
               ],
               "translationTotal": 757,
-              "translationDone": 401
+              "translationDone": 402
             }
           ],
           "translationTotal": 757,
-          "translationDone": 401
+          "translationDone": 402
         }
       ],
       "translationTotal": 757,
-      "translationDone": 401
+      "translationDone": 402
     },
     {
       "type": "directory",
@@ -4932,7 +4932,7 @@
                               "key": "TXT_KEY_BUILDING_COALING_STATION_HELP",
                               "text": "",
                               "oldText": "Internal [ICON_INTERNATIONAL_TRADE] Trade Routes from this City generate +6 [ICON_FOOD] Food. Requires an [ICON_INDUSTRIAL_CONNECTED] Industrial City Connection before it can be constructed.[NEWLINE][NEWLINE]Requires 1 [ICON_RES_COAL] Coal.",
-                              "translated": null
+                              "translated": ""
                             },
                             {
                               "key": "TXT_KEY_BUILDING_COALING_STATION_TEXT",
@@ -4944,7 +4944,7 @@
                               "key": "TXT_KEY_BUILDING_BATH_HELP",
                               "text": "",
                               "oldText": "Temples, Amphitheaters, and Gardens in City: +1 [ICON_GOLD] Gold and [ICON_CULTURE] Culture. +10% [ICON_CULTURE] Culture in the City during [ICON_GOLDEN_AGE] Golden Ages.[NEWLINE][NEWLINE]Can only be built in a City next to fresh water.",
-                              "translated": null
+                              "translated": ""
                             },
                             {
                               "key": "TXT_KEY_BUILDING_BATH_TEXT",
@@ -4968,7 +4968,7 @@
                               "key": "TXT_KEY_BUILDING_COUNCIL_HELP",
                               "text": "",
                               "newlyAdded": true,
-                              "translated": null
+                              "translated": ""
                             },
                             {
                               "key": "TXT_KEY_BUILDING_COUNCIL_TEXT",
@@ -4992,7 +4992,7 @@
                               "key": "TXT_KEY_BUILDING_SMOKEHOUSE_HELP",
                               "text": "",
                               "newlyAdded": true,
-                              "translated": null
+                              "translated": ""
                             },
                             {
                               "key": "TXT_KEY_BUILDING_SMOKEHOUSE_TEXT",
@@ -5004,13 +5004,13 @@
                               "key": "TXT_KEY_BUILDING_GALLERY_HELP",
                               "text": "",
                               "oldText": "[ICON_GREAT_WORK] Great Works in the City produce +1 [ICON_TOURISM] Tourism. +33% [ICON_GREAT_ARTIST] Great Artist Rate in the City.[NEWLINE][NEWLINE]Contains 1 slot for a [ICON_GREAT_WORK] Great Work of Art or Artifact.",
-                              "translated": null
+                              "translated": ""
                             },
                             {
                               "key": "TXT_KEY_BUILDING_HERBALIST_HELP",
                               "text": "",
                               "oldText": "+1 [ICON_FOOD] Food for every 2 Jungle or 2 Forest tiles worked by the City. +1 [ICON_PRODUCTION] Production from Marshes and Plantations.",
-                              "translated": null
+                              "translated": ""
                             },
                             {
                               "key": "TXT_KEY_BUILDING_HERBALIST_TEXT",
@@ -5022,7 +5022,7 @@
                               "key": "TXT_KEY_BUILDING_WELL_HELP",
                               "text": "",
                               "oldText": "+1 [ICON_PRODUCTION] Production for every 5 [ICON_CITIZEN] Citizens in the City.[NEWLINE][NEWLINE]City must not be built next to a River.",
-                              "translated": null
+                              "translated": ""
                             },
                             {
                               "key": "TXT_KEY_BUILDING_WELL_TEXT",
@@ -5034,7 +5034,7 @@
                               "key": "TXT_KEY_BUILDING_WIND_PLANT_HELP",
                               "text": "",
                               "oldText": "All City Processes are 10% more efficient at converting [ICON_PRODUCTION] Production into Yields.[NEWLINE][NEWLINE]+1 [ICON_PRODUCTION] Production, [ICON_CULTURE] Culture, and [ICON_RESEARCH] Science on every workable Tile (flat, hills and water).[NEWLINE][NEWLINE]Requires 1 [ICON_RES_ALUMINUM] Aluminum to be constructed. City must not contain another energy-producing Plant.",
-                              "translated": null
+                              "translated": ""
                             },
                             {
                               "key": "TXT_KEY_BUILDING_WIND_PLANT_TEXT",
@@ -5046,13 +5046,13 @@
                               "key": "TXT_KEY_BUILDING_TIDAL_PLANT_HELP",
                               "text": "",
                               "oldText": "All City Processes are 10% more efficient at converting [ICON_PRODUCTION] Production into Yields.[NEWLINE][NEWLINE]+2 [ICON_PRODUCTION] Production, [ICON_RESEARCH] Science, [ICON_GOLD] Gold and [ICON_FOOD] Food on every Sea Tile.[NEWLINE][NEWLINE]Requires 1 [ICON_RES_ALUMINUM] Aluminum to be constructed. City must be built on the coast. City must not contain another energy-producing Plant.",
-                              "translated": null
+                              "translated": ""
                             },
                             {
                               "key": "TXT_KEY_BUILDING_GROCER_HELP",
                               "text": "",
                               "oldText": "+1 [ICON_FOOD] Food for every 5 [ICON_CITIZEN] Citizens in the City. 15% of [ICON_FOOD] Food is carried over after a new [ICON_CITIZEN] Citizen is born.[NEWLINE][NEWLINE]-1 [ICON_HAPPINESS_3] Unhappiness from [ICON_GOLD] Poverty.",
-                              "translated": null
+                              "translated": ""
                             },
                             {
                               "key": "TXT_KEY_BUILDING_GROCER_TEXT",
@@ -5076,7 +5076,7 @@
                               "key": "TXT_KEY_BUILDING_AGRIBUSINESS_HELP",
                               "text": "",
                               "newlyAdded": true,
-                              "translated": null
+                              "translated": ""
                             },
                             {
                               "key": "TXT_KEY_BUILDING_AGRIBUSINESS_TEXT",
@@ -5100,7 +5100,7 @@
                               "key": "TXT_KEY_BUILDING_REFINERY_HELP",
                               "text": "",
                               "newlyAdded": true,
-                              "translated": null
+                              "translated": ""
                             },
                             {
                               "key": "TXT_KEY_BUILDING_REFINERY_TEXT",
@@ -5124,7 +5124,7 @@
                               "key": "TXT_KEY_BUILDING_BASTION_FORT_HELP",
                               "text": "",
                               "newlyAdded": true,
-                              "translated": null
+                              "translated": ""
                             },
                             {
                               "key": "TXT_KEY_BUILDING_BASTION_FORT_TEXT",
@@ -5136,7 +5136,7 @@
                               "key": "TXT_KEY_BUILDING_MINEFIELD_HELP",
                               "text": "",
                               "oldText": "Enemy Naval Units and Embarked Units expend all [ICON_MOVES] Movement when entering water tiles owned by this City. Units ending their turn in Ocean tiles owned by this City take [COLOR_NEGATIVE_TEXT]5 Damage[ENDCOLOR].[NEWLINE][NEWLINE]Requires 1 [ICON_RES_IRON] Iron. Can only be built in a City on the coast with a Harbor.",
-                              "translated": null
+                              "translated": ""
                             },
                             {
                               "key": "TXT_KEY_BUILDING_MINEFIELD_TEXT",
@@ -5148,61 +5148,61 @@
                               "key": "TXT_KEY_BUILDING_INTERPRETIVE_CENTER_HELP",
                               "text": "",
                               "oldText": "50% of the [ICON_CULTURE] Culture from [ICON_WONDER] World Wonders and Tiles is added to the [ICON_TOURISM] Tourism output of the City. +1 [ICON_CULTURE] Culture and [ICON_TOURISM] Tourism from all Landmarks in Empire.",
-                              "translated": null
+                              "translated": ""
                             },
                             {
                               "key": "TXT_KEY_BUILDING_HOSPITAL_HELP",
                               "text": "",
                               "oldText": "Land Units in this City heal 15 points per turn whether or not they take an action. All Specialists in this City produce +1 [ICON_FOOD] Food, and 2 Specialists in this City no longer produce [ICON_HAPPINESS_3] Unhappiness from [ICON_URBANIZATION] Urbanization. [ICON_VP_SCIENTIST] Scientists, [ICON_VP_MERCHANT] Merchants, and [ICON_VP_ENGINEER] Engineers in the City produce +2 of their base Yield.[NEWLINE][NEWLINE]-1 [ICON_HAPPINESS_3] Unhappiness from [ICON_GOLD] Poverty.",
-                              "translated": null
+                              "translated": ""
                             },
                             {
                               "key": "TXT_KEY_BUILDING_TEMPLE_HELP",
                               "text": "",
                               "oldText": "Generates +25% Religious Pressure. Contains 1 slot for a [ICON_VP_GREATMUSIC] Great Work of Music.[NEWLINE][NEWLINE]-1 [ICON_HAPPINESS_3] Unhappiness from [ICON_RELIGION] Religious Unrest.[NEWLINE][NEWLINE]Nearby [ICON_RES_INCENSE] Incense: +1 [ICON_CULTURE] Culture, +1 [ICON_GOLD] Gold.[NEWLINE]Nearby [ICON_RES_WINE] Wine: +1 [ICON_CULTURE] Culture, +1 [ICON_GOLD] Gold.[NEWLINE]Nearby [ICON_RES_AMBER] Amber: +1 [ICON_CULTURE] Culture, +1 [ICON_GOLD] Gold.",
-                              "translated": null
+                              "translated": ""
                             },
                             {
                               "key": "TXT_KEY_BUILDING_AMPHITHEATER_HELP",
                               "text": "",
                               "oldText": "+33% [ICON_GREAT_WRITER] Great Writer Rate in the City.[NEWLINE][NEWLINE]Nearby [ICON_RES_DYE] Dye: +1 [ICON_CULTURE] Culture, +1 [ICON_GOLD] Gold.[NEWLINE]Nearby [ICON_RES_SILK] Silk: +1 [ICON_CULTURE] Culture, +1 [ICON_GOLD] Gold.[NEWLINE]Nearby [ICON_RES_LAPIS] Lapis Lazuli: +2 [ICON_CULTURE] Culture.[NEWLINE]Nearby [ICON_RES_BRAZILWOOD] Brazilwood: +1 [ICON_CULTURE] Culture, +1 [ICON_GOLD] Gold.[NEWLINE][NEWLINE]+2 [ICON_CULTURE] Culture if [COLOR_POSITIVE_TEXT]Themed[ENDCOLOR].",
-                              "translated": null
+                              "translated": ""
                             },
                             {
                               "key": "TXT_KEY_BUILDING_OPERA_HOUSE_HELP",
                               "text": "",
                               "oldText": "+5% [ICON_CULTURE] Culture in the City. [ICON_GREAT_WORK] Great Works in the City produce +1 [ICON_TOURISM] Tourism. +33% [ICON_GREAT_MUSICIAN] Great Musician Rate in the City.",
-                              "translated": null
+                              "translated": ""
                             },
                             {
                               "key": "TXT_KEY_BUILDING_MUSEUM_HELP",
                               "text": "",
                               "oldText": "Allows [COLOR_YELLOW]Archaeologists[ENDCOLOR] to be built in this City. +1 [ICON_CULTURE] Culture and [ICON_TOURISM] Tourism for every 4 [ICON_CITIZEN] Citizens in the City. [ICON_GREAT_WORK] Great Works in the City produce +1 [ICON_TOURISM] Tourism.[NEWLINE][NEWLINE]-1 [ICON_HAPPINESS_3] Unhappiness from [ICON_CULTURE] Boredom.[NEWLINE][NEWLINE]Contains 2 slots for [ICON_GREAT_WORK] Great Works of Art or Artifacts. +4 [ICON_CULTURE] Culture if [COLOR_POSITIVE_TEXT]Themed[ENDCOLOR].",
-                              "translated": null
+                              "translated": ""
                             },
                             {
                               "key": "TXT_KEY_BUILDING_MARKET_HELP",
                               "text": "",
                               "oldText": "Incoming [ICON_ARROW_LEFT] Trade Routes generate +1 [ICON_GOLD] Gold for the City, and +1 [ICON_GOLD] Gold for [ICON_ARROW_RIGHT] Trade Route owner.[NEWLINE][NEWLINE]Nearby [ICON_RES_SPICES] Cinnamon: +1 [ICON_FOOD] Food, +1 [ICON_PRODUCTION] Production.[NEWLINE]Nearby [ICON_RES_SUGAR] Sugar: +1 [ICON_FOOD] Food, +1 [ICON_GOLD] Gold.",
-                              "translated": null
+                              "translated": ""
                             },
                             {
                               "key": "TXT_KEY_BUILDING_WALLS_HELP",
                               "text": "",
                               "oldText": "+1 [ICON_RANGE_STRENGTH] City Strike Range. +5% [ICON_SILVER_FIST] Military Supply from Population.[NEWLINE][NEWLINE][ICON_CITY_STATE] Empire Size Modifier is reduced by 5% in this City.",
-                              "translated": null
+                              "translated": ""
                             },
                             {
                               "key": "TXT_KEY_BUILDING_COLOSSEUM_HELP",
                               "text": "",
                               "oldText": "+1 [ICON_TOURISM] Tourism for every 4 [ICON_CITIZEN] Citizens in the City. Barracks, Forge, and Armory in this City gain +2 [ICON_PRODUCTION] Production. -1 [ICON_HAPPINESS_3] Unhappiness from [ICON_CULTURE] Boredom.[NEWLINE][NEWLINE]Nearby [ICON_RES_PERFUME] Perfume: +1 [ICON_GOLD] Gold, +1 [ICON_CULTURE] Culture.[NEWLINE]Nearby [ICON_RES_OLIVE] Olives: +1 [ICON_GOLD] Gold, +1 [ICON_FOOD] Food.",
-                              "translated": null
+                              "translated": ""
                             },
                             {
                               "key": "TXT_KEY_BUILDING_CHANCERY_HELP",
                               "text": "",
                               "oldText": "+10% [ICON_PRODUCTION] Production of Diplomatic Units in this City. Grants Promotion [COLOR_POSITIVE_TEXT]{TXT_KEY_PROMOTION_SIGNET}[ENDCOLOR] for Diplomatic Units in the city in which it is built.[NEWLINE][NEWLINE][ICON_CITY_STATE] City-State [COLOR_CYAN]Ally[ENDCOLOR] Bonus: +2 [ICON_PRODUCTION] Production each.",
-                              "translated": null
+                              "translated": ""
                             },
                             {
                               "key": "TXT_KEY_BUILDING_CHANCERY_TEXT",
@@ -5214,7 +5214,7 @@
                               "key": "TXT_KEY_BUILDING_WIRE_SERVICE_HELP",
                               "text": "",
                               "oldText": "+20% [ICON_PRODUCTION] Production of Diplomatic Units in this City. Grants Promotion [COLOR_POSITIVE_TEXT]{TXT_KEY_PROMOTION_EXPRESS}[ENDCOLOR] for Diplomatic Units in the city in which it is built.[NEWLINE][NEWLINE][ICON_CITY_STATE] City-State [COLOR_POSITIVE_TEXT]Friend[ENDCOLOR] Bonus: +1 [ICON_CULTURE] Culture each.[NEWLINE][ICON_CITY_STATE] City-State [COLOR_CYAN]Ally[ENDCOLOR] Bonus: +1 [ICON_CULTURE] Culture and +1 [ICON_RESEARCH] Science each.",
-                              "translated": null
+                              "translated": ""
                             },
                             {
                               "key": "TXT_KEY_BUILDING_WIRE_SERVICE_TEXT",
@@ -5238,7 +5238,7 @@
                               "key": "TXT_KEY_BUILDING_SCRIVENERS_OFFICE_HELP",
                               "text": "",
                               "newlyAdded": true,
-                              "translated": null
+                              "translated": ""
                             },
                             {
                               "key": "TXT_KEY_BUILDING_SCRIVENERS_OFFICE_TEXT",
@@ -5250,7 +5250,7 @@
                               "key": "TXT_KEY_BUILDING_PRINTING_PRESS_HELP",
                               "text": "",
                               "oldText": "+1 [ICON_RES_PAPER] Paper. +20% [ICON_PRODUCTION] Production of Diplomatic Units in this City. All Diplomatic Units receive the [COLOR_POSITIVE_TEXT]Literacy[ENDCOLOR] Promotion.[NEWLINE][NEWLINE]The [ICON_PRODUCTION] Production Cost and [ICON_CITIZEN] Population Requirements increase based on the number of Cities you own.",
-                              "translated": null
+                              "translated": ""
                             },
                             {
                               "key": "TXT_KEY_BUILDING_PRINTING_PRESS_TEXT",
@@ -5274,7 +5274,7 @@
                               "key": "TXT_KEY_BUILDING_FOREIGN_BUREAU_HELP",
                               "text": "",
                               "newlyAdded": true,
-                              "translated": null
+                              "translated": ""
                             },
                             {
                               "key": "TXT_KEY_BUILDING_FOREIGN_BUREAU_TEXT",
@@ -5298,7 +5298,7 @@
                               "key": "TXT_KEY_BUILDING_INTERNATIONAL_FINANCE_CENTER_HELP",
                               "text": "",
                               "newlyAdded": true,
-                              "translated": null
+                              "translated": ""
                             },
                             {
                               "key": "TXT_KEY_BUILDING_INTERNATIONAL_FINANCE_CENTER_TEXT",
@@ -5322,7 +5322,7 @@
                               "key": "TXT_KEY_BUILDING_PALACE_CULTURE_SCIENCE_HELP",
                               "text": "",
                               "newlyAdded": true,
-                              "translated": null
+                              "translated": ""
                             },
                             {
                               "key": "TXT_KEY_BUILDING_PALACE_CULTURE_SCIENCE_TEXT",
@@ -5346,7 +5346,7 @@
                               "key": "TXT_KEY_BUILDING_HALL_OF_HONOR_HELP",
                               "text": "",
                               "newlyAdded": true,
-                              "translated": null
+                              "translated": ""
                             },
                             {
                               "key": "TXT_KEY_BUILDING_HALL_OF_HONOR_TEXT",
@@ -5358,7 +5358,7 @@
                               "key": "TXT_KEY_BUILDING_STONEHENGE_HELP",
                               "text": "",
                               "oldText": "Provides a [COLOR_POSITIVE_TEXT]Free[ENDCOLOR] Council and 60 [ICON_PEACE] Faith in the City in which it is built.",
-                              "translated": null
+                              "translated": ""
                             },
                             {
                               "key": "TXT_KEY_BUILDING_NALANDA",
@@ -5370,7 +5370,7 @@
                               "key": "TXT_KEY_BUILDING_NALANDA_HELP",
                               "text": "",
                               "newlyAdded": true,
-                              "translated": null
+                              "translated": ""
                             },
                             {
                               "key": "TXT_KEY_BUILDING_NALANDA_TEXT",
@@ -5388,7 +5388,7 @@
                               "key": "TXT_KEY_BUILDING_NOTRE_DAME_HELP",
                               "text": "",
                               "oldText": "Receive a [COLOR_POSITIVE_TEXT]Free[ENDCOLOR] Cathedral in the City in which it is built. +30% base Religious Pressure in all Cities following your [COLOR_POSITIVE_TEXT]Primary Religion[ENDCOLOR]. Contains 2 slots for [ICON_GREAT_WORK] Great Works of Art or Artifacts. +3 [ICON_PEACE] Faith and [ICON_GOLDEN_AGE] Golden Age Points if [COLOR_POSITIVE_TEXT]Themed[ENDCOLOR].",
-                              "translated": null
+                              "translated": ""
                             },
                             {
                               "key": "TXT_KEY_BUILDING_ROMAN_FORUM",
@@ -5406,7 +5406,7 @@
                               "key": "TXT_KEY_BUILDING_ROMAN_FORUM_HELP",
                               "text": "",
                               "newlyAdded": true,
-                              "translated": null
+                              "translated": ""
                             },
                             {
                               "key": "TXT_KEY_BUILDING_ROMAN_FORUM_TEXT",
@@ -5424,7 +5424,7 @@
                               "key": "TXT_KEY_BUILDING_SUMMER_PALACE_HELP",
                               "text": "",
                               "oldText": "+1 [ICON_RES_PAPER] Paper. +20% [ICON_PRODUCTION] Production of Diplomatic Units in all Cities. All Diplomatic Units receive the [COLOR_POSITIVE_TEXT]{TXT_KEY_PROMOTION_NOBILITY}[ENDCOLOR] Promotion. All Chanceries gain +3 [ICON_GOLD] Gold and +1 [ICON_CULTURE] Culture.",
-                              "translated": null
+                              "translated": ""
                             },
                             {
                               "key": "TXT_KEY_BUILDING_SUMMER_PALACE_TEXT",
@@ -5436,7 +5436,7 @@
                               "key": "TXT_KEY_BUILDING_KARLSTEJN_HELP",
                               "text": "",
                               "oldText": "Can only be built in a Holy City. Provides a [COLOR_POSITIVE_TEXT]Free[ENDCOLOR] Order in the City in which it is built. Enables you to select a [COLOR_POSITIVE_TEXT]Reformation Belief[ENDCOLOR] at 5% below its normal Global [ICON_RELIGION] Follower requirement (20% on Standard).",
-                              "translated": null
+                              "translated": ""
                             },
                             {
                               "key": "TXT_KEY_BUILDING_KARLSTEJN_TEXT",
@@ -5448,7 +5448,7 @@
                               "key": "TXT_KEY_BUILDING_SOHO_FOUNDRY_HELP",
                               "text": "",
                               "oldText": "Provides a [COLOR_POSITIVE_TEXT]Free[ENDCOLOR] Factory and +5 [ICON_PRODUCTION] Production in the City in which it is built. Also grants 4 [COLOR_POSITIVE_TEXT]Free[ENDCOLOR] [ICON_RES_COAL] Coal.",
-                              "translated": null
+                              "translated": ""
                             },
                             {
                               "key": "TXT_KEY_BUILDING_SOHO_FOUNDRY_TEXT",
@@ -5460,7 +5460,7 @@
                               "key": "TXT_KEY_BUILDING_EMPIRE_STATE_BUILDING_HELP",
                               "text": "",
                               "oldText": "Receive a [COLOR_POSITIVE_TEXT]Free[ENDCOLOR] [ICON_GREAT_PEOPLE] Great Person of your choice and a [COLOR_POSITIVE_TEXT]Free[ENDCOLOR] Stock Exchange in the City in which it is built. Specialists in all Cities produce +1 [ICON_GOLD] Gold.",
-                              "translated": null
+                              "translated": ""
                             },
                             {
                               "key": "TXT_KEY_BUILDING_EMPIRE_STATE_BUILDING_TEXT",
@@ -5478,7 +5478,7 @@
                               "key": "TXT_KEY_BUILDING_MOTHERLAND_CALLS_HELP",
                               "text": "",
                               "newlyAdded": true,
-                              "translated": null
+                              "translated": ""
                             },
                             {
                               "key": "TXT_KEY_BUILDING_MOTHERLAND_CALLS_TEXT",
@@ -5496,7 +5496,7 @@
                               "key": "TXT_KEY_BUILDING_BLETCHLEY_PARK_HELP",
                               "text": "",
                               "oldText": "Requires completion of [COLOR_MAGENTA]Rationalism[ENDCOLOR] Branch. Receive a [COLOR_POSITIVE_TEXT]Free[ENDCOLOR] Research Lab in the City in which it is built, and all [ICON_VP_SCIENTIST] Scientists gain +1 [ICON_RESEARCH] Science. Receive 200 [ICON_VP_SPY_POINTS] Spy Points. +20 [ICON_SPY] City Security in all Cities.",
-                              "translated": null
+                              "translated": ""
                             },
                             {
                               "key": "TXT_KEY_BUILDING_BLETCHLEY_PARK_TEXT",
@@ -5508,7 +5508,7 @@
                               "key": "TXT_KEY_BUILDING_CERN_HELP",
                               "text": "",
                               "oldText": "Receive 2 [COLOR_POSITIVE_TEXT]Free[ENDCOLOR] Technologies and +100 [ICON_INFLUENCE] Influence with all [ICON_CITY_STATE] City-States in the world.",
-                              "translated": null
+                              "translated": ""
                             },
                             {
                               "key": "TXT_KEY_BUILDING_CERN_TEXT",
@@ -5520,7 +5520,7 @@
                               "key": "TXT_KEY_BUILDING_GRAND_CANAL_HELP",
                               "text": "",
                               "oldText": "May only be built collaboratively through the World Congress. Receive 1 [COLOR_POSITIVE_TEXT]Additional[ENDCOLOR] [ICON_INTERNATIONAL_TRADE] Trade Route. Grants all Naval Units except Submarines and Carriers the [COLOR_POSITIVE_TEXT]{TXT_KEY_PROMOTION_TREASURE_FLEET}[ENDCOLOR] Promotion, which grants +10% [ICON_STRENGTH] Combat Strength when attacking, +1 [ICON_VP_VISION] Sight, and the ability to heal [COLOR_POSITIVE_TEXT]Outside of Friendly Territory[ENDCOLOR].",
-                              "translated": null
+                              "translated": ""
                             },
                             {
                               "key": "TXT_KEY_BUILDING_GRAND_CANAL_TEXT",
@@ -5532,7 +5532,7 @@
                               "key": "TXT_KEY_BUILDING_CRYSTAL_PALACE_HELP",
                               "text": "",
                               "oldText": "May only be built collaboratively through the World Congress. Receive +2 [ICON_PRODUCTION] Production and +2 [ICON_RESEARCH] Science for all Factories in owned Cities. The Empire enters a [ICON_GOLDEN_AGE] Golden Age.",
-                              "translated": null
+                              "translated": ""
                             },
                             {
                               "key": "TXT_KEY_BUILDING_CRYSTAL_PALACE_TEXT",
@@ -5544,7 +5544,7 @@
                               "key": "TXT_KEY_BUILDING_MENIN_GATE_HELP",
                               "text": "",
                               "oldText": "May only be built collaboratively through the World Congress. Receive +2 [ICON_HAPPINESS_1] Happiness in the City in which it is built.[NEWLINE][NEWLINE]Receive 2 [ICON_CULTURE] Culture and [ICON_GOLDEN_AGE] Golden Age Points whenever an owned unit is killed, scaling with Era. Forts, Citadels and Landmarks provide +2 [ICON_CULTURE] Culture and [ICON_GOLDEN_AGE] Golden Age Points when worked.",
-                              "translated": null
+                              "translated": ""
                             },
                             {
                               "key": "TXT_KEY_WONDER_MENIN_GATE_QUOTE",
@@ -5556,7 +5556,7 @@
                               "key": "TXT_KEY_BUILDING_OLYMPIC_VILLAGE_HELP",
                               "text": "",
                               "oldText": "May only be built collaboratively through the World Congress. Receive +3 [ICON_HAPPINESS_1] Happiness and +3 [ICON_CULTURE] Culture in the City in which it is built. 25% of the [ICON_CULTURE] Culture from [ICON_WONDER] World Wonders and Tiles is added to the [ICON_TOURISM] Tourism output of the City.[NEWLINE][NEWLINE]All Stadiums receive +2 [ICON_GOLD] Gold and [ICON_TOURISM] Tourism.",
-                              "translated": null
+                              "translated": ""
                             },
                             {
                               "key": "TXT_KEY_BUILDING_OLYMPIC_VILLAGE_TEXT",
@@ -5568,13 +5568,13 @@
                               "key": "TXT_KEY_BUILDING_UNITED_NATIONS_HELP",
                               "text": "",
                               "newlyAdded": true,
-                              "translated": null
+                              "translated": ""
                             },
                             {
                               "key": "TXT_KEY_BUILDING_CONSULATE_HELP",
                               "text": "",
                               "newlyAdded": true,
-                              "translated": null
+                              "translated": ""
                             },
                             {
                               "key": "TXT_KEY_BUILDING_CONSULATE_TEXT",
@@ -5592,7 +5592,7 @@
                               "key": "TXT_KEY_BUILDING_TRADER_SIDS_HQ_HELP",
                               "text": "",
                               "oldText": "Founds the Trader Sid's, Inc. Corporation.[NEWLINE][NEWLINE]Receive a free Trader Sid's Office in this City, and unlocks construction of Trader Sid's Offices in owned Cities.",
-                              "translated": null
+                              "translated": ""
                             },
                             {
                               "key": "TXT_KEY_WONDER_TRADER_SIDS_HQ_QUOTE",
@@ -5604,7 +5604,7 @@
                               "key": "TXT_KEY_BUILDING_TRADER_SIDS_HELP",
                               "text": "",
                               "oldText": "Incoming [ICON_INTERNATIONAL_TRADE] Trade Routes generate +2 [ICON_GOLD] Gold for the City, and +2 [ICON_GOLD] Gold for Trade Route owner. +4 [ICON_GOLD] Gold for every Trader Sid's Franchise in foreign Cities (up to your Franchise Limit).[NEWLINE][NEWLINE]Trade Routes from this City to foreign Cities with a Trader Sid's Franchise produce +25% more [ICON_GOLD] Gold.",
-                              "translated": null
+                              "translated": ""
                             },
                             {
                               "key": "TXT_KEY_BUILDING_TRADER_SIDS_FRANCHISE_HELP",
@@ -5628,7 +5628,7 @@
                               "key": "TXT_KEY_BUILDING_CENTAURUS_EXTRACTORS_HQ_HELP",
                               "text": "",
                               "newlyAdded": true,
-                              "translated": null
+                              "translated": ""
                             },
                             {
                               "key": "TXT_KEY_WONDER_CENTAURUS_EXTRACTORS_HQ_QUOTE",
@@ -5652,7 +5652,7 @@
                               "key": "TXT_KEY_BUILDING_CENTAURUS_EXTRACTORS_HELP",
                               "text": "",
                               "newlyAdded": true,
-                              "translated": null
+                              "translated": ""
                             },
                             {
                               "key": "TXT_KEY_BUILDING_CENTAURUS_EXTRACTORS_FRANCHISE",
@@ -5676,7 +5676,7 @@
                               "key": "TXT_KEY_BUILDING_HEXXON_REFINERY_HQ_HELP",
                               "text": "",
                               "oldText": "Founds the Hexxon Refineries Corporation.[NEWLINE][NEWLINE]Receive a free Hexxon Refineries Office in this City, and unlocks construction of Hexxon Refineries Offices in owned Cities.",
-                              "translated": null
+                              "translated": ""
                             },
                             {
                               "key": "TXT_KEY_WONDER_HEXXON_REFINERY_HQ_QUOTE",
@@ -5688,7 +5688,7 @@
                               "key": "TXT_KEY_BUILDING_HEXXON_REFINERY_HELP",
                               "text": "",
                               "oldText": "+15% [ICON_PRODUCTION] Production when training Military Units in this City. +1 [ICON_RES_OIL] Oil and +1 [ICON_RES_COAL] Coal for every [COLOR_POSITIVE_TEXT]three[ENDCOLOR] Hexxon Refineries Franchises (up to your Franchise Limit).[NEWLINE][NEWLINE]Every Trade Route from this City to a foreign City with a Hexxon Refineries Franchise increases this City's [ICON_PRODUCTION] Production rate by +10%.",
-                              "translated": null
+                              "translated": ""
                             },
                             {
                               "key": "TXT_KEY_BUILDING_HEXXON_REFINERY_FRANCHISE_HELP",
@@ -5700,7 +5700,7 @@
                               "key": "TXT_KEY_BUILDING_GIORGIO_ARMEIER_HQ_HELP",
                               "text": "",
                               "oldText": "Founds the Giorgio Armeier Corporation.[NEWLINE][NEWLINE]Receive a free Giorgio Armeier Office in this City, and unlocks construction of Giorgio Armeier Offices in owned Cities.",
-                              "translated": null
+                              "translated": ""
                             },
                             {
                               "key": "TXT_KEY_WONDER_GIORGIO_ARMEIER_HQ_QUOTE",
@@ -5712,7 +5712,7 @@
                               "key": "TXT_KEY_BUILDING_GIORGIO_ARMEIER_HELP",
                               "text": "",
                               "oldText": "+2 [ICON_CULTURE] Culture for every Giorgio Armeier Franchise (up to your Franchise Limit). -1 [ICON_HAPPINESS_3] Unhappiness from [ICON_RESEARCH] Illiteracy and [ICON_CULTURE] Boredom[NEWLINE][NEWLINE]Every Trade Route from this City to a foreign City with a Giorgio Armeier Franchise increases this City's [ICON_CULTURE] Culture rate by +10%.",
-                              "translated": null
+                              "translated": ""
                             },
                             {
                               "key": "TXT_KEY_BUILDING_GIORGIO_ARMEIER_FRANCHISE_HELP",
@@ -5724,7 +5724,7 @@
                               "key": "TXT_KEY_BUILDING_FIRAXITE_MATERIALS_HQ_HELP",
                               "text": "",
                               "oldText": "Founds the Firaxite Materials Corporation.[NEWLINE][NEWLINE]Receive a free Firaxite Materials Office in this City, and unlocks construction of Firaxite Materials Offices in owned Cities.",
-                              "translated": null
+                              "translated": ""
                             },
                             {
                               "key": "TXT_KEY_WONDER_FIRAXITE_MATERIALS_HQ_QUOTE",
@@ -5736,7 +5736,7 @@
                               "key": "TXT_KEY_BUILDING_FIRAXITE_MATERIALS_HELP",
                               "text": "",
                               "oldText": "+20% [ICON_PRODUCTION] Production when constructing Buildings in this City. +2 [ICON_RESEARCH] Science for every Firaxite Materials Franchise (up to your Franchise Limit).[NEWLINE][NEWLINE]Trade Routes to foreign Cities with a Firaxite Materials Franchise produce 50% more [ICON_RESEARCH] Science.",
-                              "translated": null
+                              "translated": ""
                             },
                             {
                               "key": "TXT_KEY_BUILDING_FIRAXITE_MATERIALS_FRANCHISE_HELP",
@@ -5748,7 +5748,7 @@
                               "key": "TXT_KEY_BUILDING_TWOKAY_FOODS_HQ_HELP",
                               "text": "",
                               "oldText": "Founds the TwoKay Foods Corporation.[NEWLINE][NEWLINE]Grants a free TwoKay Foods Office in this City, and unlocks construction of TwoKay Foods Offices in owned Cities.",
-                              "translated": null
+                              "translated": ""
                             },
                             {
                               "key": "TXT_KEY_WONDER_TWOKAY_FOODS_HQ_QUOTE",
@@ -5760,7 +5760,7 @@
                               "key": "TXT_KEY_BUILDING_TWOKAY_FOODS_HELP",
                               "text": "",
                               "oldText": "Reduces [ICON_HAPPINESS_3] Unhappiness from all Needs by 1 and the [ICON_CITY_STATE] Empire Size Modifier by 5% in all Cities. +10% [ICON_FOOD] Food in the City. +3 [ICON_FOOD] Food for every TwoKay Foods Franchise (up to your Franchise Limit).[NEWLINE][NEWLINE]Every Trade Route from this City to a foreign City with a TwoKay Foods Franchise increases this City's [ICON_FOOD] Growth rate by +10%.",
-                              "translated": null
+                              "translated": ""
                             },
                             {
                               "key": "TXT_KEY_BUILDING_TWOKAY_FOODS_FRANCHISE_HELP",
@@ -5772,7 +5772,7 @@
                               "key": "TXT_KEY_BUILDING_CIVILIZED_JEWELERS_HQ_HELP",
                               "text": "",
                               "oldText": "Founds the Civilized Jewelers Corporation.[NEWLINE][NEWLINE]Receive a free Civilized Jewelers Office in this City, and unlocks construction of Civilized Jewelers Offices in owned Cities.",
-                              "translated": null
+                              "translated": ""
                             },
                             {
                               "key": "TXT_KEY_WONDER_CIVILIZED_JEWELERS_HQ_QUOTE",
@@ -5784,7 +5784,7 @@
                               "key": "TXT_KEY_BUILDING_CIVILIZED_JEWELERS_HELP",
                               "text": "",
                               "oldText": "+3% [ICON_GOLDEN_AGE] Golden Age Length Modifier. +15% [ICON_GREAT_PEOPLE] Great Person rate in City, and an additional +10% for every Civilized Jeweler's Franchise (up to your Franchise Limit).[NEWLINE][NEWLINE]Every Trade Route from this City to a foreign City with a Civilized Jewelers Franchise increases this City's [ICON_GOLD] Gold rate by +10%.",
-                              "translated": null
+                              "translated": ""
                             },
                             {
                               "key": "TXT_KEY_BUILDING_CIVILIZED_JEWELERS_FRANCHISE_HELP",
@@ -5796,31 +5796,31 @@
                               "key": "TXT_KEY_BUILDING_STUPA_HELP",
                               "text": "",
                               "oldText": "Boosts Pressure of [ICON_RELIGION] Religious Majority emanating from this City by 25%.[NEWLINE][NEWLINE]-1 [ICON_HAPPINESS_3] Unhappiness from [ICON_RESEARCH] Illiteracy.",
-                              "translated": null
+                              "translated": ""
                             },
                             {
                               "key": "TXT_KEY_BUILDING_CHURCH_HELP",
                               "text": "",
                               "oldText": "15 turns of \"We Love the King Day\" in the City when constructed. All [ICON_GREAT_WORK] Great Works in the City generate +1 [ICON_PEACE] Faith. Boosts Pressure of [ICON_RELIGION] Religious Majority emanating from this City by 40%.[NEWLINE][NEWLINE]-1 [ICON_HAPPINESS_3] Unhappiness from [ICON_CULTURE] Boredom.",
-                              "translated": null
+                              "translated": ""
                             },
                             {
                               "key": "TXT_KEY_BUILDING_MANDIR_HELP",
                               "text": "",
                               "oldText": "Gain 5 [ICON_FOOD] Food, [ICON_PRODUCTION] Production, [ICON_GOLD] Gold, [ICON_CULTURE] Culture, [ICON_RESEARCH] Science, and [ICON_PEACE] Faith when a new [ICON_CITIZEN] Citizen is born in the City, scaling with Era.[NEWLINE][NEWLINE]Boosts Pressure of [ICON_RELIGION] Religious Majority emanating from this City by 15%, and increases the City's resistance to [ICON_RELIGION] Religious conversion by 10%.[NEWLINE][NEWLINE]-1 [ICON_HAPPINESS_3] Unhappiness from [ICON_GOLD] Poverty.",
-                              "translated": null
+                              "translated": ""
                             },
                             {
                               "key": "TXT_KEY_BUILDING_SYNAGOGUE_HELP",
                               "text": "",
                               "oldText": "Increases the City's resistance to [ICON_RELIGION] Religious conversion by 15%. During \"We Love the King Day\", City [ICON_RESEARCH] Science increases by +10%.[NEWLINE][NEWLINE]-1 [ICON_HAPPINESS_3] Unhappiness from [ICON_FOOD] and [ICON_PRODUCTION] Distress.",
-                              "translated": null
+                              "translated": ""
                             },
                             {
                               "key": "TXT_KEY_BUILDING_ORDER_HELP",
                               "text": "",
                               "oldText": "When you construct a Military Unit in this City, gain [ICON_PEACE] Faith equal to 10% of the Unit's [ICON_PRODUCTION] Production cost. Land Military Units produced in the City gain the [COLOR_POSITIVE_TEXT]Morale[ENDCOLOR] Promotion.[NEWLINE][NEWLINE]Increases City [ICON_STRENGTH] Combat Strength by 3 and [ICON_RANGE_STRENGTH] Bombard Strength by 10%. Boosts Pressure of [ICON_RELIGION] Religious Majority emanating from this City by 25%.[NEWLINE][NEWLINE]-1 [ICON_HAPPINESS_3] Unhappiness from [ICON_FOOD] and [ICON_PRODUCTION] Distress.",
-                              "translated": null
+                              "translated": ""
                             },
                             {
                               "key": "TXT_KEY_BUILDING_ORDER_TEXT",
@@ -5832,7 +5832,7 @@
                               "key": "TXT_KEY_BUILDING_TEOCALLI_HELP",
                               "text": "",
                               "oldText": "+5 [ICON_PEACE] Faith when a Unit defeats an Enemy Unit in battle. Increases [ICON_SILVER_FIST] Military Unit Supply Cap by 1. +15 XP for all Military Units produced in the City. Boosts Pressure of [ICON_RELIGION] Religious Majority emanating from this City by 25%.[NEWLINE][NEWLINE]-1 [ICON_HAPPINESS_3] Unhappiness from [ICON_FOOD] and [ICON_PRODUCTION] Distress.",
-                              "translated": null
+                              "translated": ""
                             },
                             {
                               "key": "TXT_KEY_BUILDING_TEOCALLI_TEXT",
@@ -5844,7 +5844,7 @@
                               "key": "TXT_KEY_BUILDING_GURDWARA_HELP",
                               "text": "",
                               "oldText": "Boosts Pressure of [ICON_RELIGION] Religious Majority emanating from this City by 25%.[NEWLINE][NEWLINE]+10% [ICON_FOOD] Food and +10% [ICON_STRENGTH] Defense in the City. -1 [ICON_HAPPINESS_3] Unhappiness from [ICON_FOOD] and [ICON_PRODUCTION] Distress.",
-                              "translated": null
+                              "translated": ""
                             },
                             {
                               "key": "TXT_KEY_BUILDING_GURDWARA_TEXT",
@@ -5856,25 +5856,25 @@
                               "key": "TXT_KEY_BUILDING_CATHEDRAL_HELP",
                               "text": "",
                               "oldText": "Boosts Pressure of [ICON_RELIGION] Religious Majority emanating from this City by 25%. Farms, Pastures, and Quarries near this City generate +1 [ICON_GOLD] Gold. Gain +10 [ICON_GOLD] Gold in the City when its borders expand, scaling with Era.[NEWLINE][NEWLINE]-1 [ICON_HAPPINESS_3] Unhappiness from [ICON_GOLD] Poverty.",
-                              "translated": null
+                              "translated": ""
                             },
                             {
                               "key": "TXT_KEY_BUILDING_MOSQUE_HELP",
                               "text": "",
                               "oldText": "Boosts Pressure of [ICON_RELIGION] Religious Majority emanating from this City by 25%. +15% [ICON_CULTURE] Culture in the City during [ICON_GOLDEN_AGE] Golden Ages.[NEWLINE][NEWLINE]-1 [ICON_HAPPINESS_3] Unhappiness from [ICON_RESEARCH] Illiteracy.",
-                              "translated": null
+                              "translated": ""
                             },
                             {
                               "key": "TXT_KEY_BUILDING_PAGODA_HELP",
                               "text": "",
                               "oldText": "+1 to all City Yields for every World Religion that has at least one Follower in this City.[NEWLINE][NEWLINE]-1 [ICON_HAPPINESS_3] Unhappiness from [ICON_CULTURE] Boredom and -2 [ICON_HAPPINESS_3] Unhappiness from [ICON_RELIGION] Religious Unrest.",
-                              "translated": null
+                              "translated": ""
                             },
                             {
                               "key": "TXT_KEY_BUILDING_MAUSOLEUM_HELP",
                               "text": "",
                               "oldText": "Gain [ICON_PEACE] Faith when an owned Unit is killed in battle. Bonus scales with Era.[NEWLINE][NEWLINE]+5 [ICON_PEACE] Faith from all [ICON_RELIGION] Holy Sites.[NEWLINE][NEWLINE]May only be constructed in a Holy City, and only if at least 15% of the global population follows your [ICON_RELIGION] Religion (scaling with map size). -1 [ICON_HAPPINESS_3] Unhappiness from Religious Unrest, and allows you to select a [COLOR_POSITIVE_TEXT]Reformation Belief[ENDCOLOR].[NEWLINE][NEWLINE]Boosts Pressure of [ICON_RELIGION] Religious Majority emanating from this City by 25%, and increases the City's resistance to conversion by 20%.[NEWLINE][NEWLINE]Receive 1 [COLOR_POSITIVE_TEXT]Additional[ENDCOLOR] [ICON_DIPLOMAT] Delegate in the World Congress for every 10 Cities following your [ICON_RELIGION] Religion.",
-                              "translated": null
+                              "translated": ""
                             },
                             {
                               "key": "TXT_KEY_BUILDING_CELESTIAL_THRONE",
@@ -5892,7 +5892,7 @@
                               "key": "TXT_KEY_BUILDING_CELESTIAL_THRONE_HELP",
                               "text": "",
                               "newlyAdded": true,
-                              "translated": null
+                              "translated": ""
                             },
                             {
                               "key": "TXT_KEY_BUILDING_CELESTIAL_THRONE_TEXT",
@@ -5904,7 +5904,7 @@
                               "key": "TXT_KEY_BUILDING_GREAT_ALTAR_HELP",
                               "text": "",
                               "oldText": "+15% Military Unit [ICON_PRODUCTION] Production in this City.[NEWLINE][NEWLINE]+5 [ICON_PRODUCTION] Production from all [ICON_RELIGION] Holy Sites.[NEWLINE][NEWLINE]May only be constructed in a Holy City, and only if at least 15% of the global population follows your [ICON_RELIGION] Religion (scaling with map size). -1 [ICON_HAPPINESS_3] Unhappiness from Religious Unrest, and allows you to select a [COLOR_POSITIVE_TEXT]Reformation Belief[ENDCOLOR].[NEWLINE][NEWLINE]Boosts Pressure of [ICON_RELIGION] Religious Majority emanating from this City by 25%, and increases the City's resistance to conversion by 20%.[NEWLINE][NEWLINE]Receive 1 [COLOR_POSITIVE_TEXT]Additional[ENDCOLOR] [ICON_DIPLOMAT] Delegate in the World Congress for every 10 Cities following your [ICON_RELIGION] Religion.",
-                              "translated": null
+                              "translated": ""
                             },
                             {
                               "key": "TXT_KEY_BUILDING_CHARTARIUM",
@@ -5922,7 +5922,7 @@
                               "key": "TXT_KEY_BUILDING_CHARTAIUM_HELP",
                               "text": "",
                               "newlyAdded": true,
-                              "translated": null
+                              "translated": ""
                             },
                             {
                               "key": "TXT_KEY_BUILDING_CHARTAIUM_TEXT",
@@ -5934,37 +5934,37 @@
                               "key": "TXT_KEY_BUILDING_DIVINE_COURT_HELP",
                               "text": "",
                               "oldText": "+5 [ICON_CULTURE] Culture from all [ICON_RELIGION] Holy Sites.[NEWLINE][NEWLINE]May only be constructed in a Holy City, and only if at least 15% of the global population follows your [ICON_RELIGION] Religion (scaling with map size). -1 [ICON_HAPPINESS_3] Unhappiness from Religious Unrest, and allows you to select a [COLOR_POSITIVE_TEXT]Reformation Belief[ENDCOLOR].[NEWLINE][NEWLINE]Boosts Pressure of [ICON_RELIGION] Religious Majority emanating from this City by 25%, and increases the City's resistance to conversion by 20%.[NEWLINE][NEWLINE]Receive 1 [COLOR_POSITIVE_TEXT]Additional[ENDCOLOR] [ICON_DIPLOMAT] Delegate in the World Congress for every 10 Cities following your [ICON_RELIGION] Religion.",
-                              "translated": null
+                              "translated": ""
                             },
                             {
                               "key": "TXT_KEY_BUILDING_SACRED_GARDEN_HELP",
                               "text": "",
                               "oldText": "+5 [ICON_FOOD] Food from all [ICON_RELIGION] Holy Sites.[NEWLINE][NEWLINE]May only be constructed in a Holy City, and only if at least 15% of the global population follows your [ICON_RELIGION] Religion (scaling with map size). -1 [ICON_HAPPINESS_3] Unhappiness from Religious Unrest, and allows you to select a [COLOR_POSITIVE_TEXT]Reformation Belief[ENDCOLOR].[NEWLINE][NEWLINE]Boosts Pressure of [ICON_RELIGION] Religious Majority emanating from this City by 25%, and increases the City's resistance to conversion by 20%.[NEWLINE][NEWLINE]Receive 1 [COLOR_POSITIVE_TEXT]Additional[ENDCOLOR] [ICON_DIPLOMAT] Delegate in the World Congress for every 10 Cities following your [ICON_RELIGION] Religion.",
-                              "translated": null
+                              "translated": ""
                             },
                             {
                               "key": "TXT_KEY_BUILDING_HOLY_COUNCIL_HELP",
                               "text": "",
                               "oldText": "+5 [ICON_RESEARCH] Science from all [ICON_RELIGION] Holy Sites.[NEWLINE][NEWLINE]May only be constructed in a Holy City, and only if at least 15% of the global population follows your [ICON_RELIGION] Religion (scaling with map size). -1 [ICON_HAPPINESS_3] Unhappiness from Religious Unrest, and allows you to select a [COLOR_POSITIVE_TEXT]Reformation Belief[ENDCOLOR].[NEWLINE][NEWLINE]Boosts Pressure of [ICON_RELIGION] Religious Majority emanating from this City by 25%, and increases the City's resistance to conversion by 20%.[NEWLINE][NEWLINE]Receive 1 [COLOR_POSITIVE_TEXT]Additional[ENDCOLOR] [ICON_DIPLOMAT] Delegate in the World Congress for every 10 Cities following your [ICON_RELIGION] Religion.",
-                              "translated": null
+                              "translated": ""
                             },
                             {
                               "key": "TXT_KEY_BUILDING_APOSTOLIC_PALACE_HELP",
                               "text": "",
                               "oldText": "+4 [ICON_GOLDEN_AGE] Golden Age points.[NEWLINE][NEWLINE]+5 [ICON_TOURISM] Tourism from all [ICON_RELIGION] Holy Sites.[NEWLINE][NEWLINE]May only be constructed in a Holy City, and only if at least 15% of the global population follows your [ICON_RELIGION] Religion (scaling with map size). -1 [ICON_HAPPINESS_3] Unhappiness from Religious Unrest, and allows you to select a [COLOR_POSITIVE_TEXT]Reformation Belief[ENDCOLOR].[NEWLINE][NEWLINE]Boosts Pressure of [ICON_RELIGION] Religious Majority emanating from this City by 25%, and increases the City's resistance to conversion by 20%.[NEWLINE][NEWLINE]Receive 1 [COLOR_POSITIVE_TEXT]Additional[ENDCOLOR] [ICON_DIPLOMAT] Delegate in the World Congress for every 10 Cities following your [ICON_RELIGION] Religion.",
-                              "translated": null
+                              "translated": ""
                             },
                             {
                               "key": "TXT_KEY_BUILDING_GRAND_OSSUARY_HELP",
                               "text": "",
                               "oldText": "+5 [ICON_GOLD] Gold from all [ICON_RELIGION] Holy Sites.[NEWLINE][NEWLINE]May only be constructed in a Holy City, and only if at least 15% of the global population follows your [ICON_RELIGION] Religion (scaling with map size). -1 [ICON_HAPPINESS_3] Unhappiness from Religious Unrest, and allows you to select a [COLOR_POSITIVE_TEXT]Reformation Belief[ENDCOLOR].[NEWLINE][NEWLINE]Boosts Pressure of [ICON_RELIGION] Religious Majority emanating from this city by 25%, and increases the City's resistance to conversion by 20%.[NEWLINE][NEWLINE]Receive 1 [COLOR_POSITIVE_TEXT]Additional[ENDCOLOR] [ICON_DIPLOMAT] Delegate in the World Congress for every 10 Cities following your [ICON_RELIGION] Religion.",
-                              "translated": null
+                              "translated": ""
                             },
                             {
                               "key": "TXT_KEY_BUILDING_THRONE_ROOM_HELP",
                               "text": "",
                               "newlyAdded": true,
-                              "translated": null
+                              "translated": ""
                             },
                             {
                               "key": "TXT_KEY_BUILDING_THRONE_ROOM_TEXT",
@@ -5982,7 +5982,7 @@
                               "key": "TXT_KEY_BUILDING_STATE_TREASURY_HELP",
                               "text": "",
                               "newlyAdded": true,
-                              "translated": null
+                              "translated": ""
                             },
                             {
                               "key": "TXT_KEY_BUILDING_STATE_TREASURY_TEXT",
@@ -6000,7 +6000,7 @@
                               "key": "TXT_KEY_BUILDING_ROYAL_GUARDHOUSE_HELP",
                               "text": "",
                               "newlyAdded": true,
-                              "translated": null
+                              "translated": ""
                             },
                             {
                               "key": "TXT_KEY_BUILDING_ROYAL_GUARDHOUSE_TEXT",
@@ -6012,7 +6012,7 @@
                               "key": "TXT_KEY_BUILDING_PALACE_GARDEN_HELP",
                               "text": "",
                               "oldText": "+25% [ICON_GREAT_PEOPLE] Great Person Rate in the City. Contains 1 slot for a [ICON_VP_GREATWRITING] Great Work of Writing.[NEWLINE][NEWLINE]2 Specialists in this City no longer produce [ICON_HAPPINESS_3] Unhappiness from [ICON_URBANIZATION] Urbanization.[NEWLINE][NEWLINE]Can only be constructed via the [COLOR_MAGENTA]{TXT_KEY_POLICY_MONARCHY}[ENDCOLOR] Policy.",
-                              "translated": null
+                              "translated": ""
                             },
                             {
                               "key": "TXT_KEY_BUILDING_PALACE_GARDEN_TEXT",
@@ -6030,7 +6030,7 @@
                               "key": "TXT_KEY_BUILDING_COURT_CHAPEL_HELP",
                               "text": "",
                               "newlyAdded": true,
-                              "translated": null
+                              "translated": ""
                             },
                             {
                               "key": "TXT_KEY_BUILDING_COURT_CHAPEL_TEXT",
@@ -6048,7 +6048,7 @@
                               "key": "TXT_KEY_BUILDING_ROYAL_ASTROLOGER_HELP",
                               "text": "",
                               "newlyAdded": true,
-                              "translated": null
+                              "translated": ""
                             },
                             {
                               "key": "TXT_KEY_BUILDING_ROYAL_ASTROLOGER_TEXT",
@@ -6082,7 +6082,7 @@
                             }
                           ],
                           "translationTotal": 193,
-                          "translationDone": 98
+                          "translationDone": 185
                         },
                         {
                           "type": "file",
@@ -6120,7 +6120,7 @@
                         }
                       ],
                       "translationTotal": 207,
-                      "translationDone": 105
+                      "translationDone": 192
                     },
                     {
                       "type": "directory",
@@ -6400,13 +6400,13 @@
                               "key": "TXT_KEY_BUILDING_SMITHSONIAN_INSTITUTION_HELP",
                               "text": "",
                               "newlyAdded": true,
-                              "translated": null
+                              "translated": ""
                             },
                             {
                               "key": "TXT_KEY_BUILDING_SMITHSONIAN_INSTITUTION_STRATEGY",
                               "text": "One of the three mutually exclusive Wonders that America can build after it has completed Independence Hall. Choose your destiny carefully.[NEWLINE][NEWLINE]Note that all 3 Wonders have symmetry between them, focusing either on [ICON_CULTURE] Culture, [ICON_RESEARCH] Science, or [ICON_PRODUCTION] Production in similar ways. Thus, which Yield and Victory type you care most about should influence your choice.[NEWLINE][NEWLINE]Build the Smithsonian Institution if you aim for the Cultural or Scientific victory. Your Cities receive extra [ICON_CULTURE] Culture based on their [ICON_GOLD] Gold output, which lets you unlock Policies faster. Focusing on [ICON_GOLD] Gold per turn is a strong strategy from now on. This wonder synergizes best with Artistry as this Policy Branch lets you create more Great Works or Landmarks that gain a [ICON_RESEARCH] Science bonus from this Wonder. Freedom Ideology will further benefit Landmarks and Tourism output.[NEWLINE][NEWLINE]Museums and Research Labs gain powerful yields, so it's worth building them as soon as possible.[NEWLINE][NEWLINE]Since it's unlocked at Archaeology, you will reveal antiquity sites early, so consider expanding near unowned sites to create Landmarks in your new territories. They are recommended over Great Works because on top of the bigger [ICON_RESEARCH] Science bonus, they provide [ICON_GOLD] Gold which feeds back to the [ICON_CULTURE] Culture bonus. However, keep your City number in check to avoid the [ICON_TOURISM] Tourism penalty.[NEWLINE][NEWLINE]The 25% discount on tile [ICON_GOLD] Gold purchases promotes buying tiles liberally to boost prodution of important Buildings, Wonders or Units.",
                               "newlyAdded": true,
-                              "translated": null
+                              "translated": ""
                             },
                             {
                               "key": "TXT_KEY_BUILDING_WEST_POINT",
@@ -6418,7 +6418,7 @@
                               "key": "TXT_KEY_BUILDING_WEST_POINT_HELP",
                               "text": "",
                               "newlyAdded": true,
-                              "translated": null
+                              "translated": ""
                             },
                             {
                               "key": "TXT_KEY_BUILDING_WEST_POINT_TEXT",
@@ -6430,7 +6430,7 @@
                               "key": "TXT_KEY_BUILDING_WEST_POINT_STRATEGY",
                               "text": "One of the three mutually exclusive Wonders that America can build after it has completed Independence Hall. Choose your destiny carefully.[NEWLINE][NEWLINE]Note that all 3 Wonders have symmetry between them, focusing either on [ICON_CULTURE] Culture, [ICON_RESEARCH] Science, or [ICON_PRODUCTION] Production in similar ways. Thus, which Yield and Victory type you care most about should influence your choice.[NEWLINE][NEWLINE]Build West Point if you aim for the Scientific or Domination Victory. Your Cities receive extra [ICON_RESEARCH] Science based on their [ICON_GOLD] Gold output, which lets you unlock Techonologies faster and therefore also helps with gaining a military advantage. Focusing on [ICON_GOLD] Gold per turn is a strong strategy from now on. Moreover, Splash I is a strong Promotion that is given to all Siege and Naval Ranged Units, so if you plan to war, consider this Wonder more. Despite Splash I is given to Siege units, Minutemen are so strong that they shouldn't be replaced in attacking enemy Units in any way. West Point benefits most from Fealty which encourages wide empires, because such an empire is needed both for Scientific and Domination victories. Both Rationalism and Industry fit too, by multiplying [ICON_RESEARCH] Science yields from the Buildings and boosting [ICON_GOLD] Gold generation respectively.[NEWLINE][NEWLINE]Military Academies and Arsenals gain powerful yields so it's worth building them as soon as possible.[NEWLINE][NEWLINE]Since it's unlocked at Military Science, try to focus on this Technology first, and at that point why not build Brandenburg Gate as well if you can?[NEWLINE][NEWLINE]The 25% discount on tile [ICON_GOLD] Gold purchases promotes buying tiles liberally to boost prodution of important Buildings, Wonders or Units.",
                               "newlyAdded": true,
-                              "translated": null
+                              "translated": ""
                             },
                             {
                               "key": "TXT_KEY_BUILDING_SLATER_MILL",
@@ -6442,7 +6442,7 @@
                               "key": "TXT_KEY_BUILDING_SLATER_MILL_HELP",
                               "text": "",
                               "newlyAdded": true,
-                              "translated": null
+                              "translated": ""
                             },
                             {
                               "key": "TXT_KEY_BUILDING_SLATER_MILL_TEXT",
@@ -6454,7 +6454,7 @@
                               "key": "TXT_KEY_BUILDING_SLATER_MILL_STRATEGY",
                               "text": "One of the three mutually exclusive Wonders that America can build after it has completed Independence Hall. Choose your destiny carefully.[NEWLINE][NEWLINE]Note that all 3 Wonders have symmetry between them, focusing either on [ICON_CULTURE] Culture, [ICON_RESEARCH] Science, or [ICON_PRODUCTION] Production in similar ways. Thus, which Yield and Victory type you care most about should influence your choice.[NEWLINE][NEWLINE]Build the Slater Mill if you aim for the Diplomatic or Domination victory. Your Cities receive extra [ICON_PRODUCTION] Production based on their [ICON_GOLD] Gold output, which lets you build Military and Diplomatic Units faster. The [ICON_RESEARCH] Science or [ICON_CULTURE] Culture that the alternatives provide is stronger, unless you heavily lack [ICON_PRODUCTION] Production. The West Point encourages Domination too, and it's usually a better choice, especially if you're lacking in [ICON_RESEARCH] Science but your [ICON_PRODUCTION] Production capacity is strong. Otherwise the Slater Mill might be better. Focusing on [ICON_GOLD] Gold per turn is a strong strategy from now on. This Wonder synergizes best with Statecraft as this Policy Branch helps with allying city states and gaining Congress Votes, and gives an extra Trade Route. Industry and Freedom will further add Trade Routes which are important, because with the Slater Mill's 25% shorter Trade Route duration, you will be able to establish your Franchises faster.[NEWLINE][NEWLINE]Factories and Stock Exchanges gain powerful yields so it's worth building them as soon as possible.[NEWLINE][NEWLINE]The 25% discount on tile [ICON_GOLD] Gold purchases promotes buying tiles liberally to boost prodution of important Buildings, Wonders or Units.",
                               "newlyAdded": true,
-                              "translated": null
+                              "translated": ""
                             },
                             {
                               "key": "TXT_KEY_BUILDING_HOMESTEAD",
@@ -6466,7 +6466,7 @@
                               "key": "TXT_KEY_BUILDING_HOMESTEAD_HELP",
                               "text": "",
                               "newlyAdded": true,
-                              "translated": null
+                              "translated": ""
                             },
                             {
                               "key": "TXT_KEY_BUILDING_HOMESTEAD_TEXT",
@@ -6478,7 +6478,7 @@
                               "key": "TXT_KEY_BUILDING_HOMESTEAD_STRATEGY",
                               "text": "",
                               "newlyAdded": true,
-                              "translated": null
+                              "translated": ""
                             },
                             {
                               "key": "TXT_KEY_UNIT_MONITOR",
@@ -6490,7 +6490,7 @@
                               "key": "TXT_KEY_UNIT_MONITOR_HELP",
                               "text": "",
                               "newlyAdded": true,
-                              "translated": null
+                              "translated": ""
                             },
                             {
                               "key": "TXT_KEY_UNIT_MONITOR_TEXT",
@@ -6514,7 +6514,7 @@
                               "key": "TXT_KEY_BUILDING_BIMARISTAN_HELP",
                               "text": "",
                               "newlyAdded": true,
-                              "translated": null
+                              "translated": ""
                             },
                             {
                               "key": "TXT_KEY_BUILDING_BIMARISTAN_TEXT",
@@ -6526,7 +6526,7 @@
                               "key": "TXT_KEY_BUILDING_BIMARISTAN_STRATEGY",
                               "text": "",
                               "newlyAdded": true,
-                              "translated": null
+                              "translated": ""
                             },
                             {
                               "key": "TXT_KEY_UNIT_HASHEMITE_RAIDER",
@@ -6538,7 +6538,7 @@
                               "key": "TXT_KEY_UNIT_HASHEMITE_RAIDER_HELP",
                               "text": "",
                               "newlyAdded": true,
-                              "translated": null
+                              "translated": ""
                             },
                             {
                               "key": "TXT_KEY_UNIT_HASHEMITE_RAIDER_TEXT",
@@ -6550,7 +6550,7 @@
                               "key": "TXT_KEY_UNIT_HASHEMITE_RAIDER_STRATEGY",
                               "text": "",
                               "newlyAdded": true,
-                              "translated": null
+                              "translated": ""
                             },
                             {
                               "key": "TXT_KEY_BUILDING_LAMASSU_GATE",
@@ -6562,7 +6562,7 @@
                               "key": "TXT_KEY_BUILDING_LAMASSU_GATE_HELP",
                               "text": "",
                               "newlyAdded": true,
-                              "translated": null
+                              "translated": ""
                             },
                             {
                               "key": "TXT_KEY_BUILDING_LAMASSU_GATE_TEXT",
@@ -6574,7 +6574,7 @@
                               "key": "TXT_KEY_BUILDING_LAMASSU_GATE_STRATEGY",
                               "text": "",
                               "newlyAdded": true,
-                              "translated": null
+                              "translated": ""
                             },
                             {
                               "key": "TXT_KEY_UNIT_IRON_CHARIOT",
@@ -6586,7 +6586,7 @@
                               "key": "TXT_KEY_UNIT_IRON_CHARIOT_HELP",
                               "text": "",
                               "newlyAdded": true,
-                              "translated": null
+                              "translated": ""
                             },
                             {
                               "key": "TXT_KEY_UNIT_IRON_CHARIOT_TEXT",
@@ -6598,7 +6598,7 @@
                               "key": "TXT_KEY_UNIT_IRON_CHARIOT_STRATEGY",
                               "text": "",
                               "newlyAdded": true,
-                              "translated": null
+                              "translated": ""
                             },
                             {
                               "key": "TXT_KEY_BUILDING_SCHUTZENSTAND",
@@ -6610,7 +6610,7 @@
                               "key": "TXT_KEY_BUILDING_SCHUTZENSTAND_HELP",
                               "text": "",
                               "newlyAdded": true,
-                              "translated": null
+                              "translated": ""
                             },
                             {
                               "key": "TXT_KEY_BUILDING_SCHUTZENSTAND_TEXT",
@@ -6622,7 +6622,7 @@
                               "key": "TXT_KEY_BUILDING_SCHUTZENSTAND_STRATEGY",
                               "text": "",
                               "newlyAdded": true,
-                              "translated": null
+                              "translated": ""
                             },
                             {
                               "key": "TXT_KEY_BUILDING_BALLHAUSPLATZ",
@@ -6634,7 +6634,7 @@
                               "key": "TXT_KEY_BUILDING_BALLHAUSPLATZ_HELP",
                               "text": "",
                               "newlyAdded": true,
-                              "translated": null
+                              "translated": ""
                             },
                             {
                               "key": "TXT_KEY_BUILDING_BALLHAUSPLATZ_TEXT",
@@ -6646,7 +6646,7 @@
                               "key": "TXT_KEY_BUILDING_BALLHAUSPLATZ_STRATEGY",
                               "text": "",
                               "newlyAdded": true,
-                              "translated": null
+                              "translated": ""
                             },
                             {
                               "key": "TXT_KEY_UNIT_GRENZER",
@@ -6658,7 +6658,7 @@
                               "key": "TXT_KEY_UNIT_GRENZER_HELP",
                               "text": "",
                               "newlyAdded": true,
-                              "translated": null
+                              "translated": ""
                             },
                             {
                               "key": "TXT_KEY_UNIT_GRENZER_TEXT",
@@ -6670,7 +6670,7 @@
                               "key": "TXT_KEY_UNIT_GRENZER_STRATEGY",
                               "text": "",
                               "newlyAdded": true,
-                              "translated": null
+                              "translated": ""
                             },
                             {
                               "key": "TXT_KEY_BUILDING_TELPOCHCALLI",
@@ -6682,7 +6682,7 @@
                               "key": "TXT_KEY_BUILDING_TELPOCHCALLI_HELP",
                               "text": "",
                               "newlyAdded": true,
-                              "translated": null
+                              "translated": ""
                             },
                             {
                               "key": "TXT_KEY_BUILDING_TELPOCHCALLI_TEXT",
@@ -6694,7 +6694,7 @@
                               "key": "TXT_KEY_BUILDING_TELPOCHCALLI_STRATEGY",
                               "text": "",
                               "newlyAdded": true,
-                              "translated": null
+                              "translated": ""
                             },
                             {
                               "key": "TXT_KEY_BUILDING_HUEY_TEOCALLI",
@@ -6706,7 +6706,7 @@
                               "key": "TXT_KEY_BUILDING_HUEY_TEOCALLI_HELP",
                               "text": "",
                               "newlyAdded": true,
-                              "translated": null
+                              "translated": ""
                             },
                             {
                               "key": "TXT_KEY_BUILDING_HUEY_TEOCALLI_TEXT",
@@ -6718,7 +6718,7 @@
                               "key": "TXT_KEY_BUILDING_HUEY_TEOCALLI_STRATEGY",
                               "text": "",
                               "newlyAdded": true,
-                              "translated": null
+                              "translated": ""
                             },
                             {
                               "key": "TXT_KEY_UNIT_OTOMI",
@@ -6730,7 +6730,7 @@
                               "key": "TXT_KEY_UNIT_OTOMI_HELP",
                               "text": "",
                               "newlyAdded": true,
-                              "translated": null
+                              "translated": ""
                             },
                             {
                               "key": "TXT_KEY_UNIT_OTOMI_TEXT",
@@ -6742,7 +6742,7 @@
                               "key": "TXT_KEY_UNIT_OTOMI_STRATEGY",
                               "text": "",
                               "newlyAdded": true,
-                              "translated": null
+                              "translated": ""
                             },
                             {
                               "key": "TXT_KEY_UNIT_SABUM_KIBITUM",
@@ -6754,7 +6754,7 @@
                               "key": "TXT_KEY_UNIT_SABUM_KIBITUM_HELP",
                               "text": "",
                               "newlyAdded": true,
-                              "translated": null
+                              "translated": ""
                             },
                             {
                               "key": "TXT_KEY_UNIT_SABUM_KIBITUM_TEXT",
@@ -6766,7 +6766,7 @@
                               "key": "TXT_KEY_UNIT_SABUM_KIBITUM_STRATEGY",
                               "text": "",
                               "newlyAdded": true,
-                              "translated": null
+                              "translated": ""
                             },
                             {
                               "key": "TXT_KEY_BUILDING_ETEMENANKI",
@@ -6778,7 +6778,7 @@
                               "key": "TXT_KEY_BUILDING_ETEMENANKI_HELP",
                               "text": "",
                               "newlyAdded": true,
-                              "translated": null
+                              "translated": ""
                             },
                             {
                               "key": "TXT_KEY_BUILDING_ETEMENANKI_TEXT",
@@ -6790,7 +6790,7 @@
                               "key": "TXT_KEY_BUILDING_ETEMENANKI_STRATEGY",
                               "text": "",
                               "newlyAdded": true,
-                              "translated": null
+                              "translated": ""
                             },
                             {
                               "key": "TXT_KEY_UNIT_BANDEIRANTE",
@@ -6826,7 +6826,7 @@
                               "key": "TXT_KEY_BUILDING_EMBRAPA_HELP",
                               "text": "",
                               "newlyAdded": true,
-                              "translated": null
+                              "translated": ""
                             },
                             {
                               "key": "TXT_KEY_BUILDING_EMBRAPA_TEXT",
@@ -6850,7 +6850,7 @@
                               "key": "TXT_KEY_UNIT_AMAZONAS_HELP",
                               "text": "",
                               "newlyAdded": true,
-                              "translated": null
+                              "translated": ""
                             },
                             {
                               "key": "TXT_KEY_UNIT_AMAZONAS_TEXT",
@@ -6946,7 +6946,7 @@
                               "key": "TXT_KEY_UNIT_ASAMU_HELP",
                               "text": "",
                               "newlyAdded": true,
-                              "translated": null
+                              "translated": ""
                             },
                             {
                               "key": "TXT_KEY_UNIT_ASAMU_TEXT",
@@ -6976,7 +6976,7 @@
                               "key": "TXT_KEY_UNIT_SCYTHED_CHARIOT_HELP",
                               "text": "",
                               "newlyAdded": true,
-                              "translated": null
+                              "translated": ""
                             },
                             {
                               "key": "TXT_KEY_UNIT_SCYTHED_CHARIOT_TEXT",
@@ -6988,7 +6988,7 @@
                               "key": "TXT_KEY_UNIT_SCYTHED_CHARIOT_STRATEGY",
                               "text": "",
                               "newlyAdded": true,
-                              "translated": null
+                              "translated": ""
                             },
                             {
                               "key": "TXT_KEY_IMPROVEMENT_OPPIDUM",
@@ -7042,13 +7042,13 @@
                               "key": "TXT_KEY_BUILDING_EXAMINATION_HALL_STRATEGY",
                               "text": "",
                               "newlyAdded": true,
-                              "translated": null
+                              "translated": ""
                             },
                             {
                               "key": "TXT_KEY_BUILDING_EXAMINATION_HALL_HELP",
                               "text": "",
                               "newlyAdded": true,
-                              "translated": null
+                              "translated": ""
                             },
                             {
                               "key": "TXT_KEY_UNIT_TREASURE_SHIP",
@@ -7060,7 +7060,7 @@
                               "key": "TXT_KEY_UNIT_TREASURE_SHIP_HELP",
                               "text": "",
                               "newlyAdded": true,
-                              "translated": null
+                              "translated": ""
                             },
                             {
                               "key": "TXT_KEY_UNIT_TREASURE_SHIP_TEXT",
@@ -7072,7 +7072,7 @@
                               "key": "TXT_KEY_UNIT_TREASURE_SHIP_STRATEGY",
                               "text": "",
                               "newlyAdded": true,
-                              "translated": null
+                              "translated": ""
                             },
                             {
                               "key": "TXT_KEY_BUILDING_RUNESTONE",
@@ -7108,7 +7108,7 @@
                               "key": "TXT_KEY_BUILDING_ANDELSBEVAEGELSE_HELP",
                               "text": "",
                               "newlyAdded": true,
-                              "translated": null
+                              "translated": ""
                             },
                             {
                               "key": "TXT_KEY_BUILDING_ANDELSBEVAEGELSE_TEXT",
@@ -7120,7 +7120,7 @@
                               "key": "TXT_KEY_BUILDING_ANDELSBEVAEGELSE_STRATEGY",
                               "text": "",
                               "newlyAdded": true,
-                              "translated": null
+                              "translated": ""
                             },
                             {
                               "key": "TXT_KEY_UNIT_LONGSHIP",
@@ -7132,7 +7132,7 @@
                               "key": "TXT_KEY_UNIT_LONGSHIP_HELP",
                               "text": "",
                               "newlyAdded": true,
-                              "translated": null
+                              "translated": ""
                             },
                             {
                               "key": "TXT_KEY_UNIT_LONGSHIP_TEXT",
@@ -7144,7 +7144,7 @@
                               "key": "TXT_KEY_UNIT_LONGSHIP_STRATEGY",
                               "text": "",
                               "newlyAdded": true,
-                              "translated": null
+                              "translated": ""
                             },
                             {
                               "key": "TXT_KEY_UNIT_MAMLUK",
@@ -7156,7 +7156,7 @@
                               "key": "TXT_KEY_UNIT_MAMLUK_HELP",
                               "text": "",
                               "newlyAdded": true,
-                              "translated": null
+                              "translated": ""
                             },
                             {
                               "key": "TXT_KEY_UNIT_MAMLUK_TEXT",
@@ -7168,7 +7168,7 @@
                               "key": "TXT_KEY_UNIT_MAMLUK_STRATEGY",
                               "text": "",
                               "newlyAdded": true,
-                              "translated": null
+                              "translated": ""
                             },
                             {
                               "key": "TXT_KEY_IMPROVEMENT_OBELISK",
@@ -7234,7 +7234,7 @@
                               "key": "TXT_KEY_BUILDING_STEAM_MILL_HELP",
                               "text": "",
                               "newlyAdded": true,
-                              "translated": null
+                              "translated": ""
                             },
                             {
                               "key": "TXT_KEY_BUILDING_STEAM_MILL_TEXT",
@@ -7246,7 +7246,7 @@
                               "key": "TXT_KEY_BUILDING_STEAM_MILL_STRATEGY",
                               "text": "",
                               "newlyAdded": true,
-                              "translated": null
+                              "translated": ""
                             },
                             {
                               "key": "TXT_KEY_UNIT_REDCOAT",
@@ -7258,7 +7258,7 @@
                               "key": "TXT_KEY_UNIT_REDCOAT_HELP",
                               "text": "",
                               "newlyAdded": true,
-                              "translated": null
+                              "translated": ""
                             },
                             {
                               "key": "TXT_KEY_UNIT_REDCOAT_TEXT",
@@ -7270,13 +7270,13 @@
                               "key": "TXT_KEY_UNIT_REDCOAT_STRATEGY",
                               "text": "",
                               "newlyAdded": true,
-                              "translated": null
+                              "translated": ""
                             },
                             {
                               "key": "TXT_KEY_BUILDING_STELE_HELP",
                               "text": "",
                               "oldText": "+25% [ICON_PEACE] Faith during [ICON_GOLDEN_AGE] Golden Ages.",
-                              "translated": null
+                              "translated": ""
                             },
                             {
                               "key": "TXT_KEY_UNIT_CHEWA",
@@ -7288,7 +7288,7 @@
                               "key": "TXT_KEY_UNIT_CHEWA_HELP",
                               "text": "",
                               "newlyAdded": true,
-                              "translated": null
+                              "translated": ""
                             },
                             {
                               "key": "TXT_KEY_UNIT_CHEWA_TEXT",
@@ -7300,7 +7300,7 @@
                               "key": "TXT_KEY_UNIT_CHEWA_STRATEGY",
                               "text": "",
                               "newlyAdded": true,
-                              "translated": null
+                              "translated": ""
                             },
                             {
                               "key": "TXT_KEY_UNIT_OROMO_CAVALRY",
@@ -7312,7 +7312,7 @@
                               "key": "TXT_KEY_UNIT_OROMO_CAVALRY_HELP",
                               "text": "",
                               "newlyAdded": true,
-                              "translated": null
+                              "translated": ""
                             },
                             {
                               "key": "TXT_KEY_UNIT_OROMO_CAVALRY_TEXT",
@@ -7324,7 +7324,7 @@
                               "key": "TXT_KEY_UNIT_OROMO_CAVALRY_STRATEGY",
                               "text": "",
                               "newlyAdded": true,
-                              "translated": null
+                              "translated": ""
                             },
                             {
                               "key": "TXT_KEY_IMPROVEMENT_MONOLITHIC_CHURCH",
@@ -7384,7 +7384,7 @@
                               "key": "TXT_KEY_BUILDING_SALON_STRATEGY",
                               "text": "",
                               "newlyAdded": true,
-                              "translated": null
+                              "translated": ""
                             },
                             {
                               "key": "TXT_KEY_THEMING_BONUS_SALON_1",
@@ -7426,7 +7426,7 @@
                               "key": "TXT_KEY_UNIT_SPAD_HELP",
                               "text": "",
                               "newlyAdded": true,
-                              "translated": null
+                              "translated": ""
                             },
                             {
                               "key": "TXT_KEY_UNIT_SPAD_TEXT",
@@ -7438,7 +7438,7 @@
                               "key": "TXT_KEY_UNIT_SPAD_STRATEGY",
                               "text": "",
                               "newlyAdded": true,
-                              "translated": null
+                              "translated": ""
                             },
                             {
                               "key": "TXT_KEY_BUILDING_BREWHOUSE",
@@ -7450,7 +7450,7 @@
                               "key": "TXT_KEY_BUILDING_BREWHOUSE_HELP",
                               "text": "",
                               "newlyAdded": true,
-                              "translated": null
+                              "translated": ""
                             },
                             {
                               "key": "TXT_KEY_BUILDING_BREWHOUSE_TEXT",
@@ -7462,7 +7462,7 @@
                               "key": "TXT_KEY_BUILDING_BREWHOUSE_STRATEGY",
                               "text": "",
                               "newlyAdded": true,
-                              "translated": null
+                              "translated": ""
                             },
                             {
                               "key": "TXT_KEY_UNIT_KRUPP_GUN",
@@ -7474,7 +7474,7 @@
                               "key": "TXT_KEY_UNIT_KRUPP_GUN_HELP",
                               "text": "",
                               "newlyAdded": true,
-                              "translated": null
+                              "translated": ""
                             },
                             {
                               "key": "TXT_KEY_UNIT_KRUPP_GUN_TEXT",
@@ -7486,7 +7486,7 @@
                               "key": "TXT_KEY_UNIT_KRUPP_GUN_STRATEGY",
                               "text": "",
                               "newlyAdded": true,
-                              "translated": null
+                              "translated": ""
                             },
                             {
                               "key": "TXT_KEY_BUILDING_GYMNASION",
@@ -7498,7 +7498,7 @@
                               "key": "TXT_KEY_BUILDING_GYMNASION_HELP",
                               "text": "",
                               "newlyAdded": true,
-                              "translated": null
+                              "translated": ""
                             },
                             {
                               "key": "TXT_KEY_BUILDING_GYMNASION_TEXT",
@@ -7510,7 +7510,7 @@
                               "key": "TXT_KEY_BUILDING_GYMNASION_STRATEGY",
                               "text": "",
                               "newlyAdded": true,
-                              "translated": null
+                              "translated": ""
                             },
                             {
                               "key": "TXT_KEY_UNIT_KLEPHT",
@@ -7522,7 +7522,7 @@
                               "key": "TXT_KEY_UNIT_KLEPHT_HELP",
                               "text": "",
                               "newlyAdded": true,
-                              "translated": null
+                              "translated": ""
                             },
                             {
                               "key": "TXT_KEY_UNIT_KLEPHT_TEXT",
@@ -7534,7 +7534,7 @@
                               "key": "TXT_KEY_UNIT_KLEPHT_STRATEGY",
                               "text": "",
                               "newlyAdded": true,
-                              "translated": null
+                              "translated": ""
                             },
                             {
                               "key": "TXT_KEY_IMPROVEMENT_EKI_TEXT",
@@ -7558,7 +7558,7 @@
                               "key": "TXT_KEY_UNIT_TARKHAN_HELP",
                               "text": "",
                               "newlyAdded": true,
-                              "translated": null
+                              "translated": ""
                             },
                             {
                               "key": "TXT_KEY_UNIT_TARKHAN_TEXT",
@@ -7570,7 +7570,7 @@
                               "key": "TXT_KEY_UNIT_TARKHAN_STRATEGY",
                               "text": "",
                               "newlyAdded": true,
-                              "translated": null
+                              "translated": ""
                             },
                             {
                               "key": "TXT_KEY_BUILDING_ULTICUR",
@@ -7582,7 +7582,7 @@
                               "key": "TXT_KEY_BUILDING_ULTICUR_HELP",
                               "text": "",
                               "newlyAdded": true,
-                              "translated": null
+                              "translated": ""
                             },
                             {
                               "key": "TXT_KEY_BUILDING_ULTICUR_TEXT",
@@ -7594,7 +7594,7 @@
                               "key": "TXT_KEY_BUILDING_ULTICUR_STRATEGY",
                               "text": "",
                               "newlyAdded": true,
-                              "translated": null
+                              "translated": ""
                             },
                             {
                               "key": "TXT_KEY_UNIT_WARAKAQ",
@@ -7630,7 +7630,7 @@
                               "key": "TXT_KEY_BUILDING_QULLQA_HELP",
                               "text": "",
                               "newlyAdded": true,
-                              "translated": null
+                              "translated": ""
                             },
                             {
                               "key": "TXT_KEY_BUILDING_QULLQA_TEXT",
@@ -7642,7 +7642,7 @@
                               "key": "TXT_KEY_BUILDING_QULLQA_STRATEGY",
                               "text": "",
                               "newlyAdded": true,
-                              "translated": null
+                              "translated": ""
                             },
                             {
                               "key": "TXT_KEY_UNIT_INTI_MACEMAN",
@@ -7654,7 +7654,7 @@
                               "key": "TXT_KEY_UNIT_INTI_MACEMAN_HELP",
                               "text": "",
                               "newlyAdded": true,
-                              "translated": null
+                              "translated": ""
                             },
                             {
                               "key": "TXT_KEY_UNIT_INTI_MACEMAN_TEXT",
@@ -7666,7 +7666,7 @@
                               "key": "TXT_KEY_UNIT_INTI_MACEMAN_STRATEGY",
                               "text": "",
                               "newlyAdded": true,
-                              "translated": null
+                              "translated": ""
                             },
                             {
                               "key": "TXT_KEY_BUILDING_HARAPPAN_RESERVOIR",
@@ -7702,7 +7702,7 @@
                               "key": "TXT_KEY_UNIT_DHANURDHARA_HELP",
                               "text": "",
                               "newlyAdded": true,
-                              "translated": null
+                              "translated": ""
                             },
                             {
                               "key": "TXT_KEY_UNIT_DHANURDHARA_TEXT",
@@ -7714,7 +7714,7 @@
                               "key": "TXT_KEY_UNIT_DHANURDHARA_STRATEGY",
                               "text": "",
                               "newlyAdded": true,
-                              "translated": null
+                              "translated": ""
                             },
                             {
                               "key": "TXT_KEY_UNIT_DJONG",
@@ -7726,7 +7726,7 @@
                               "key": "TXT_KEY_UNIT_DJONG_HELP",
                               "text": "",
                               "newlyAdded": true,
-                              "translated": null
+                              "translated": ""
                             },
                             {
                               "key": "TXT_KEY_UNIT_DJONG_TEXT",
@@ -7738,7 +7738,7 @@
                               "key": "TXT_KEY_UNIT_DJONG_STRATEGY",
                               "text": "",
                               "newlyAdded": true,
-                              "translated": null
+                              "translated": ""
                             },
                             {
                               "key": "TXT_KEY_IMPROVEMENT_KAMPONG",
@@ -7786,7 +7786,7 @@
                               "key": "TXT_KEY_UNIT_PROWLER_HELP",
                               "text": "",
                               "newlyAdded": true,
-                              "translated": null
+                              "translated": ""
                             },
                             {
                               "key": "TXT_KEY_UNIT_PROWLER_TEXT",
@@ -7798,7 +7798,7 @@
                               "key": "TXT_KEY_UNIT_PROWLER_STRATEGY",
                               "text": "",
                               "newlyAdded": true,
-                              "translated": null
+                              "translated": ""
                             },
                             {
                               "key": "TXT_KEY_UNIT_TADODAHO",
@@ -7810,7 +7810,7 @@
                               "key": "TXT_KEY_UNIT_TADODAHO_HELP",
                               "text": "",
                               "newlyAdded": true,
-                              "translated": null
+                              "translated": ""
                             },
                             {
                               "key": "TXT_KEY_UNIT_TADODAHO_TEXT",
@@ -7822,7 +7822,7 @@
                               "key": "TXT_KEY_UNIT_TADODAHO_STRATEGY",
                               "text": "",
                               "newlyAdded": true,
-                              "translated": null
+                              "translated": ""
                             },
                             {
                               "key": "TXT_KEY_BUILDING_DOJO_TEXT",
@@ -7840,7 +7840,7 @@
                               "key": "TXT_KEY_BUILDING_KABUKI_THEATER_HELP",
                               "text": "",
                               "newlyAdded": true,
-                              "translated": null
+                              "translated": ""
                             },
                             {
                               "key": "TXT_KEY_BUILDING_KABUKI_THEATER_TEXT",
@@ -7852,7 +7852,7 @@
                               "key": "TXT_KEY_BUILDING_KABUKI_THEATER_STRATEGY",
                               "text": "",
                               "newlyAdded": true,
-                              "translated": null
+                              "translated": ""
                             },
                             {
                               "key": "TXT_KEY_UNIT_YAMATO",
@@ -7864,7 +7864,7 @@
                               "key": "TXT_KEY_UNIT_YAMATO_HELP",
                               "text": "",
                               "newlyAdded": true,
-                              "translated": null
+                              "translated": ""
                             },
                             {
                               "key": "TXT_KEY_UNIT_YAMATO_TEXT",
@@ -7876,7 +7876,7 @@
                               "key": "TXT_KEY_UNIT_YAMATO_STRATEGY",
                               "text": "",
                               "newlyAdded": true,
-                              "translated": null
+                              "translated": ""
                             },
                             {
                               "key": "TXT_KEY_BUILDING_SEOWON_TEXT",
@@ -7894,7 +7894,7 @@
                               "key": "TXT_KEY_BUILDING_CHAEBOL_HELP",
                               "text": "",
                               "newlyAdded": true,
-                              "translated": null
+                              "translated": ""
                             },
                             {
                               "key": "TXT_KEY_BUILDING_CHAEBOL_TEXT",
@@ -7906,7 +7906,7 @@
                               "key": "TXT_KEY_BUILDING_CHAEBOL_STRATEGY",
                               "text": "",
                               "newlyAdded": true,
-                              "translated": null
+                              "translated": ""
                             },
                             {
                               "key": "TXT_KEY_IMPROVEMENT_KUNA_TEXT",
@@ -7930,7 +7930,7 @@
                               "key": "TXT_KEY_BUILDING_PITZ_COURT_HELP",
                               "text": "",
                               "newlyAdded": true,
-                              "translated": null
+                              "translated": ""
                             },
                             {
                               "key": "TXT_KEY_BUILDING_PITZ_COURT_TEXT",
@@ -7942,7 +7942,7 @@
                               "key": "TXT_KEY_BUILDING_PITZ_COURT_STRATEGY",
                               "text": "",
                               "newlyAdded": true,
-                              "translated": null
+                              "translated": ""
                             },
                             {
                               "key": "TXT_KEY_UNIT_HOLKAN",
@@ -7954,7 +7954,7 @@
                               "key": "TXT_KEY_UNIT_HOLKAN_HELP",
                               "text": "",
                               "newlyAdded": true,
-                              "translated": null
+                              "translated": ""
                             },
                             {
                               "key": "TXT_KEY_UNIT_HOLKAN_TEXT",
@@ -7966,7 +7966,7 @@
                               "key": "TXT_KEY_UNIT_HOLKAN_STRATEGY",
                               "text": "",
                               "newlyAdded": true,
-                              "translated": null
+                              "translated": ""
                             },
                             {
                               "key": "TXT_KEY_BUILDING_GER",
@@ -8032,7 +8032,7 @@
                               "key": "TXT_KEY_UNIT_BLACK_TUG_HELP",
                               "text": "",
                               "newlyAdded": true,
-                              "translated": null
+                              "translated": ""
                             },
                             {
                               "key": "TXT_KEY_UNIT_BLACK_TUG_TEXT",
@@ -8044,7 +8044,7 @@
                               "key": "TXT_KEY_UNIT_BLACK_TUG_STRATEGY",
                               "text": "",
                               "newlyAdded": true,
-                              "translated": null
+                              "translated": ""
                             },
                             {
                               "key": "TXT_KEY_PROJECT_YASSA",
@@ -8056,7 +8056,7 @@
                               "key": "TXT_KEY_PROJECT_YASSA_HELP",
                               "text": "",
                               "newlyAdded": true,
-                              "translated": null
+                              "translated": ""
                             },
                             {
                               "key": "TXT_KEY_PROJECT_YASSA_TEXT",
@@ -8068,7 +8068,7 @@
                               "key": "TXT_KEY_PROJECT_YASSA_STRATEGY",
                               "text": "",
                               "newlyAdded": true,
-                              "translated": null
+                              "translated": ""
                             },
                             {
                               "key": "TXT_KEY_BUILDING_RIAD",
@@ -8080,7 +8080,7 @@
                               "key": "TXT_KEY_BUILDING_RIAD_HELP",
                               "text": "",
                               "newlyAdded": true,
-                              "translated": null
+                              "translated": ""
                             },
                             {
                               "key": "TXT_KEY_BUILDING_RIAD_TEXT",
@@ -8092,7 +8092,7 @@
                               "key": "TXT_KEY_BUILDING_RIAD_STRATEGY",
                               "text": "",
                               "newlyAdded": true,
-                              "translated": null
+                              "translated": ""
                             },
                             {
                               "key": "TXT_KEY_UNIT_CORSAIR",
@@ -8104,7 +8104,7 @@
                               "key": "TXT_KEY_UNIT_CORSAIR_HELP",
                               "text": "",
                               "newlyAdded": true,
-                              "translated": null
+                              "translated": ""
                             },
                             {
                               "key": "TXT_KEY_UNIT_CORSAIR_TEXT",
@@ -8116,7 +8116,7 @@
                               "key": "TXT_KEY_UNIT_CORSAIR_STRATEGY",
                               "text": "",
                               "newlyAdded": true,
-                              "translated": null
+                              "translated": ""
                             },
                             {
                               "key": "TXT_KEY_BUILDING_DOELEN",
@@ -8128,7 +8128,7 @@
                               "key": "TXT_KEY_BUILDING_DOELEN_HELP",
                               "text": "",
                               "newlyAdded": true,
-                              "translated": null
+                              "translated": ""
                             },
                             {
                               "key": "TXT_KEY_BUILDING_DOELEN_TEXT",
@@ -8140,7 +8140,7 @@
                               "key": "TXT_KEY_BUILDING_DOELEN_STRATEGY",
                               "text": "",
                               "newlyAdded": true,
-                              "translated": null
+                              "translated": ""
                             },
                             {
                               "key": "TXT_KEY_UNIT_GOEDENDAG",
@@ -8152,7 +8152,7 @@
                               "key": "TXT_KEY_UNIT_GOEDENDAG_HELP",
                               "text": "",
                               "newlyAdded": true,
-                              "translated": null
+                              "translated": ""
                             },
                             {
                               "key": "TXT_KEY_UNIT_GOEDENDAG_TEXT",
@@ -8164,7 +8164,7 @@
                               "key": "TXT_KEY_UNIT_GOEDENDAG_STRATEGY",
                               "text": "",
                               "newlyAdded": true,
-                              "translated": null
+                              "translated": ""
                             },
                             {
                               "key": "TXT_KEY_BUILDING_SIEGE_FOUNDRY",
@@ -8200,7 +8200,7 @@
                               "key": "TXT_KEY_UNIT_GREAT_BOMBARD_HELP",
                               "text": "",
                               "newlyAdded": true,
-                              "translated": null
+                              "translated": ""
                             },
                             {
                               "key": "TXT_KEY_UNIT_GREAT_BOMBARD_TEXT",
@@ -8212,7 +8212,7 @@
                               "key": "TXT_KEY_UNIT_GREAT_BOMBARD_STRATEGY",
                               "text": "",
                               "newlyAdded": true,
-                              "translated": null
+                              "translated": ""
                             },
                             {
                               "key": "TXT_KEY_UNIT_GREAT_BOMBARD_1",
@@ -8332,7 +8332,7 @@
                               "key": "TXT_KEY_UNIT_QIZILBASH_HELP",
                               "text": "",
                               "newlyAdded": true,
-                              "translated": null
+                              "translated": ""
                             },
                             {
                               "key": "TXT_KEY_UNIT_QIZILBASH_TEXT",
@@ -8344,7 +8344,7 @@
                               "key": "TXT_KEY_UNIT_QIZILBASH_STRATEGY",
                               "text": "",
                               "newlyAdded": true,
-                              "translated": null
+                              "translated": ""
                             },
                             {
                               "key": "TXT_KEY_BUILDING_BARBICAN",
@@ -8356,7 +8356,7 @@
                               "key": "TXT_KEY_BUILDING_BARBICAN_HELP",
                               "text": "",
                               "newlyAdded": true,
-                              "translated": null
+                              "translated": ""
                             },
                             {
                               "key": "TXT_KEY_BUILDING_BARBICAN_TEXT",
@@ -8368,7 +8368,7 @@
                               "key": "TXT_KEY_BUILDING_BARBICAN_STRATEGY",
                               "text": "",
                               "newlyAdded": true,
-                              "translated": null
+                              "translated": ""
                             },
                             {
                               "key": "TXT_KEY_UNIT_PANCERNY",
@@ -8380,7 +8380,7 @@
                               "key": "TXT_KEY_UNIT_PANCERNY_HELP",
                               "text": "",
                               "newlyAdded": true,
-                              "translated": null
+                              "translated": ""
                             },
                             {
                               "key": "TXT_KEY_UNIT_PANCERNY_TEXT",
@@ -8392,7 +8392,7 @@
                               "key": "TXT_KEY_UNIT_PANCERNY_STRATEGY",
                               "text": "",
                               "newlyAdded": true,
-                              "translated": null
+                              "translated": ""
                             },
                             {
                               "key": "TXT_KEY_BUILDING_MARAE",
@@ -8404,7 +8404,7 @@
                               "key": "TXT_KEY_BUILDING_MARAE_HELP",
                               "text": "",
                               "newlyAdded": true,
-                              "translated": null
+                              "translated": ""
                             },
                             {
                               "key": "TXT_KEY_BUILDING_MARAE_TEXT",
@@ -8416,7 +8416,7 @@
                               "key": "TXT_KEY_BUILDING_MARAE_STRATEGY",
                               "text": "",
                               "newlyAdded": true,
-                              "translated": null
+                              "translated": ""
                             },
                             {
                               "key": "TXT_KEY_UNIT_VAKA_NUI",
@@ -8428,7 +8428,7 @@
                               "key": "TXT_KEY_UNIT_VAKA_NUI_HELP",
                               "text": "",
                               "newlyAdded": true,
-                              "translated": null
+                              "translated": ""
                             },
                             {
                               "key": "TXT_KEY_UNIT_VAKA_NUI_TEXT",
@@ -8440,7 +8440,7 @@
                               "key": "TXT_KEY_UNIT_VAKA_NUI_STRATEGY",
                               "text": "",
                               "newlyAdded": true,
-                              "translated": null
+                              "translated": ""
                             },
                             {
                               "key": "TXT_KEY_UNIT_CACADOR",
@@ -8452,7 +8452,7 @@
                               "key": "TXT_KEY_UNIT_CACADOR_HELP",
                               "text": "",
                               "newlyAdded": true,
-                              "translated": null
+                              "translated": ""
                             },
                             {
                               "key": "TXT_KEY_UNIT_CACADOR_TEXT",
@@ -8464,7 +8464,7 @@
                               "key": "TXT_KEY_UNIT_CACADOR_STRATEGY",
                               "text": "",
                               "newlyAdded": true,
-                              "translated": null
+                              "translated": ""
                             },
                             {
                               "key": "TXT_KEY_BUILDING_UNIVERSITY_OF_COIMBRA",
@@ -8476,7 +8476,7 @@
                               "key": "TXT_KEY_BUILDING_UNIVERSITY_OF_COIMBRA_HELP",
                               "text": "",
                               "newlyAdded": true,
-                              "translated": null
+                              "translated": ""
                             },
                             {
                               "key": "TXT_KEY_BUILDING_UNIVERSITY_OF_COIMBRA_TEXT",
@@ -8488,7 +8488,7 @@
                               "key": "TXT_KEY_BUILDING_UNIVERSITY_OF_COIMBRA_STRATEGY",
                               "text": "",
                               "newlyAdded": true,
-                              "translated": null
+                              "translated": ""
                             },
                             {
                               "key": "TXT_KEY_BUILDING_FORNIX",
@@ -8500,7 +8500,7 @@
                               "key": "TXT_KEY_BUILDING_FORNIX_HELP",
                               "text": "",
                               "newlyAdded": true,
-                              "translated": null
+                              "translated": ""
                             },
                             {
                               "key": "TXT_KEY_BUILDING_FORNIX_TEXT",
@@ -8512,7 +8512,7 @@
                               "key": "TXT_KEY_BUILDING_FORNIX_STRATEGY",
                               "text": "",
                               "newlyAdded": true,
-                              "translated": null
+                              "translated": ""
                             },
                             {
                               "key": "TXT_KEY_IMPROVEMENT_VILLA",
@@ -8560,7 +8560,7 @@
                               "key": "TXT_KEY_BUILDING_POGOST_HELP",
                               "text": "",
                               "newlyAdded": true,
-                              "translated": null
+                              "translated": ""
                             },
                             {
                               "key": "TXT_KEY_BUILDING_POGOST_TEXT",
@@ -8572,7 +8572,7 @@
                               "key": "TXT_KEY_BUILDING_POGOST_STRATEGY",
                               "text": "",
                               "newlyAdded": true,
-                              "translated": null
+                              "translated": ""
                             },
                             {
                               "key": "TXT_KEY_UNIT_LICORNE",
@@ -8584,7 +8584,7 @@
                               "key": "TXT_KEY_UNIT_LICORNE_HELP",
                               "text": "",
                               "newlyAdded": true,
-                              "translated": null
+                              "translated": ""
                             },
                             {
                               "key": "TXT_KEY_UNIT_LICORNE_TEXT",
@@ -8596,7 +8596,7 @@
                               "key": "TXT_KEY_UNIT_LICORNE_STRATEGY",
                               "text": "",
                               "newlyAdded": true,
-                              "translated": null
+                              "translated": ""
                             },
                             {
                               "key": "TXT_KEY_IMPROVEMENT_VP_ENCAMPMENT",
@@ -8644,7 +8644,7 @@
                               "key": "TXT_KEY_BUILDING_BUFFALO_POUND_HELP",
                               "text": "",
                               "newlyAdded": true,
-                              "translated": null
+                              "translated": ""
                             },
                             {
                               "key": "TXT_KEY_BUILDING_BUFFALO_POUND_TEXT",
@@ -8656,7 +8656,7 @@
                               "key": "TXT_KEY_BUILDING_BUFFALO_POUND_STRATEGY",
                               "text": "",
                               "newlyAdded": true,
-                              "translated": null
+                              "translated": ""
                             },
                             {
                               "key": "TXT_KEY_UNIT_YELLOW_BROW",
@@ -8668,7 +8668,7 @@
                               "key": "TXT_KEY_UNIT_YELLOW_BROW_HELP",
                               "text": "",
                               "newlyAdded": true,
-                              "translated": null
+                              "translated": ""
                             },
                             {
                               "key": "TXT_KEY_UNIT_YELLOW_BROW_TEXT",
@@ -8680,7 +8680,7 @@
                               "key": "TXT_KEY_UNIT_YELLOW_BROW_STRATEGY",
                               "text": "",
                               "newlyAdded": true,
-                              "translated": null
+                              "translated": ""
                             },
                             {
                               "key": "TXT_KEY_BUILDING_ELEPHANT_CAMP",
@@ -8692,7 +8692,7 @@
                               "key": "TXT_KEY_BUILDING_ELEPHANT_CAMP_HELP",
                               "text": "",
                               "newlyAdded": true,
-                              "translated": null
+                              "translated": ""
                             },
                             {
                               "key": "TXT_KEY_BUILDING_ELEPHANT_CAMP_TEXT",
@@ -8716,7 +8716,7 @@
                               "key": "TXT_KEY_UNIT_SUEA_MOP_HELP",
                               "text": "",
                               "newlyAdded": true,
-                              "translated": null
+                              "translated": ""
                             },
                             {
                               "key": "TXT_KEY_UNIT_SUEA_MOP_TEXT",
@@ -8740,7 +8740,7 @@
                               "key": "TXT_KEY_BUILDING_GUMEY_HELP",
                               "text": "",
                               "newlyAdded": true,
-                              "translated": null
+                              "translated": ""
                             },
                             {
                               "key": "TXT_KEY_BUILDING_GUMEY_TEXT",
@@ -8752,7 +8752,7 @@
                               "key": "TXT_KEY_BUILDING_GUMEY_STRATEGY",
                               "text": "",
                               "newlyAdded": true,
-                              "translated": null
+                              "translated": ""
                             },
                             {
                               "key": "TXT_KEY_UNIT_SOFA",
@@ -8764,7 +8764,7 @@
                               "key": "TXT_KEY_UNIT_SOFA_HELP",
                               "text": "",
                               "newlyAdded": true,
-                              "translated": null
+                              "translated": ""
                             },
                             {
                               "key": "TXT_KEY_UNIT_SOFA_TEXT",
@@ -8776,7 +8776,7 @@
                               "key": "TXT_KEY_UNIT_SOFA_STRATEGY",
                               "text": "",
                               "newlyAdded": true,
-                              "translated": null
+                              "translated": ""
                             },
                             {
                               "key": "TXT_KEY_IMPROVEMENT_HACIENDA",
@@ -8824,7 +8824,7 @@
                               "key": "TXT_KEY_BUILDING_BULLRING_HELP",
                               "text": "",
                               "newlyAdded": true,
-                              "translated": null
+                              "translated": ""
                             },
                             {
                               "key": "TXT_KEY_BUILDING_BULLRING_TEXT",
@@ -8836,7 +8836,7 @@
                               "key": "TXT_KEY_BUILDING_BULLRING_STRATEGY",
                               "text": "",
                               "newlyAdded": true,
-                              "translated": null
+                              "translated": ""
                             },
                             {
                               "key": "TXT_KEY_UNIT_ARMADA",
@@ -8848,7 +8848,7 @@
                               "key": "TXT_KEY_UNIT_ARMADA_HELP",
                               "text": "",
                               "newlyAdded": true,
-                              "translated": null
+                              "translated": ""
                             },
                             {
                               "key": "TXT_KEY_UNIT_ARMADA_TEXT",
@@ -8860,7 +8860,7 @@
                               "key": "TXT_KEY_UNIT_ARMADA_STRATEGY",
                               "text": "",
                               "newlyAdded": true,
-                              "translated": null
+                              "translated": ""
                             },
                             {
                               "key": "TXT_KEY_BUILDING_BASTU",
@@ -8872,7 +8872,7 @@
                               "key": "TXT_KEY_BUILDING_BASTU_HELP",
                               "text": "",
                               "newlyAdded": true,
-                              "translated": null
+                              "translated": ""
                             },
                             {
                               "key": "TXT_KEY_BUILDING_BASTU_TEXT",
@@ -8884,7 +8884,7 @@
                               "key": "TXT_KEY_BUILDING_BASTU_STRATEGY",
                               "text": "",
                               "newlyAdded": true,
-                              "translated": null
+                              "translated": ""
                             },
                             {
                               "key": "TXT_KEY_BUILDING_NOBEL_COMMITTEE",
@@ -8896,7 +8896,7 @@
                               "key": "TXT_KEY_BUILDING_NOBEL_COMMITTEE_HELP",
                               "text": "",
                               "newlyAdded": true,
-                              "translated": null
+                              "translated": ""
                             },
                             {
                               "key": "TXT_KEY_BUILDING_NOBEL_COMMITTEE_TEXT",
@@ -8908,7 +8908,7 @@
                               "key": "TXT_KEY_BUILDING_NOBEL_COMMITTEE_STRATEGY",
                               "text": "",
                               "newlyAdded": true,
-                              "translated": null
+                              "translated": ""
                             },
                             {
                               "key": "TXT_KEY_BUILDING_PIAZZA_SAN_MARCO_TEXT",
@@ -8980,7 +8980,7 @@
                               "key": "TXT_KEY_UNIT_FUSTA_HELP",
                               "text": "",
                               "newlyAdded": true,
-                              "translated": null
+                              "translated": ""
                             },
                             {
                               "key": "TXT_KEY_UNIT_FUSTA_TEXT",
@@ -8992,7 +8992,7 @@
                               "key": "TXT_KEY_UNIT_FUSTA_STRATEGY",
                               "text": "",
                               "newlyAdded": true,
-                              "translated": null
+                              "translated": ""
                             },
                             {
                               "key": "TXT_KEY_UNIT_GREAT_GALLEASS_01",
@@ -9154,7 +9154,7 @@
                               "key": "TXT_KEY_BUILDING_IZIKO_HELP",
                               "text": "",
                               "newlyAdded": true,
-                              "translated": null
+                              "translated": ""
                             },
                             {
                               "key": "TXT_KEY_BUILDING_IZIKO_TEXT",
@@ -9166,7 +9166,7 @@
                               "key": "TXT_KEY_BUILDING_IZIKO_STRATEGY",
                               "text": "",
                               "newlyAdded": true,
-                              "translated": null
+                              "translated": ""
                             },
                             {
                               "key": "TXT_KEY_UNIT_INDUNA",
@@ -9178,7 +9178,7 @@
                               "key": "TXT_KEY_UNIT_INDUNA_HELP",
                               "text": "",
                               "newlyAdded": true,
-                              "translated": null
+                              "translated": ""
                             },
                             {
                               "key": "TXT_KEY_UNIT_INDUNA_TEXT",
@@ -9190,7 +9190,7 @@
                               "key": "TXT_KEY_UNIT_INDUNA_STRATEGY",
                               "text": "",
                               "newlyAdded": true,
-                              "translated": null
+                              "translated": ""
                             },
                             {
                               "key": "TXT_KEY_UNIT_INDUNA_01",
@@ -9332,11 +9332,11 @@
                             }
                           ],
                           "translationTotal": 496,
-                          "translationDone": 236
+                          "translationDone": 388
                         }
                       ],
                       "translationTotal": 532,
-                      "translationDone": 271
+                      "translationDone": 423
                     },
                     {
                       "type": "directory",
@@ -10671,7 +10671,7 @@
                             {
                               "text": "[ICON_FOOD] Growth is reduced by {1_NumGrowth}% in all Cities and Settler costs are increased by {2_NumSettlerCost}%! [ICON_STRENGTH] Combat effectiveness is also reduced by {3_NumCombatStrength}%!",
                               "newlyAdded": true,
-                              "translated": null
+                              "translated": ""
                             },
                             {
                               "key": "TXT_KEY_CITY_COUNT_SUPPLY_TT",
@@ -10911,31 +10911,31 @@
                               "key": "TXT_KEY_PRODUCTION_BUILDING_GOLD_MEDIAN_MODIFIER",
                               "text": "{2_Sign}{1_Num}% [ICON_GOLD] Gold Median",
                               "newlyAdded": true,
-                              "translated": null
+                              "translated": ""
                             },
                             {
                               "key": "TXT_KEY_PRODUCTION_BUILDING_SCIENCE_MEDIAN_MODIFIER",
                               "text": "{2_Sign}{1_Num}% [ICON_RESEARCH] Science Median",
                               "newlyAdded": true,
-                              "translated": null
+                              "translated": ""
                             },
                             {
                               "key": "TXT_KEY_PRODUCTION_BUILDING_CULTURE_MEDIAN_MODIFIER",
                               "text": "{2_Sign}{1_Num}% [ICON_CULTURE] Culture Median",
                               "newlyAdded": true,
-                              "translated": null
+                              "translated": ""
                             },
                             {
                               "key": "TXT_KEY_PRODUCTION_BUILDING_RELIGIOUS_UNREST_MODIFIER",
                               "text": "{2_Sign}{1_Num}% [ICON_RELIGION] Religious Unrest",
                               "newlyAdded": true,
-                              "translated": null
+                              "translated": ""
                             },
                             {
                               "key": "TXT_KEY_PRODUCTION_BUILDING_EMPIRE_SIZE_MODIFIER",
                               "text": "{2_Sign}{1_Num}% [ICON_CITY_STATE] Empire Size Modifier",
                               "newlyAdded": true,
-                              "translated": null
+                              "translated": ""
                             },
                             {
                               "key": "TXT_KEY_PRODUCTION_BUILDING_DISTRESS_REDUCTION",
@@ -11059,7 +11059,7 @@
                             }
                           ],
                           "translationTotal": 70,
-                          "translationDone": 58
+                          "translationDone": 64
                         },
                         {
                           "type": "file",
@@ -11083,7 +11083,7 @@
                         }
                       ],
                       "translationTotal": 72,
-                      "translationDone": 60
+                      "translationDone": 66
                     },
                     {
                       "type": "directory",
@@ -11751,7 +11751,7 @@
                               "key": "TXT_KEY_PROMOTION_HEAVY_FLANKING",
                               "text": "Heavy Flanking",
                               "newlyAdded": true,
-                              "translated": null
+                              "translated": ""
                             },
                             {
                               "key": "TXT_KEY_PROMOTION_HEAVY_FLANKING_HELP",
@@ -11817,7 +11817,7 @@
                               "key": "TXT_KEY_PROMOTION_GRENADIER",
                               "text": "Grenadier",
                               "newlyAdded": true,
-                              "translated": null
+                              "translated": ""
                             },
                             {
                               "key": "TXT_KEY_PROMOTION_GRENADIER_HELP",
@@ -12589,7 +12589,7 @@
                             }
                           ],
                           "translationTotal": 249,
-                          "translationDone": 134
+                          "translationDone": 136
                         },
                         {
                           "type": "file",
@@ -12679,7 +12679,7 @@
                         }
                       ],
                       "translationTotal": 262,
-                      "translationDone": 143
+                      "translationDone": 145
                     },
                     {
                       "type": "directory",
@@ -12725,7 +12725,7 @@
                               "key": "TXT_KEY_UNIT_HEAVY_SKIRMISHER_HELP",
                               "text": "",
                               "newlyAdded": true,
-                              "translated": null
+                              "translated": ""
                             },
                             {
                               "key": "TXT_KEY_UNIT_CUIRASSIER",
@@ -12749,7 +12749,7 @@
                               "key": "TXT_KEY_UNIT_CUIRASSIER_HELP",
                               "text": "",
                               "newlyAdded": true,
-                              "translated": null
+                              "translated": ""
                             },
                             {
                               "key": "TXT_KEY_UNIT_COMMANDO_STRATEGY",
@@ -12761,7 +12761,7 @@
                               "key": "TXT_KEY_UNIT_COMMANDO_HELP",
                               "text": "",
                               "newlyAdded": true,
-                              "translated": null
+                              "translated": ""
                             },
                             {
                               "key": "TXT_KEY_UNIT_COMMANDO_TEXT",
@@ -12773,7 +12773,7 @@
                               "key": "TXT_KEY_UNIT_EXPLORER_HELP",
                               "text": "",
                               "newlyAdded": true,
-                              "translated": null
+                              "translated": ""
                             },
                             {
                               "key": "TXT_KEY_UNIT_EXPLORER_TEXT",
@@ -12803,7 +12803,7 @@
                               "key": "TXT_KEY_UNIT_FIELD_GUN_HELP",
                               "text": "",
                               "newlyAdded": true,
-                              "translated": null
+                              "translated": ""
                             },
                             {
                               "key": "TXT_KEY_UNIT_FREE_COMPANY",
@@ -12815,7 +12815,7 @@
                               "key": "TXT_KEY_UNIT_HELP_FCOMPANY",
                               "text": "",
                               "oldText": "This Unit is much cheaper than the Pikeman, can pillage without spending any Movement, and receives full XP from the City when purchased. Steals gold when attacking a City. May move immediately after purchase.[NEWLINE][NEWLINE]May only be purchased with [ICON_GOLD] Gold after completing the [COLOR_MAGENTA]Authority[ENDCOLOR] Policy Branch.",
-                              "translated": null
+                              "translated": ""
                             },
                             {
                               "key": "TXT_KEY_UNIT_MERCENARY",
@@ -12827,7 +12827,7 @@
                               "key": "TXT_KEY_UNIT_HELP_GUERILLA",
                               "text": "",
                               "oldText": "Flank attack bonus increased, and receives bonuses when embarked or attacking over rivers.[NEWLINE][NEWLINE]May only be purchased with [ICON_GOLD] Gold after completing the [COLOR_MAGENTA]Authority[ENDCOLOR] Policy Branch.",
-                              "translated": null
+                              "translated": ""
                             },
                             {
                               "key": "TXT_KEY_UNIT_PIONEER_TEXT",
@@ -12839,7 +12839,7 @@
                               "key": "TXT_KEY_UNIT_PIONEER_HELP",
                               "text": "",
                               "newlyAdded": true,
-                              "translated": null
+                              "translated": ""
                             },
                             {
                               "key": "TXT_KEY_UNIT_COLONIST_TEXT",
@@ -12851,13 +12851,13 @@
                               "key": "TXT_KEY_UNIT_COLONIST_HELP",
                               "text": "",
                               "newlyAdded": true,
-                              "translated": null
+                              "translated": ""
                             },
                             {
                               "key": "TXT_KEY_UNIT_VP_GALLEY_HELP",
                               "text": "",
                               "newlyAdded": true,
-                              "translated": null
+                              "translated": ""
                             },
                             {
                               "key": "TXT_KEY_UNIT_FLEET_DESTROYER",
@@ -12875,13 +12875,13 @@
                               "key": "TXT_KEY_UNIT_FLEET_DESTROYER_TEXT",
                               "text": "A destroyer is a 20th century ship designed for patrol, escort, anti-air and anti-submarine duties. The earliest destroyers were light vessels not well-suited for oceanic cruises unless accompanied by \"tenders\" carrying additional fuel. By World War II the destroyers were fast, maneuverable and carried enough weaponry and supplies for long-range missions across the world's oceans.[NEWLINE][NEWLINE]For weaponry, destroyers carried anti-aircraft guns, light anti-ship guns, torpedoes and depth charges. They often accompanied carrier groups, patrolling the waters around the more valuable and larger ships for submarines and providing anti-aircraft cover as well. They escorted supply convoys and patrolled harbors and coasts as well. Duty aboard a World War II destroyer was dangerous indeed; during the war over 220 British, American, Australian and Canadian destroyers were lost, mostly to aircraft attack.",
                               "newlyAdded": true,
-                              "translated": null
+                              "translated": ""
                             },
                             {
                               "key": "TXT_KEY_UNIT_FLEET_DESTROYER_HELP",
                               "text": "",
                               "newlyAdded": true,
-                              "translated": null
+                              "translated": ""
                             },
                             {
                               "key": "TXT_KEY_UNIT_SENSOR_COMBAT_SHIP",
@@ -12905,7 +12905,7 @@
                               "key": "TXT_KEY_UNIT_SENSOR_COMBAT_SHIP_HELP",
                               "text": "",
                               "newlyAdded": true,
-                              "translated": null
+                              "translated": ""
                             },
                             {
                               "key": "TXT_KEY_UNIT_LIBURNA_TEXT",
@@ -12917,7 +12917,7 @@
                               "key": "TXT_KEY_UNIT_LIBURNA_HELP",
                               "text": "",
                               "oldText": "Dominant Classical Era Naval Unit used to own the seas well into the Medieval Era with its ranged attack.",
-                              "translated": null
+                              "translated": ""
                             },
                             {
                               "key": "TXT_KEY_UNIT_CRUISER",
@@ -12941,7 +12941,7 @@
                               "key": "TXT_KEY_UNIT_CRUISER_HELP",
                               "text": "",
                               "newlyAdded": true,
-                              "translated": null
+                              "translated": ""
                             },
                             {
                               "key": "TXT_KEY_UNIT_DREADNOUGHT_TEXT",
@@ -12953,7 +12953,7 @@
                               "key": "TXT_KEY_UNIT_DREADNOUGHT_HELP",
                               "text": "",
                               "oldText": "Modern-Era Ranged Naval Unit with devastating strength.[NEWLINE][NEWLINE][COLOR_NEGATIVE_TEXT]Land attacks can only be performed on Coastal Tiles.[ENDCOLOR]",
-                              "translated": null
+                              "translated": ""
                             },
                             {
                               "key": "TXT_KEY_UNIT_ATTACK_SUBMARINE_TEXT",
@@ -12965,7 +12965,7 @@
                               "key": "TXT_KEY_UNIT_ATTACK_SUBMARINE_HELP",
                               "text": "",
                               "oldText": "Invisible to all Units except promoted Destroyers and other Submarines, or until it attacks or is adjacent to another unit. Can carry 1 Missile.",
-                              "translated": null
+                              "translated": ""
                             },
                             {
                               "key": "TXT_KEY_UNIT_SUPERCARRIER_TEXT",
@@ -12977,7 +12977,7 @@
                               "key": "TXT_KEY_UNIT_SUPERCARRIER_HELP",
                               "text": "",
                               "oldText": "Carries 5 aircrafts (up to 8 with promotions), has Air Interception range of 5 and can detect Submarines.[NEWLINE][NEWLINE]May only have [COLOR_POSITIVE_TEXT]2[ENDCOLOR] Supercarriers active at one time.",
-                              "translated": null
+                              "translated": ""
                             },
                             {
                               "key": "TXT_KEY_UNIT_ROCKET_MISSILE_TEXT",
@@ -12989,7 +12989,7 @@
                               "key": "TXT_KEY_UNIT_ROCKET_MISSILE_HELP",
                               "text": "",
                               "oldText": "A cheap Unit that may be used once to damage Enemy Units or Garrisoned Units in Cities. [COLOR_POSITIVE_TEXT]Does not use Military Supply.[ENDCOLOR][NEWLINE][NEWLINE]Requires 1 [ICON_RES_OIL] Oil.",
-                              "translated": null
+                              "translated": ""
                             },
                             {
                               "key": "TXT_KEY_UNIT_EMISSARY_TEXT",
@@ -13001,7 +13001,7 @@
                               "key": "TXT_KEY_UNIT_EMISSARY_HELP",
                               "text": "Move this unit to a [ICON_CITY_STATE] City-State you are not at war with and conduct a Diplomatic Mission to receive 40 [ICON_INFLUENCE] Influence. [ICON_PRODUCTION] Production cost scales with Era.",
                               "newlyAdded": true,
-                              "translated": null
+                              "translated": ""
                             },
                             {
                               "key": "TXT_KEY_UNIT_ENVOY_TEXT",
@@ -13025,7 +13025,7 @@
                               "key": "TXT_KEY_UNIT_DIPLOMAT_HELP",
                               "text": "Move this unit to a [ICON_CITY_STATE] City-State you are not at war with and conduct a Diplomatic Mission to receive 60 [ICON_INFLUENCE] Influence. [ICON_PRODUCTION] Production cost scales with Era.",
                               "newlyAdded": true,
-                              "translated": null
+                              "translated": ""
                             },
                             {
                               "key": "TXT_KEY_UNIT_AMBASSADOR_TEXT",
@@ -13037,7 +13037,7 @@
                               "key": "TXT_KEY_UNIT_AMBASSADOR_HELP",
                               "text": "Move this unit to a [ICON_CITY_STATE] City-State you are not at war with and conduct a Diplomatic Mission to receive 70 [ICON_INFLUENCE] Influence. [ICON_PRODUCTION] Production cost scales with Era.",
                               "newlyAdded": true,
-                              "translated": null
+                              "translated": ""
                             },
                             {
                               "key": "TXT_KEY_UNIT_GREAT_DIPLOMAT_TEXT",
@@ -13107,7 +13107,7 @@
                             }
                           ],
                           "translationTotal": 67,
-                          "translationDone": 44
+                          "translationDone": 66
                         },
                         {
                           "type": "file",
@@ -13173,7 +13173,7 @@
                         }
                       ],
                       "translationTotal": 77,
-                      "translationDone": 54
+                      "translationDone": 76
                     },
                     {
                       "type": "directory",
@@ -13279,19 +13279,19 @@
                     }
                   ],
                   "translationTotal": 1357,
-                  "translationDone": 704
+                  "translationDone": 973
                 }
               ],
               "translationTotal": 1357,
-              "translationDone": 704
+              "translationDone": 973
             }
           ],
           "translationTotal": 1357,
-          "translationDone": 704
+          "translationDone": 973
         }
       ],
       "translationTotal": 1357,
-      "translationDone": 704
+      "translationDone": 973
     },
     {
       "type": "directory",
@@ -13314,25 +13314,25 @@
                 {
                   "text": "[ICON_GOLD] Gold spent on Buildings Invests in them, reducing their [ICON_PRODUCTION] Production cost by 50% (25% for Wonders)",
                   "newlyAdded": true,
-                  "translated": null
+                  "translated": ""
                 },
                 {
                   "text": "[ICON_GOLD] Gold-purchased Units start with half of the XP of a [ICON_PRODUCTION] Produced Unit.",
                   "newlyAdded": true,
-                  "translated": null
+                  "translated": ""
                 },
                 {
                   "text": "[ICON_PEACE] Purchase this Unit or Building with Faith.",
                   "newlyAdded": true,
-                  "translated": null
+                  "translated": ""
                 }
               ],
               "translationTotal": 4,
-              "translationDone": 1
+              "translationDone": 4
             }
           ],
           "translationTotal": 4,
-          "translationDone": 1
+          "translationDone": 4
         },
         {
           "type": "directory",
@@ -13345,44 +13345,44 @@
                 {
                   "text": "[COLOR:255:235:0:255]{1_TotalGold: number \"##\"}[/COLOR]",
                   "newlyAdded": true,
-                  "translated": null
+                  "translated": ""
                 },
                 {
                   "text": "[COLOR:255:235:0:255]{1_GoldPerTurn: number \"'+'##' ';'[COLOR:255:60:60:255]-'##' '\"}[/COLOR]",
                   "newlyAdded": true,
-                  "translated": null
+                  "translated": ""
                 },
                 {
                   "text": "This is the empire-wide breakdown. [ICON_HAPPINESS_1] Happiness counters [ICON_HAPPINESS_3] Unhappiness in each city. Unhappiness is limited by the size of the city, except for Urbanization! You have a total of [ICON_HAPPINESS_1] {1_Val} / [ICON_HAPPINESS_3] {2_Val} in your cities.",
                   "newlyAdded": true,
-                  "translated": null
+                  "translated": ""
                 },
                 {
                   "text": "You have a total of [ICON_HAPPINESS_1] {1_Val} / [ICON_HAPPINESS_3] {2_Val} in your cities.",
                   "newlyAdded": true,
-                  "translated": null
+                  "translated": ""
                 },
                 {
                   "text": "[COLOR:255:235:0:255]{1_GoldPerTurn: number \"'+'#,###'[ICON_GOLD]';'[COLOR:255:60:60:255]-'#,###'[ICON_GOLD]'\"}{2_TotalGold: number \"#,###\"}[/COLOR]",
                   "newlyAdded": true,
-                  "translated": null
+                  "translated": ""
                 },
                 {
                   "text": "([ICON_HAPPINESS_1][COLOR_POSITIVE_TEXT]{3_Val}[ENDCOLOR]/[ICON_HAPPINESS_3][COLOR_NEGATIVE_TEXT]{2_Val}[ENDCOLOR])",
                   "newlyAdded": true,
-                  "translated": null
+                  "translated": ""
                 }
               ],
               "translationTotal": 6,
-              "translationDone": 0
+              "translationDone": 6
             }
           ],
           "translationTotal": 6,
-          "translationDone": 0
+          "translationDone": 6
         }
       ],
       "translationTotal": 10,
-      "translationDone": 1
+      "translationDone": 10
     },
     {
       "type": "directory",
@@ -13422,5 +13422,5 @@
     }
   ],
   "translationTotal": 2126,
-  "translationDone": 1108
+  "translationDone": 1387
 }
