@@ -98,10 +98,11 @@
       <div class="label">English</div>
       <div class="text">
         {item.text}
-        {#if item.oldText}
-          <div class="old"><div><b>Old</b></div> {item.oldText}</div>
-        {/if}
       </div>
+      {#if item.oldText}
+        <div class="label">English - old</div>
+        <div class="text">{item.oldText}</div>
+      {/if}
     </div>
     <div class="col">
       <div class="label">Korean</div>
