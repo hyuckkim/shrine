@@ -58,45 +58,81 @@ function findKeyByText(indexes, dirPath, text) {
 // 디렉토리 탐색
 // =====================
 async function walkDirFlat(dir, handlers, root) {
-  const entries = await readdir(dir, { withFileTypes: true });
+  let entries;
+  try {
+    entries = await readdir(dir, { withFileTypes: true });
+  } catch (err) {
+    console.error("  [ERROR] readdir failed:", dir, err.message);
+    return []; // 디렉토리 읽기 실패 시 빈 리스트 반환
+  }
 
   const tasks = entries.map(async (entry) => {
     const fullPath = path.join(dir, entry.name);
 
-    if (entry.isDirectory()) {
-      return await walkDirFlat(fullPath, handlers, root);
-    } else if (entry.isFile()) {
-      const ext = path.extname(entry.name);
-      if (handlers[ext]) {
-        const text = await readFileWithEncoding(fullPath);
-        return await handlers[ext](fullPath, text);
+    try {
+      if (entry.isDirectory()) {
+        return await walkDirFlat(fullPath, handlers, root);
+      } else if (entry.isFile()) {
+        const ext = path.extname(entry.name).toLowerCase();
+        if (handlers[ext]) {
+          const text = await readFileWithEncoding(fullPath);
+          try {
+            return await handlers[ext](fullPath, text) || [];
+          } catch (handlerErr) {
+            console.error("  [ERROR] handler failed:", fullPath, handlerErr.message);
+            return [];
+          }
+        }
       }
+      return [];
+    } catch (err) {
+      console.error("  [ERROR] walkDirFlat entry processing failed:", fullPath, err.message);
+      return [];
     }
-    return [];
   });
 
-  const results = await Promise.all(tasks);
-  return results.flat().filter(Boolean);
+  try {
+    const results = await Promise.all(tasks);
+    return results.flat().filter(Boolean);
+  } catch (err) {
+    console.error("  [ERROR] walkDirFlat Promise.all failed:", dir, err.message);
+    return [];
+  }
 }
 
 async function readFileWithEncoding(fullPath) {
-  const buffer = await readFile(fullPath);
-  let encoding = chardet.detect(buffer);
-  if (Array.isArray(encoding)) encoding = encoding[0];
-  if (encoding) encoding = String(encoding).toLowerCase();
-  if (!encoding || !iconv.encodingExists(encoding)) encoding = "utf-8";
-  return iconv.decode(buffer, encoding);
+  try {
+    const buffer = await readFile(fullPath);
+    let encoding = chardet.detect(buffer);
+    if (Array.isArray(encoding)) encoding = encoding[0];
+    if (encoding) encoding = String(encoding).toLowerCase();
+    if (!encoding || !iconv.encodingExists(encoding)) encoding = "utf-8";
+    return iconv.decode(buffer, encoding);
+  } catch (err) {
+    console.error("  [ERROR] readFileWithEncoding failed:", fullPath, err.message);
+    return ""; // 읽기 실패 시 빈 문자열 반환 — 호출자에서 빈 결과로 처리
+  }
 }
 
 export async function walkDirOneLevelFlat(dir, handlers = {}, root = dir) {
-  const entries = await readdir(dir, { withFileTypes: true });
+  let entries;
+  try {
+    entries = await readdir(dir, { withFileTypes: true });
+  } catch (err) {
+    console.error("  [ERROR] walkDirOneLevelFlat readdir failed:", dir, err.message);
+    return { type: "directory", path: path.relative(root, dir) || ".", children: [] };
+  }
+
   const result = { type: "directory", path: path.relative(root, dir) || ".", children: [] };
 
   for (const entry of entries) {
+    if (!entry.isDirectory()) continue;
     const fullPath = path.join(dir, entry.name);
-    if (entry.isDirectory()) {
+    try {
       const files = await walkDirFlat(fullPath, handlers, root);
       result.children.push({ type: "directory", path: path.relative(root, fullPath), children: files });
+    } catch (err) {
+      console.error("  [ERROR] walkDirOneLevelFlat child processing failed:", fullPath, err.message);
     }
   }
   return result;
@@ -105,28 +141,44 @@ export async function walkDirOneLevelFlat(dir, handlers = {}, root = dir) {
 async function walkDirMain(dir, handlers, indexesBundle, root = dir) {
   console.log("[DIR] Enter:", path.relative(root, dir) || ".");
 
-  const entries = await readdir(dir, { withFileTypes: true });
+  let entries;
+  try {
+    entries = await readdir(dir, { withFileTypes: true });
+  } catch (err) {
+    console.error("  [ERROR] readdir failed:", dir, err.message);
+    return { type: "directory", path: path.relative(root, dir) || ".", children: [] };
+  }
 
   const tasks = entries.map(async (entry) => {
     const fullPath = path.join(dir, entry.name);
 
-    if (entry.isDirectory()) {
-      const subTree = await walkDirMain(fullPath, handlers, indexesBundle, root);
-      return subTree.children.length > 0 ? subTree : null;
-    } else if (entry.isFile()) {
-      const ext = path.extname(entry.name).toLowerCase();
-      if (!handlers[ext]) {
-        console.log("  [SKIP] unsupported ext:", fullPath);
-        return null;
+    try {
+      if (entry.isDirectory()) {
+        const subTree = await walkDirMain(fullPath, handlers, indexesBundle, root);
+        return subTree.children && subTree.children.length > 0 ? subTree : null;
+      } else if (entry.isFile()) {
+        const ext = path.extname(entry.name).toLowerCase();
+        if (!handlers[ext]) {
+          console.log("  [SKIP] unsupported ext:", fullPath);
+          return null;
+        }
+        return await processFile(fullPath, ext, handlers, indexesBundle, root, path.relative(root, dir) || ".");
       }
-      return await processFile(fullPath, ext, handlers, indexesBundle, root, path.relative(root, dir) || ".");
+      return null;
+    } catch (err) {
+      console.error("  [ERROR] walkDirMain entry processing failed:", fullPath, err.message);
+      return null;
     }
-    return null;
   });
 
-  const children = (await Promise.all(tasks)).filter(Boolean);
-  console.log("[DIR] Leave:", path.relative(root, dir) || ".", "children:", children.length);
-  return { type: "directory", path: path.relative(root, dir) || ".", children };
+  try {
+    const children = (await Promise.all(tasks)).filter(Boolean);
+    console.log("[DIR] Leave:", path.relative(root, dir) || ".", "children:", children.length);
+    return { type: "directory", path: path.relative(root, dir) || ".", children };
+  } catch (err) {
+    console.error("  [ERROR] walkDirMain Promise.all failed:", dir, err.message);
+    return { type: "directory", path: path.relative(root, dir) || ".", children: [] };
+  }
 }
 
 
@@ -134,18 +186,36 @@ async function processFile(fullPath, ext, handlers, indexesBundle, root, dirPath
   console.log("  [FILE] Start:", fullPath);
   if (!handlers[ext]) return null;
 
-  const text = await readFileWithEncoding(fullPath);
-  let content = await handlers[ext](fullPath, text);
-
-  if (content) {
-    content = annotateItems(content, dirPath, indexesBundle);
-    console.log("  [FILE] Parsed:", fullPath, "items:", content.length);
-    if (content.length > 0) {
-      return { type: "file", path: path.relative(root, fullPath), content };
-    }
-  } else {
-    console.log("  [FILE] Empty:", fullPath);
+  let text;
+  try {
+    text = await readFileWithEncoding(fullPath);
+  } catch (err) {
+    console.error("  [ERROR] reading file failed:", fullPath, err.message);
+    return null;
   }
+
+  let content;
+  try {
+    content = await handlers[ext](fullPath, text);
+  } catch (err) {
+    console.error("  [ERROR] handler threw for file:", fullPath, err.message);
+    content = null;
+  }
+
+  try {
+    if (content && Array.isArray(content)) {
+      const annotated = annotateItems(content, dirPath, indexesBundle);
+      console.log("  [FILE] Parsed:", fullPath, "items:", annotated.length);
+      if (annotated.length > 0) {
+        return { type: "file", path: path.relative(root, fullPath), content: annotated };
+      }
+    } else {
+      console.log("  [FILE] Empty or invalid content:", fullPath);
+    }
+  } catch (err) {
+    console.error("  [ERROR] annotating or packaging file failed:", fullPath, err.message);
+  }
+
   return null;
 }
 
@@ -212,33 +282,36 @@ function annotateItems(items, dirPath, { oldIndexes, krIndexes, oldKrIndexes }) 
 // 파서
 // =====================
 export function parseUpdateSQLs(sql) {
-  const regex = /SET\s+Text\s*=\s*'((?:''|[^'])*)'[\s\S]*?WHERE\s+Tag\s*=\s*'([^']+)'/gi;
-  const results = [];
-  let match;
-  while ((match = regex.exec(sql)) !== null) {
-    results.push({ text: match[1].replace(/''/g, "'"), key: match[2] });
+  try {
+    const regex = /SET\s+Text\s*=\s*'((?:''|[^'])*)'[\s\S]*?WHERE\s+Tag\s*=\s*'([^']+)'/gi;
+    const results = [];
+    let match;
+    while ((match = regex.exec(sql)) !== null) {
+      results.push({ text: match[1].replace(/''/g, "'"), key: match[2] });
+    }
+    return results;
+  } catch (err) {
+    console.error("  [ERROR] parseUpdateSQLs failed:", err.message);
+    return [];
   }
-  return results;
 }
 
 export function parseRowsXML(xml) {
-  const parser = new XMLParser({
-    ignoreAttributes: false,
-    trimValues: true,
-  });
-  const parsed = parser.parse(xml);
+  try {
+    const parser = new XMLParser({
+      ignoreAttributes: false,
+      trimValues: true,
+    });
+    const parsed = parser.parse(xml);
 
-  const results = [];
-
-  // GameData 안의 모든 Language_* 노드를 순회
-  if (parsed.GameData) {
-    for (const [langName, langNode] of Object.entries(parsed.GameData)) {
-      if (langName.startsWith("Language_")) {
-        const rows = Array.isArray((langNode).Row)
-          ? (langNode).Row
-          : [(langNode).Row].filter(Boolean);
-
+    const results = [];
+    if (parsed && parsed.GameData) {
+      for (const [langName, langNode] of Object.entries(parsed.GameData)) {
+        if (!langName.startsWith("Language_")) continue;
+        const rawRow = langNode && langNode.Row ? langNode.Row : null;
+        const rows = Array.isArray(rawRow) ? rawRow : rawRow ? [rawRow] : [];
         for (const row of rows) {
+          if (!row) continue;
           results.push({
             key: row["@_Tag"],
             text: row.Text,
@@ -246,9 +319,11 @@ export function parseRowsXML(xml) {
         }
       }
     }
+    return results;
+  } catch (err) {
+    console.error("  [ERROR] parseRowsXML failed:", err.message);
+    return [];
   }
-
-  return results;
 }
 
 
