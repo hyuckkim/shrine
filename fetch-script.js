@@ -219,63 +219,116 @@ async function processFile(fullPath, ext, handlers, indexesBundle, root, dirPath
   return null;
 }
 
+// 텍스트 정규화: null/undefined 방어, trim, 연속 공백 단일화
+function normalizeTextForCompare(input) {
+  if (input === null || input === undefined) return null;
+  const s = String(input).trim();
+  // 연속 공백을 하나로 줄임(줄바꿈 포함)
+  return s.replace(/\s+/g, ' ');
+}
+
+// change detection: oldText, movedFrom, newlyAdded 판정
+function detectChange(item, dirPath, oldIndexes) {
+  const normalizedItemText = normalizeTextForCompare(item.text);
+  const oldTextRaw = findTextByKey(oldIndexes, dirPath, item.key);
+  const oldText = normalizeTextForCompare(oldTextRaw);
+
+  const oldKeyForText = findKeyByText(oldIndexes, dirPath, item.text); // 원래 로직과 동일한 검색 기준 유지
+
+  const result = { base: { ...item, text: normalizedItemText } };
+
+  // 1) 텍스트가 존재했고 달라진 경우 (oldText 존재 && 값 불일치)
+  if (oldText !== null && oldText !== normalizedItemText && oldText !== undefined) {
+    result.base.oldText = oldTextRaw; // 원본 표시(정규화 전 원문 보존 필요하면 oldTextRaw 사용)
+  }
+
+  // 2) 텍스트는 없지만 같은 텍스트에 매칭되는 oldKey가 있고 키가 다른 경우 -> movedFrom
+  if ((oldText === null || oldText === undefined) && oldKeyForText && oldKeyForText !== item.key) {
+    result.base.movedFrom = oldKeyForText;
+  }
+
+  // 3) 완전히 새로 추가된 경우 (oldText 없고 oldKey도 없음)
+  if ((oldText === null || oldText === undefined) && !oldKeyForText) {
+    result.base.newlyAdded = true;
+  }
+
+  return result.base;
+}
+
+// translation 판단: copied / translated / oldText_kr 결정
+function determineTranslationStatus(item, dirPath, krIndexes, oldKrIndexes, oldIndexes) {
+  // kr 텍스트는 key로 찾는다
+  const krRaw = findTextByKey(krIndexes, dirPath, item.key);
+  const krText = normalizeTextForCompare(krRaw);
+
+  // oldKrText: 우선 oldKrIndexes에서 직접 찾아보고, 없으면 oldIndexes 기반으로 매칭된 key로 찾아본다
+  const oldKrDirect = findTextByKey(oldKrIndexes, dirPath, item.key);
+  let oldKrText = normalizeTextForCompare(oldKrDirect);
+
+  if (!oldKrText) {
+    const matchedOldKey = findKeyByText(oldIndexes, dirPath, item.text);
+    if (matchedOldKey) {
+      const oldKrFromMatchedKey = findTextByKey(oldKrIndexes, dirPath, matchedOldKey);
+      oldKrText = normalizeTextForCompare(oldKrFromMatchedKey);
+    }
+  }
+
+  // item.text는 이미 normalize 후 들어온다 (detectChange에서 변경)
+  const itemText = normalizeTextForCompare(item.text);
+
+  // 1) 원문과 번역본이 동일한 경우(번역이 원문을 복사한 경우) => copied
+  if (krText !== null && krText === itemText) {
+    return { ...item, copied: true };
+  }
+
+  // 2) movedFrom 인 경우: 우선 krText가 있으면 translated로, 없으면 oldText_kr 사용
+  if (item.movedFrom) {
+    if (krText) {
+      return { ...item, translated: krText };
+    }
+    return { ...item, oldText_kr: oldKrText ?? '' };
+  }
+
+  // 3) newlyAdded 인 경우: 번역본(있으면 translated로) 기록
+  if (item.newlyAdded) {
+    return { ...item, translated: krText ?? '' };
+  }
+
+  // 4) 기본 비교: oldKrText와 현재 krText가 다르면 translated에 krText 저장, 아니면 oldText_kr에 oldKrText 저장
+  if (oldKrText !== krText) {
+    return { ...item, translated: krText ?? '' };
+  }
+
+  return { ...item, oldText_kr: oldKrText ?? '' };
+}
+
+// 최종 annotateItems: detectChange -> 필터 -> determineTranslationStatus
 function annotateItems(items, dirPath, { oldIndexes, krIndexes, oldKrIndexes }) {
-  return items
-    .map(item => {
-      const oldText = findTextByKey(oldIndexes, dirPath, item.key);
-      const oldKey = findKeyByText(oldIndexes, dirPath, item.text);
+  if (!Array.isArray(items)) return [];
 
-      const base = { ...item };
+  // 1) 모든 항목의 텍스트 정규화 및 change detection
+  const withChanges = items.map(item => {
+    try {
+      return detectChange(item, dirPath, oldIndexes);
+    } catch (err) {
+      console.error("  [ERROR] detectChange failed for item:", item && item.key, err.message);
+      return null;
+    }
+  }).filter(Boolean);
 
-      // 1. 텍스트가 달라진 경우
-      if (oldText !== null && oldText !== item.text) {
-        base.oldText = oldText;
-      }
+  // 2) oldText, movedFrom, newlyAdded 중 하나라도 있는 항목만 남김
+  const filtered = withChanges.filter(i => i.oldText !== undefined || i.movedFrom !== undefined || i.newlyAdded);
 
-      // 2. 텍스트는 같지만 키가 달라진 경우 → movedFrom
-      if (oldText === null && oldKey && oldKey !== item.key) {
-        base.movedFrom = oldKey;
-      }
-
-      // 3. 완전히 새로 생긴 경우
-      if (oldText === null && !oldKey) {
-        base.newlyAdded = true;
-      }
-
-      return base;
-    })
-    // oldText, movedFrom, newlyAdded 중 하나라도 있는 항목만 남김
-    .filter(item => item.oldText !== undefined || item.movedFrom !== undefined || item.newlyAdded)
-    // 4. 번역 상태 추가
-    .map(item => {
-      const krText = findTextByKey(krIndexes, dirPath, item.key);
-      const oldKrText =
-        findTextByKey(oldKrIndexes, dirPath, item.key) ||
-        (findKeyByText(oldIndexes, dirPath, item.text)
-          ? findTextByKey(oldKrIndexes, dirPath, findKeyByText(oldIndexes, dirPath, item.text))
-          : null);
-      // 모든 텍스트 비교에 trim 적용
-      const itemTextTrimmed = item.text?.trim();
-      const krTextTrimmed = krText?.trim();
-      const oldKrTextTrimmed = oldKrText?.trim();
-
-      if (krTextTrimmed && krTextTrimmed === itemTextTrimmed) {
-        return { ...item, copied: true };
-      }
-      if (item.movedFrom) {
-        if (krTextTrimmed) {
-          return { ...item, translated: krTextTrimmed ?? '' };
-        }
-        return { ...item, oldText_kr: oldKrTextTrimmed ?? '' };
-      }
-      if (item.newlyAdded) {
-        return { ...item, translated: krTextTrimmed ?? '' };
-      }
-      if (oldKrTextTrimmed !== krTextTrimmed) {
-        return { ...item, translated: krTextTrimmed ?? '' };
-      }
-      return { ...item, oldText_kr: oldKrTextTrimmed ?? '' };
-    });
+  // 3) 번역 상태 판정
+  return filtered.map(item => {
+    try {
+      return determineTranslationStatus(item, dirPath, krIndexes, oldKrIndexes, oldIndexes);
+    } catch (err) {
+      console.error("  [ERROR] determineTranslationStatus failed for item:", item && item.key, err.message);
+      // 실패 시 최소한 원본 항목은 반환해 디버깅 가능하게 함
+      return item;
+    }
+  });
 }
 
 // =====================
