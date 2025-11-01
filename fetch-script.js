@@ -257,21 +257,32 @@ export function parseRowsXML(xml) {
 }
 function calcTranslationCount(node) {
   if (node.type === "file" && Array.isArray(node.content)) {
-    // technical 아닌 항목만 필터
     const validItems = node.content.filter(item => !item.technical);
 
     const total = validItems.length;
     const translated = validItems.filter(
       item => item.translated !== undefined // 빈 문자열도 포함
     ).length;
-
     node.translationTotal = total;
     node.translationDone = translated;
-
     return { total, translated };
   }
-}
 
+  if (node.type === "directory" && Array.isArray(node.children)) {
+    let total = 0;
+    let translated = 0;
+    for (const child of node.children) {
+      const result = calcTranslationCount(child);
+      total += result.total;
+      translated += result.translated;
+    }
+    node.translationTotal = total;
+    node.translationDone = translated;
+    return { total, translated };
+  }
+
+  return { total: 0, translated: 0 };
+}
 
 // =====================
 // 실행
@@ -295,23 +306,6 @@ function calcTranslationCount(node) {
 
   console.log("parsing current...");
   const data = await walkDirMain("./repos/current", extensions, { oldIndexes, krIndexes, oldKrIndexes });
-
-  if (node.type === "directory" && Array.isArray(node.children)) {
-    let total = 0;
-    let translated = 0;
-    for (const child of node.children) {
-      const result = calcTranslationCount(child);
-      total += result.total;
-      translated += result.translated;
-    }
-    node.translationTotal = total;
-    node.translationDone = translated;
-    return { total, translated };
-  }
-
-  return { total: 0, translated: 0 };
-}
-
 
   calcTranslationCount(data);
 
