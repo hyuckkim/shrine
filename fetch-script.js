@@ -226,6 +226,19 @@ function normalizeTextForCompare(input) {
   // 연속 공백을 하나로 줄임(줄바꿈 포함)
   return s.replace(/\s+/g, ' ');
 }
+function isFormatOnlyText(text) {
+  if (typeof text !== "string") return false;
+
+  const trimmed = text.trim();
+
+  // 1. 영문 알파벳이 포함되어 있으면 false
+  if (/[a-zA-Z]/.test(trimmed)) return false;
+
+  // 2. 전체가 {} 또는 [] 구조로만 이루어졌는지 확인
+  // 허용: 공백, {}, [], 숫자, 기호, 콜론, 세미콜론, 따옴표 등
+  const formatOnlyPattern = /^([\[\{][^{}\[\]]+[\]\}]\s*)+$/;
+  return formatOnlyPattern.test(trimmed);
+}
 
 // change detection: oldText, movedFrom, newlyAdded 판정
 function detectChange(item, dirPath, oldIndexes) {
@@ -277,9 +290,10 @@ function determineTranslationStatus(item, dirPath, krIndexes, oldKrIndexes, oldI
   const itemText = normalizeTextForCompare(item.text);
 
   // 1) 원문과 번역본이 동일한 경우(번역이 원문을 복사한 경우) => copied
-  if (krText !== null && krText === itemText) {
-    return { ...item, copied: true };
-  }
+if (krText !== null && krText === itemText) {
+  const formatOnly = isFormatOnlyText(itemText);
+  return formatOnly ? { ...item, copied: true, formatOnly: true } : { ...item, copied: true };
+}
 
   // 2) movedFrom 인 경우: 우선 krText가 있으면 translated로, 없으면 oldText_kr 사용
   if (item.movedFrom) {
@@ -331,6 +345,47 @@ function annotateItems(items, dirPath, { oldIndexes, krIndexes, oldKrIndexes }) 
   });
 }
 
+function calcTranslationCount(node) {
+  if (node.type === "file" && Array.isArray(node.content)) {
+    let total = 0;
+    let translated = 0;
+
+    for (const item of node.content) {
+      const isFormatOnly = item.copied === true && item.formatOnly === true;
+
+      // formatOnly는 total에서도 제외
+      if (isFormatOnly) continue;
+
+      total += 1;
+
+      const hasTranslated = Object.prototype.hasOwnProperty.call(item, "translated");
+      if (hasTranslated) {
+        translated += 1;
+      }
+    }
+
+    node.translationTotal = total;
+    node.translationDone = translated;
+    return { total, translated };
+  }
+
+  if (node.type === "directory" && Array.isArray(node.children)) {
+    let total = 0;
+    let translated = 0;
+
+    for (const child of node.children) {
+      const result = calcTranslationCount(child);
+      total += result.total;
+      translated += result.translated;
+    }
+
+    node.translationTotal = total;
+    node.translationDone = translated;
+    return { total, translated };
+  }
+
+  return { total: 0, translated: 0 };
+}
 // =====================
 // 파서
 // =====================
@@ -402,33 +457,6 @@ export function parseRowsXML(xml) {
 
   console.log("parsing current...");
   const data = await walkDirMain("./repos/current", extensions, { oldIndexes, krIndexes, oldKrIndexes });
-function calcTranslationCount(node) {
-  if (node.type === "file" && Array.isArray(node.content)) {
-    const total = node.content.length;
-    const translated = node.content.filter(
-      item => item.translated !== undefined // 빈 문자열도 포함
-    ).length;
-    node.translationTotal = total;
-    node.translationDone = translated;
-    return { total, translated };
-  }
-
-  if (node.type === "directory" && Array.isArray(node.children)) {
-    let total = 0;
-    let translated = 0;
-    for (const child of node.children) {
-      const result = calcTranslationCount(child);
-      total += result.total;
-      translated += result.translated;
-    }
-    node.translationTotal = total;
-    node.translationDone = translated;
-    return { total, translated };
-  }
-
-  return { total: 0, translated: 0 };
-}
-
 
   calcTranslationCount(data);
 
