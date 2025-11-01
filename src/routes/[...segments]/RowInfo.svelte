@@ -1,17 +1,18 @@
 <script lang="ts">
   import { onMount } from "svelte";
 
-  export let item: {
-    key: string;
-    text: string;
-    oldText?: string;
-    oldKey?: string;
-    movedFrom?: string;
-    translated?: string;
-    oldText_kr?: string;
-    copied?: boolean;
-    newlyAdded?: boolean;
-  };
+export let item: {
+  key: string;
+  text: string;
+  oldText?: string;
+  oldKey?: string;
+  movedFrom?: string;
+  translated?: string;
+  oldText_kr?: string;
+  copied?: boolean;
+  newlyAdded?: boolean;
+  formatOnly?: boolean;
+};
 
   export let file_path: string;
   export let suggestions: { id: number; suggested_text: string; author?: string; created_at: string }[] = [];
