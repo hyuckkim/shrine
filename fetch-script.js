@@ -189,14 +189,9 @@ function annotateItems(items, dirPath, { oldIndexes, krIndexes, oldKrIndexes }) 
       const krTextTrimmed = krText?.trim();
       const oldKrTextTrimmed = oldKrText?.trim();
 
-if (krTextTrimmed && krTextTrimmed === itemTextTrimmed) {
-  // 텍스트가 {로 시작하고 }로 끝나면서 중간에 {}가 없으면 technical
-  if (/^\{[^{}]*\}$/.test(itemTextTrimmed)) {
-    return { ...item, technical: true };
-  }
-  // 일반 copied
-  return { ...item, copied: true };
-}
+      if (krTextTrimmed && krTextTrimmed === itemTextTrimmed) {
+        return { ...item, copied: true };
+      }
       if (item.movedFrom) {
         if (krTextTrimmed) {
           return { ...item, translated: krTextTrimmed ?? '' };
@@ -255,22 +250,6 @@ export function parseRowsXML(xml) {
 
   return results;
 }
-function calcTranslationCount(node) {
-  if (node.type === "file" && Array.isArray(node.content)) {
-    // technical 아닌 항목만 필터
-    const validItems = node.content.filter(item => !item.technical);
-
-    const total = validItems.length;
-    const translated = validItems.filter(
-      item => item.translated !== undefined // 빈 문자열도 포함
-    ).length;
-
-    node.translationTotal = total;
-    node.translationDone = translated;
-
-    return { total, translated };
-  }
-}
 
 
 // =====================
@@ -295,6 +274,16 @@ function calcTranslationCount(node) {
 
   console.log("parsing current...");
   const data = await walkDirMain("./repos/current", extensions, { oldIndexes, krIndexes, oldKrIndexes });
+function calcTranslationCount(node) {
+  if (node.type === "file" && Array.isArray(node.content)) {
+    const total = node.content.length;
+    const translated = node.content.filter(
+      item => item.translated !== undefined // 빈 문자열도 포함
+    ).length;
+    node.translationTotal = total;
+    node.translationDone = translated;
+    return { total, translated };
+  }
 
   if (node.type === "directory" && Array.isArray(node.children)) {
     let total = 0;

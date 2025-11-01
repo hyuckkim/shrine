@@ -10,7 +10,6 @@
     translated?: string;
     oldText_kr?: string;
     copied?: boolean;
-    technical?: boolean;
     newlyAdded?: boolean;
   };
 
@@ -21,14 +20,13 @@
   let showSuggestions = false;
   let suggestion = "";
   let author = ""; // 이름 입력 필드
-$: status = (() => {
-  if (item.technical) return "technical";
-  if (item.translated !== undefined && item.movedFrom) return "rename applied";
-  if (item.movedFrom) return "renamed";
-  if (item.translated !== undefined) return "translated";
-  if (item.newlyAdded) return "new";
-  if (item.oldText) return "text changed";
-  if (item.copied) return "copied";
+  $: status = (() => {
+    if (item.translated !== undefined && item.movedFrom) return "rename applied";
+    if (item.movedFrom) return "renamed";
+    if (item.translated !== undefined) return "translated";
+    if (item.newlyAdded) return "new";
+    if (item.oldText) return "text changed";
+    if (item.copied) return "copied";
   return "";
 })();
 
@@ -61,7 +59,6 @@ $: status = (() => {
   .rename-applied { background: #c8e6c9; color: #1b5e20; }
   .copied { background: #e0e0e0; color: #424242; }
   .new { background: #ffcdd2; color: #b71c1c; }
-.technical { background:#e0e0e0; color:#424242; }
   .content { display: flex; gap: 1rem; }
   .col { flex: 1; }
   .label { font-size: 0.8rem; color: #666; margin-bottom: 0.3rem; }
@@ -111,14 +108,16 @@ $: status = (() => {
     <div class="col">
       <div class="label">Korean</div>
       <div class="text">
-{#if item.technical}
-  <span class="technical">기술적 태그</span>
-  {item.translated}
-{:else if item.oldText_kr}
-  {item.oldText_kr}
-{:else if item.copied}
-  <span class="copied">영어와 같음</span>
-{/if}
+        {#if item.newlyAdded && item.translated}
+          <!-- 새로 추가된 항목이고 번역이 있으면 우선 표시 -->
+          {item.translated}
+        {:else if item.translated}
+          {item.translated}
+        {:else if item.oldText_kr}
+          {item.oldText_kr}
+        {:else if item.copied}
+          <span class="copied">영어와 같음</span>
+        {/if}
       </div>
     </div>
   </div>
