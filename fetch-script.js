@@ -7,7 +7,24 @@ import { XMLParser } from "fast-xml-parser";
 // =====================
 // 인덱스 빌더
 // =====================
-function buildIndexes(dataTree, root = ".") {
+/**
+ * @typedef {Object} Indexes
+ * @property {Map<string, string>} textByKey - `${dirKey}:${key}` 형태로 원문 텍스트를 저장하는 맵
+ * @property {Map<string, string>} keyByText - `${dirKey}:${text}` 형태로 key를 역으로 찾을 수 있는 맵
+ */
+/**
+ * 주어진 데이터 트리에서 key-text 인덱스를 구축합니다.
+ *
+ * - 각 디렉토리 내의 항목(child)에서 `key`와 `text`를 추출하여
+ *   `${dirKey}:${key}` → text, `${dirKey}:${text}` → key 형태로 저장합니다.
+ * - 중첩된 디렉토리(child.type === "directory")도 재귀적으로 순회합니다.
+ * - `dirKey`는 `normalizeDirKey(path.relative(root, dir.path))`로 계산됩니다.
+ *
+ * @param {{ type?: string; path?: string; children: any; }} dataTree - 루트 데이터 트리
+ * @param {string} [root="."] - 기준이 되는 루트 경로
+ * @returns {Indexes} key-text 매핑 인덱스 객체
+ */
+export function buildIndexes(dataTree, root = ".") {
   const textByKey = new Map();
   const keyByText = new Map();
 
@@ -32,23 +49,50 @@ function buildIndexes(dataTree, root = ".") {
   }
   return { textByKey, keyByText };
 }
-
-// =====================
-// 디렉토리 키 정규화
-// =====================
+/**
+ * 주어진 상대 경로에서 최상위 디렉토리 이름을 추출한 뒤,
+ * 그 이름을 단순화하여 반환합니다.
+ *
+ * 규칙:
+ * - 경로를 `path.sep` 기준으로 분리한 후 첫 번째 요소를 사용합니다.
+ * - 요소가 없으면 "."을 기본값으로 사용합니다.
+ * - 이름 길이가 2 이상이면 두 번째 글자만 반환합니다.
+ * - 그렇지 않으면 이름 전체를 반환합니다.
+ *
+ * 예:
+ *  - "src/components" → "r"  (첫 요소 "src"의 두 번째 글자)
+ *  - "a" → "a"
+ *  - "" → "."
+ *
+ * @param {string} dirPath - 상대 경로 문자열
+ * @returns {string} 단순화된 디렉토리 키
+ */
 function normalizeDirKey(dirPath) {
-  // 상대경로에서 최상위 폴더만 뽑아내고,
-  // 그 이름을 최대한 뭉개서(두 번째 글자만) 사용
   const parts = dirPath.split(path.sep);
   const base = parts[0] || ".";
   return base.length >= 2 ? base[1] : base;
 }
-
+/**
+ * 주어진 key에 해당하는 텍스트를 반환합니다.
+ *
+ * @param {Indexes} indexes - buildIndexes로 생성된 인덱스 객체
+ * @param {string} dirPath - 기준 디렉토리 경로
+ * @param {string} key - 조회할 key
+ * @returns {string|null} 해당 key의 텍스트, 없으면 null
+ */
 function findTextByKey(indexes, dirPath, key) {
   const dirKey = normalizeDirKey(dirPath);
   return indexes.textByKey.get(`${dirKey}:${key}`) || null;
 }
 
+/**
+ * 주어진 텍스트에 해당하는 key를 반환합니다.
+ *
+ * @param {Indexes} indexes - buildIndexes로 생성된 인덱스 객체
+ * @param {string} dirPath - 기준 디렉토리 경로
+ * @param {string} text - 조회할 텍스트
+ * @returns {string|null} 해당 텍스트의 key, 없으면 null
+ */
 function findKeyByText(indexes, dirPath, text) {
   const dirKey = normalizeDirKey(dirPath);
   return indexes.keyByText.get(`${dirKey}:${text}`) || null;
@@ -57,9 +101,11 @@ function findKeyByText(indexes, dirPath, text) {
 // =====================
 // 디렉토리 탐색
 // =====================
+// @ts-ignore
 async function walkDirFlat(dir, handlers, root) {
   const entries = await readdir(dir, { withFileTypes: true });
 
+  // @ts-ignore
   const tasks = entries.map(async (entry) => {
     const fullPath = path.join(dir, entry.name);
 
@@ -75,10 +121,12 @@ async function walkDirFlat(dir, handlers, root) {
     return [];
   });
 
+  // @ts-ignore
   const results = await Promise.all(tasks);
   return results.flat().filter(Boolean);
 }
 
+// @ts-ignore
 async function readFileWithEncoding(fullPath) {
   const buffer = await readFile(fullPath);
   let encoding = chardet.detect(buffer);
@@ -88,6 +136,7 @@ async function readFileWithEncoding(fullPath) {
   return iconv.decode(buffer, encoding);
 }
 
+// @ts-ignore
 export async function walkDirOneLevelFlat(dir, handlers = {}, root = dir) {
   const entries = await readdir(dir, { withFileTypes: true });
   const result = { type: "directory", path: path.relative(root, dir) || ".", children: [] };
@@ -96,21 +145,25 @@ export async function walkDirOneLevelFlat(dir, handlers = {}, root = dir) {
     const fullPath = path.join(dir, entry.name);
     if (entry.isDirectory()) {
       const files = await walkDirFlat(fullPath, handlers, root);
+      // @ts-ignore
       result.children.push({ type: "directory", path: path.relative(root, fullPath), children: files });
     }
   }
   return result;
 }
 
+// @ts-ignore
 async function walkDirMain(dir, handlers, indexesBundle, root = dir) {
   console.log("[DIR] Enter:", path.relative(root, dir) || ".");
 
   const entries = await readdir(dir, { withFileTypes: true });
 
+  // @ts-ignore
   const tasks = entries.map(async (entry) => {
     const fullPath = path.join(dir, entry.name);
 
     if (entry.isDirectory()) {
+      // @ts-ignore
       const subTree = await walkDirMain(fullPath, handlers, indexesBundle, root);
       return subTree.children.length > 0 ? subTree : null;
     } else if (entry.isFile()) {
@@ -124,12 +177,14 @@ async function walkDirMain(dir, handlers, indexesBundle, root = dir) {
     return null;
   });
 
+  // @ts-ignore
   const children = (await Promise.all(tasks)).filter(Boolean);
   console.log("[DIR] Leave:", path.relative(root, dir) || ".", "children:", children.length);
   return { type: "directory", path: path.relative(root, dir) || ".", children };
 }
 
 
+// @ts-ignore
 async function processFile(fullPath, ext, handlers, indexesBundle, root, dirPath) {
   console.log("  [FILE] Start:", fullPath);
   if (!handlers[ext]) return null;
@@ -149,7 +204,19 @@ async function processFile(fullPath, ext, handlers, indexesBundle, root, dirPath
   return null;
 }
 
-function annotateItems(items, dirPath, { oldIndexes, krIndexes, oldKrIndexes }) {
+/**
+ * @param {({text: string, key: string,
+ *  oldText?: string, movedFrom?: string, newlyAdded?: boolean,
+ *  translated?: string, oldText_kr?: string, copied?: boolean // 추가됨
+ * })[]} items
+ * @param {string} dirPath
+ * @param {({
+ * oldIndexes: Indexes,
+ * krIndexes: Indexes,
+ * oldKrIndexes: Indexes
+ * })} param2
+ */
+export function annotateItems(items, dirPath, { oldIndexes, krIndexes, oldKrIndexes }) {
   return items
     .map(item => {
       const oldText = findTextByKey(oldIndexes, dirPath, item.key);
@@ -182,7 +249,7 @@ function annotateItems(items, dirPath, { oldIndexes, krIndexes, oldKrIndexes }) 
       const oldKrText =
         findTextByKey(oldKrIndexes, dirPath, item.key) ||
         (findKeyByText(oldIndexes, dirPath, item.text)
-          ? findTextByKey(oldKrIndexes, dirPath, findKeyByText(oldIndexes, dirPath, item.text))
+          ? findTextByKey(oldKrIndexes, dirPath, findKeyByText(oldIndexes, dirPath, item.text) || '')
           : null);
       // 모든 텍스트 비교에 trim 적용
       const itemTextTrimmed = item.text?.trim();
@@ -211,6 +278,7 @@ function annotateItems(items, dirPath, { oldIndexes, krIndexes, oldKrIndexes }) 
 // =====================
 // 파서
 // =====================
+// @ts-ignore
 export function parseUpdateSQLs(sql) {
   const regex = /SET\s+Text\s*=\s*'((?:''|[^'])*)'[\s\S]*?WHERE\s+Tag\s*=\s*'([^']+)'/gi;
   const results = [];
@@ -221,6 +289,7 @@ export function parseUpdateSQLs(sql) {
   return results;
 }
 
+// @ts-ignore
 export function parseRowsXML(xml) {
   const parser = new XMLParser({
     ignoreAttributes: false,
@@ -257,7 +326,9 @@ export function parseRowsXML(xml) {
 // =====================
 (async () => {
   const extensions = {
+    // @ts-ignore
     ".sql": async (_, text) => parseUpdateSQLs(text),
+    // @ts-ignore
     ".xml": async (_, text) => parseRowsXML(text),
   };
 
@@ -274,10 +345,12 @@ export function parseRowsXML(xml) {
 
   console.log("parsing current...");
   const data = await walkDirMain("./repos/current", extensions, { oldIndexes, krIndexes, oldKrIndexes });
+// @ts-ignore
 function calcTranslationCount(node) {
   if (node.type === "file" && Array.isArray(node.content)) {
     const total = node.content.length;
     const translated = node.content.filter(
+      // @ts-ignore
       item => item.translated !== undefined // 빈 문자열도 포함
     ).length;
     node.translationTotal = total;
