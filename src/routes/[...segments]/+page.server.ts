@@ -1,7 +1,6 @@
 // src/routes/[...segments]/+page.server.ts
 import type { PageServerLoad } from './$types';
 import tree from '$lib/data.json';
-import { redirect } from '@sveltejs/kit';
 
 interface PageData {
   currentDir: string;
