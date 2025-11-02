@@ -203,77 +203,94 @@ async function processFile(fullPath, ext, handlers, indexesBundle, root, dirPath
   }
   return null;
 }
+/**
+ * @typedef {Object} AnnotatedItem
+ * @property {string} text
+ * @property {string} key
+ * @property {string} [oldText]     - 변경 전 원문
+ * @property {string} [movedFrom]   - 다른 key에서 이동된 경우
+ * @property {boolean} [newlyAdded] - 새로 추가된 경우
+ * @property {string} [translated]  - 현재 번역
+ * @property {string} [oldText_kr]  - 과거 번역
+ * @property {boolean} [copied]     - 번역이 원문과 동일한 경우
+ */
 
 /**
- * @param {({text: string, key: string,
- *  oldText?: string, movedFrom?: string, newlyAdded?: boolean,
- *  translated?: string, oldText_kr?: string, copied?: boolean // 추가됨
- * })[]} items
+ * 아이템 변경 사항과 번역 상태를 주석(annotate)합니다.
+ *
+ * @param {AnnotatedItem[]} items
  * @param {string} dirPath
- * @param {({
- * oldIndexes: Indexes,
- * krIndexes: Indexes,
- * oldKrIndexes: Indexes
- * })} param2
+ * @param {{ oldIndexes: Indexes, krIndexes: Indexes, oldKrIndexes: Indexes }} param2
+ * @returns {AnnotatedItem[]}
  */
 export function annotateItems(items, dirPath, { oldIndexes, krIndexes, oldKrIndexes }) {
   return items
-    .map(item => {
-      const oldText = findTextByKey(oldIndexes, dirPath, item.key);
-      const oldKey = findKeyByText(oldIndexes, dirPath, item.text);
-
-      const base = { ...item };
-
-      // 1. 텍스트가 달라진 경우
-      if (oldText !== null && oldText !== item.text) {
-        base.oldText = oldText;
-      }
-
-      // 2. 텍스트는 같지만 키가 달라진 경우 → movedFrom
-      if (oldText === null && oldKey && oldKey !== item.key) {
-        base.movedFrom = oldKey;
-      }
-
-      // 3. 완전히 새로 생긴 경우
-      if (oldText === null && !oldKey) {
-        base.newlyAdded = true;
-      }
-
-      return base;
-    })
-    // oldText, movedFrom, newlyAdded 중 하나라도 있는 항목만 남김
+    .map(item => annotateChange(item, dirPath, oldIndexes))
     .filter(item => item.oldText !== undefined || item.movedFrom !== undefined || item.newlyAdded)
-    // 4. 번역 상태 추가
-    .map(item => {
-      const krText = findTextByKey(krIndexes, dirPath, item.key);
-      const oldKrText =
-        findTextByKey(oldKrIndexes, dirPath, item.key) ||
-        (findKeyByText(oldIndexes, dirPath, item.text)
-          ? findTextByKey(oldKrIndexes, dirPath, findKeyByText(oldIndexes, dirPath, item.text) || '')
-          : null);
-      // 모든 텍스트 비교에 trim 적용
-      const itemTextTrimmed = item.text?.trim();
-      const krTextTrimmed = krText?.trim();
-      const oldKrTextTrimmed = oldKrText?.trim();
-
-      if (krTextTrimmed && krTextTrimmed === itemTextTrimmed) {
-        return { ...item, copied: true };
-      }
-      if (item.movedFrom) {
-        if (krTextTrimmed) {
-          return { ...item, translated: krTextTrimmed ?? '' };
-        }
-        return { ...item, oldText_kr: oldKrTextTrimmed ?? '' };
-      }
-      if (item.newlyAdded) {
-        return { ...item, translated: krTextTrimmed ?? '' };
-      }
-      if (oldKrTextTrimmed !== krTextTrimmed) {
-        return { ...item, translated: krTextTrimmed ?? '' };
-      }
-      return { ...item, oldText_kr: oldKrTextTrimmed ?? '' };
-    });
+    .map(item => annotateTranslation(item, dirPath, oldIndexes, krIndexes, oldKrIndexes));
 }
+
+/**
+ * 변경 사항(텍스트 변경, 이동, 추가)을 주석합니다.
+ * @param {AnnotatedItem} item
+ * @param {string} dirPath
+ * @param {Indexes} oldIndexes
+ * @returns {AnnotatedItem}
+ */
+function annotateChange(item, dirPath, oldIndexes) {
+  const oldText = findTextByKey(oldIndexes, dirPath, item.key);
+  const oldKey = findKeyByText(oldIndexes, dirPath, item.text);
+
+  const base = { ...item };
+
+  if (oldText !== null && oldText !== item.text) {
+    base.oldText = oldText;
+  } else if (oldText === null && oldKey && oldKey !== item.key) {
+    base.movedFrom = oldKey;
+  } else if (oldText === null && !oldKey) {
+    base.newlyAdded = true;
+  }
+
+  return base;
+}
+
+/**
+ * 번역 상태를 주석합니다.
+ * @param {AnnotatedItem} item
+ * @param {string} dirPath
+ * @param {Indexes} oldIndexes
+ * @param {Indexes} krIndexes
+ * @param {Indexes} oldKrIndexes
+ * @returns {AnnotatedItem}
+ */
+function annotateTranslation(item, dirPath, oldIndexes, krIndexes, oldKrIndexes) {
+  const krText = findTextByKey(krIndexes, dirPath, item.key);
+  const oldKrText =
+    findTextByKey(oldKrIndexes, dirPath, item.key) ||
+    (findKeyByText(oldIndexes, dirPath, item.text)
+      ? findTextByKey(oldKrIndexes, dirPath, findKeyByText(oldIndexes, dirPath, item.text) || '')
+      : null);
+
+  const t = (/** @type {string | null} */ s) => s?.trim();
+  const itemText = t(item.text);
+  const kr = t(krText);
+  const oldKr = t(oldKrText);
+
+  if (kr && kr === itemText) {
+    return { ...item, copied: true };
+  }
+  if (item.movedFrom) {
+    return kr ? { ...item, translated: kr } : { ...item, oldText_kr: oldKr ?? '' };
+  }
+  if (item.newlyAdded) {
+    return { ...item, translated: kr ?? '' };
+  }
+  if (oldKr !== kr) {
+    return { ...item, translated: kr ?? '' };
+  }
+  return { ...item, oldText_kr: oldKr ?? '' };
+}
+
 
 // =====================
 // 파서

@@ -106,6 +106,19 @@ describe('annotateItems with buildIndexes', () => {
 
       expect(result[0].copied).toBe(true);
     });
+    it('copied: true 는 간단한 띄어쓰기를 무시한다', () => {
+      const oldTree = makeTree({ a: 'Hello' });
+      const krTree = makeTree({ a: 'Hi     ' });
+      const newItems = [{ key: 'a', text: 'Hi' }];
+
+      const result = annotateItems(newItems, dirPath, {
+        oldIndexes: buildIndexes(oldTree),
+        krIndexes: buildIndexes(krTree),
+        oldKrIndexes: buildIndexes(makeTree({}))
+      });
+
+      expect(result[0].copied).toBe(true);
+    });
 
     it('movedFrom인데 번역이 있으면 translated에 저장', () => {
       const oldTree = makeTree({ a: 'Hello' });
