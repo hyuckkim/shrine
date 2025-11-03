@@ -277,6 +277,9 @@ function annotateTranslation(item, dirPath, oldIndexes, krIndexes, oldKrIndexes)
   const oldKr = t(oldKrText);
 
   if (kr && kr === itemText) {
+    if (isTechnicalTag(itemText)) {
+      return { ...item, translated: kr };
+    }
     return { ...item, copied: true };
   }
   if (item.movedFrom) {
@@ -291,6 +294,99 @@ function annotateTranslation(item, dirPath, oldIndexes, krIndexes, oldKrIndexes)
   return { ...item, oldText_kr: oldKr ?? '' };
 }
 
+/**
+ * @param {string} text
+ * Determines if a string is composed only of tag blocks ({...} or [...])
+ * separated by allowed non-letter separators. Content inside tag blocks is unrestricted.
+ * Allowed separators (outside tags): digits, whitespace, :, ., _, #, -, (), [], {}.
+ */
+function isTechnicalTag(text) {
+  const s = (text ?? '').trim();
+  if (!s) return false;
+
+  let i = 0;
+  let hasTag = false;
+
+  // helper: check if a char is allowed outside tags
+  /** @param {string} ch */
+  function isAllowedSepChar(ch) {
+    return (
+      (ch >= '0' && ch <= '9') ||
+      ch === ' ' || ch === '\t' || ch === '\n' || ch === '\r' ||
+      ch === ':' || ch === '.' || ch === '_' || ch === '#' || ch === '-' ||
+      ch === '(' || ch === ')' || ch === '[' || ch === ']' ||
+      ch === '{' || ch === '}'
+    );
+  }
+
+  // helper: check if a char is an ASCII letter
+  /** @param {string} ch */
+  function isAsciiLetter(ch) {
+    const c = ch.charCodeAt(0);
+    return (c >= 65 && c <= 90) || (c >= 97 && c <= 122);
+  }
+
+  // helper: rudimentary non-ASCII letter detection (CJK Hangul/Katakana/Hiragana ranges included)
+  /** @param {string} ch */
+  function isNonAsciiLetter(ch) {
+    const c = ch.charCodeAt(0);
+    // Basic Latin letters handled separately; below are common letter ranges
+    return (
+      // Latin-1 Supplement letters
+      (c >= 192 && c <= 687) ||
+      // Greek, Cyrillic, Armenian, Hebrew, Arabic
+      (c >= 880 && c <= 1791) ||
+      // Devanagari and many scripts
+      (c >= 2304 && c <= 3711) ||
+      // Hangul Jamo
+      (c >= 4352 && c <= 4607) ||
+      // Hiragana, Katakana
+      (c >= 12352 && c <= 12447) || (c >= 12448 && c <= 12543) ||
+      // CJK Unified Ideographs (rough range)
+      (c >= 19968 && c <= 40959) ||
+      // Hangul Syllables
+      (c >= 44032 && c <= 55203)
+    );
+  }
+
+  // parse loop
+  while (i < s.length) {
+    const ch = s[i];
+
+    // start of a tag block { ... } or [ ... ]
+    if (ch === '{' || ch === '[') {
+      const open = ch;
+      const close = ch === '{' ? '}' : ']';
+      let j = i + 1;
+      // find matching close without nesting
+      while (j < s.length && s[j] !== close) {
+        // allow any content inside tags
+        j++;
+      }
+      if (j >= s.length) {
+        // no matching close
+        return false;
+      }
+      hasTag = true;
+      i = j + 1; // move past closing brace/bracket
+      continue;
+    }
+
+    // outside tags: only allowed separators, no letters
+    if (!(isAllowedSepChar(ch))) {
+      // not an allowed separator; if it's a letter outside tags, reject
+      if (isAsciiLetter(ch) || isNonAsciiLetter(ch)) {
+        return false;
+      }
+      // any other unknown symbol outside tags is not allowed
+      return false;
+    }
+
+    i++;
+  }
+
+  return hasTag;
+}
 
 // =====================
 // 파서

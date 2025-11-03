@@ -584,7 +584,7 @@
                               "key": "TXT_KEY_TECH_HELP_NUMBER_CHANGE",
                               "text": "{1: number \"'+'##.##;'-'##.##\"}",
                               "newlyAdded": true,
-                              "copied": true
+                              "translated": "{1: number \"'+'##.##;'-'##.##\"}"
                             },
                             {
                               "key": "TXT_KEY_TECH_HELP_YIELD_CHANGE",
@@ -662,31 +662,31 @@
                               "key": "TXT_KEY_TECH_HELP_BUILDING_BOOST",
                               "text": "{1_Building:textkey}: {2_YieldBoosts}",
                               "newlyAdded": true,
-                              "copied": true
+                              "translated": "{1_Building:textkey}: {2_YieldBoosts}"
                             },
                             {
                               "key": "TXT_KEY_TECH_HELP_SPECIALIST_BOOST",
                               "text": "{1_Specialist:textkey}: {2_YieldBoosts}",
                               "newlyAdded": true,
-                              "copied": true
+                              "translated": "{1_Specialist:textkey}: {2_YieldBoosts}"
                             },
                             {
                               "key": "TXT_KEY_TECH_HELP_TERRAIN_BOOST",
                               "text": "{1_Terrain:textkey}: {2_YieldBoosts}",
                               "newlyAdded": true,
-                              "copied": true
+                              "translated": "{1_Terrain:textkey}: {2_YieldBoosts}"
                             },
                             {
                               "key": "TXT_KEY_TECH_HELP_FEATURE_BOOST",
                               "text": "{1_Feature:textkey}: {2_YieldBoosts}",
                               "newlyAdded": true,
-                              "copied": true
+                              "translated": "{1_Feature:textkey}: {2_YieldBoosts}"
                             },
                             {
                               "key": "TXT_KEY_TECH_HELP_IMPROVEMENT_BOOST",
                               "text": "{1_Improvement:textkey}: {2_YieldBoosts}",
                               "newlyAdded": true,
-                              "copied": true
+                              "translated": "{1_Improvement:textkey}: {2_YieldBoosts}"
                             },
                             {
                               "key": "TXT_KEY_TECH_HELP_IMPROVEMENT_BOOST_FRESH_WATER",
@@ -1094,7 +1094,7 @@
                               "key": "TXT_KEY_PRODUCTION_UNIT_SELL_EXOTIC_GOODS",
                               "text": "{TXT_KEY_MISSION_SELL_EXOTIC_GOODS} ({1_Num} {1: plural 1?Time; other?Times;})",
                               "newlyAdded": true,
-                              "copied": true
+                              "translated": "{TXT_KEY_MISSION_SELL_EXOTIC_GOODS} ({1_Num} {1: plural 1?Time; other?Times;})"
                             },
                             {
                               "key": "TXT_KEY_PRODUCTION_UNIT_CITY_ATTACK_ONLY",
@@ -1598,7 +1598,7 @@
                               "key": "TXT_KEY_PRODUCTION_BUILDING_YIELD_CHANGE",
                               "text": "{3_YieldIcon} {4_Yield:textkey}: {2_Sign}{1_Num}",
                               "newlyAdded": true,
-                              "copied": true
+                              "translated": "{3_YieldIcon} {4_Yield:textkey}: {2_Sign}{1_Num}"
                             },
                             {
                               "key": "TXT_KEY_PRODUCTION_BUILDING_PROJECTED_YIELD_CHANGE",
@@ -3308,7 +3308,7 @@
                               "key": "TXT_KEY_PRODUCTION_BUILDING_YIELD_BOOST_FROM_BUILDING",
                               "text": "[ICON_BULLET] [COLOR_YIELD_FOOD]{1_Building:textkey}[ENDCOLOR]: {2_YieldBoosts}",
                               "newlyAdded": true,
-                              "copied": true
+                              "translated": "[ICON_BULLET] [COLOR_YIELD_FOOD]{1_Building:textkey}[ENDCOLOR]: {2_YieldBoosts}"
                             },
                             {
                               "key": "TXT_KEY_PRODUCTION_BUILDING_YIELD_BOOST_FROM_BUILDING_GLOBAL",
@@ -3368,13 +3368,13 @@
                               "key": "TXT_KEY_PRODUCTION_BUILDING_YIELD_BOOST_FROM_TECH",
                               "text": "[ICON_BULLET] [COLOR_CYAN]{1_Tech:textkey}[ENDCOLOR]: {2_YieldBoosts}",
                               "newlyAdded": true,
-                              "copied": true
+                              "translated": "[ICON_BULLET] [COLOR_CYAN]{1_Tech:textkey}[ENDCOLOR]: {2_YieldBoosts}"
                             },
                             {
                               "key": "TXT_KEY_PRODUCTION_BUILDING_YIELD_BOOST_FROM_POLICY",
                               "text": "[ICON_BULLET] [COLOR_MAGENTA]{1_Policy:textkey}[ENDCOLOR]: {2_YieldBoosts}",
                               "newlyAdded": true,
-                              "copied": true
+                              "translated": "[ICON_BULLET] [COLOR_MAGENTA]{1_Policy:textkey}[ENDCOLOR]: {2_YieldBoosts}"
                             },
                             {
                               "key": "TXT_KEY_PRODUCTION_BUILDING_YIELD_BOOST_FROM_POLICY_STATE_RELIGION",
@@ -3398,7 +3398,7 @@
                               "key": "TXT_KEY_PRODUCTION_BUILDING_YIELD_BOOST_FROM_BELIEF",
                               "text": "[ICON_BULLET] [COLOR_WHITE]{1_Belief:textkey}[ENDCOLOR]: {2_YieldBoosts}",
                               "newlyAdded": true,
-                              "copied": true
+                              "translated": "[ICON_BULLET] [COLOR_WHITE]{1_Belief:textkey}[ENDCOLOR]: {2_YieldBoosts}"
                             },
                             {
                               "key": "TXT_KEY_PRODUCTION_BUILDING_HAPPINESS_FROM_BELIEF",
@@ -3410,13 +3410,13 @@
                               "key": "TXT_KEY_PRODUCTION_BUILDING_YIELD_BOOST_FROM_CORPORATION",
                               "text": "[ICON_BULLET] [COLOR_YIELD_GOLD]{1_Corporation:textkey}[ENDCOLOR]: {2_YieldBoosts}",
                               "newlyAdded": true,
-                              "copied": true
+                              "translated": "[ICON_BULLET] [COLOR_YIELD_GOLD]{1_Corporation:textkey}[ENDCOLOR]: {2_YieldBoosts}"
                             },
                             {
                               "key": "TXT_KEY_PRODUCTION_BUILDING_YIELD_BOOST_FROM_TRAIT",
                               "text": "[ICON_BULLET] [COLOR_POSITIVE_TEXT]{1_Civ:textkey}[ENDCOLOR]: {2_YieldBoosts}",
                               "newlyAdded": true,
-                              "copied": true
+                              "translated": "[ICON_BULLET] [COLOR_POSITIVE_TEXT]{1_Civ:textkey}[ENDCOLOR]: {2_YieldBoosts}"
                             },
                             {
                               "key": "TXT_KEY_PRODUCTION_BUILDING_HAPPINESS_FROM_ACCOMPLISHMENT",
@@ -3464,7 +3464,7 @@
                               "key": "TXT_KEY_PRODUCTION_BUILDING_YIELD_BOOST_FROM_ACCOMPLISHMENT",
                               "text": "[ICON_BULLET] [COLOR_WATER_TEXT]{1_Accomplishment:textkey}[ENDCOLOR]: {2_YieldBoosts}",
                               "newlyAdded": true,
-                              "copied": true
+                              "translated": "[ICON_BULLET] [COLOR_WATER_TEXT]{1_Accomplishment:textkey}[ENDCOLOR]: {2_YieldBoosts}"
                             },
                             {
                               "key": "TXT_KEY_PRODUCTION_BUILDING_YIELD_BOOST_FROM_PASSING_TR",
@@ -4392,7 +4392,7 @@
                             }
                           ],
                           "translationTotal": 646,
-                          "translationDone": 301
+                          "translationDone": 316
                         },
                         {
                           "type": "file",
@@ -4528,7 +4528,7 @@
                               "text": "[ICON_GOLD][COLOR:255:235:0:255]{1_TotalGold: number \"#,###\"} {2_GoldPerTurn: number \"'(+'#,###')';'[COLOR:255:60:60:255](-'#,###')'\"}[/COLOR]",
                               "key": "TXT_KEY_TOP_PANEL_GOLD",
                               "newlyAdded": true,
-                              "copied": true
+                              "translated": "[ICON_GOLD][COLOR:255:235:0:255]{1_TotalGold: number \"#,###\"} {2_GoldPerTurn: number \"'(+'#,###')';'[COLOR:255:60:60:255](-'#,###')'\"}[/COLOR]"
                             },
                             {
                               "text": "{1_NumCurrent}/{2_NumNeeded} progress towards the next [ICON_GOLDEN_AGE] Golden Age.",
@@ -4550,11 +4550,11 @@
                             }
                           ],
                           "translationTotal": 25,
-                          "translationDone": 23
+                          "translationDone": 24
                         }
                       ],
                       "translationTotal": 671,
-                      "translationDone": 324
+                      "translationDone": 340
                     },
                     {
                       "type": "directory",
@@ -4738,19 +4738,19 @@
                     }
                   ],
                   "translationTotal": 757,
-                  "translationDone": 402
+                  "translationDone": 418
                 }
               ],
               "translationTotal": 757,
-              "translationDone": 402
+              "translationDone": 418
             }
           ],
           "translationTotal": 757,
-          "translationDone": 402
+          "translationDone": 418
         }
       ],
       "translationTotal": 757,
-      "translationDone": 402
+      "translationDone": 418
     },
     {
       "type": "directory",
@@ -4876,47 +4876,47 @@
                               "text": "{TXT_KEY_CORPORATION_TRADE_ROUTE_BONUS_TRADER_SIDS}",
                               "key": "TXT_KEY_BUILDING_TRADER_SIDS_FRANCHISE_HELP",
                               "oldText": "Placeholder to be overridden",
-                              "copied": true
+                              "translated": "{TXT_KEY_CORPORATION_TRADE_ROUTE_BONUS_TRADER_SIDS}"
                             },
                             {
                               "text": "{TXT_KEY_CORPORATION_TRADE_ROUTE_BONUS_CENTAURUS_EXTRACTORS}",
                               "key": "TXT_KEY_BUILDING_CENTAURUS_EXTRACTORS_FRANCHISE_HELP",
                               "newlyAdded": true,
-                              "copied": true
+                              "translated": "{TXT_KEY_CORPORATION_TRADE_ROUTE_BONUS_CENTAURUS_EXTRACTORS}"
                             },
                             {
                               "text": "{TXT_KEY_CORPORATION_TRADE_ROUTE_BONUS_HEXXON_REFINERY}",
                               "key": "TXT_KEY_BUILDING_HEXXON_REFINERY_FRANCHISE_HELP",
                               "oldText": "Placeholder to be overridden",
-                              "copied": true
+                              "translated": "{TXT_KEY_CORPORATION_TRADE_ROUTE_BONUS_HEXXON_REFINERY}"
                             },
                             {
                               "text": "{TXT_KEY_CORPORATION_TRADE_ROUTE_BONUS_GIORGIO_ARMEIER}",
                               "key": "TXT_KEY_BUILDING_GIORGIO_ARMEIER_FRANCHISE_HELP",
                               "oldText": "Placeholder to be overridden",
-                              "copied": true
+                              "translated": "{TXT_KEY_CORPORATION_TRADE_ROUTE_BONUS_GIORGIO_ARMEIER}"
                             },
                             {
                               "text": "{TXT_KEY_CORPORATION_TRADE_ROUTE_BONUS_FIRAXITE_MATERIALS}",
                               "key": "TXT_KEY_BUILDING_FIRAXITE_MATERIALS_FRANCHISE_HELP",
                               "oldText": "Placeholder to be overridden",
-                              "copied": true
+                              "translated": "{TXT_KEY_CORPORATION_TRADE_ROUTE_BONUS_FIRAXITE_MATERIALS}"
                             },
                             {
                               "text": "{TXT_KEY_CORPORATION_TRADE_ROUTE_BONUS_TWOKAY_FOODS}",
                               "key": "TXT_KEY_BUILDING_TWOKAY_FOODS_FRANCHISE_HELP",
                               "oldText": "Placeholder to be overridden",
-                              "copied": true
+                              "translated": "{TXT_KEY_CORPORATION_TRADE_ROUTE_BONUS_TWOKAY_FOODS}"
                             },
                             {
                               "text": "{TXT_KEY_CORPORATION_TRADE_ROUTE_BONUS_CIVILIZED_JEWELERS}",
                               "key": "TXT_KEY_BUILDING_CIVILIZED_JEWELERS_FRANCHISE_HELP",
                               "oldText": "Placeholder to be overridden",
-                              "copied": true
+                              "translated": "{TXT_KEY_CORPORATION_TRADE_ROUTE_BONUS_CIVILIZED_JEWELERS}"
                             }
                           ],
                           "translationTotal": 11,
-                          "translationDone": 4
+                          "translationDone": 11
                         },
                         {
                           "type": "file",
@@ -5610,7 +5610,7 @@
                               "key": "TXT_KEY_BUILDING_TRADER_SIDS_FRANCHISE_HELP",
                               "text": "{TXT_KEY_CORPORATION_TRADE_ROUTE_BONUS_TRADER_SIDS}",
                               "oldText": "Placeholder to be overridden",
-                              "copied": true
+                              "translated": "{TXT_KEY_CORPORATION_TRADE_ROUTE_BONUS_TRADER_SIDS}"
                             },
                             {
                               "key": "TXT_KEY_BUILDING_CENTAURUS_EXTRACTORS_HQ",
@@ -5670,7 +5670,7 @@
                               "key": "TXT_KEY_BUILDING_CENTAURUS_EXTRACTORS_FRANCHISE_HELP",
                               "text": "{TXT_KEY_CORPORATION_TRADE_ROUTE_BONUS_CENTAURUS_EXTRACTORS}",
                               "newlyAdded": true,
-                              "copied": true
+                              "translated": "{TXT_KEY_CORPORATION_TRADE_ROUTE_BONUS_CENTAURUS_EXTRACTORS}"
                             },
                             {
                               "key": "TXT_KEY_BUILDING_HEXXON_REFINERY_HQ_HELP",
@@ -5694,7 +5694,7 @@
                               "key": "TXT_KEY_BUILDING_HEXXON_REFINERY_FRANCHISE_HELP",
                               "text": "{TXT_KEY_CORPORATION_TRADE_ROUTE_BONUS_HEXXON_REFINERY}",
                               "oldText": "Placeholder to be overridden",
-                              "copied": true
+                              "translated": "{TXT_KEY_CORPORATION_TRADE_ROUTE_BONUS_HEXXON_REFINERY}"
                             },
                             {
                               "key": "TXT_KEY_BUILDING_GIORGIO_ARMEIER_HQ_HELP",
@@ -5718,7 +5718,7 @@
                               "key": "TXT_KEY_BUILDING_GIORGIO_ARMEIER_FRANCHISE_HELP",
                               "text": "{TXT_KEY_CORPORATION_TRADE_ROUTE_BONUS_GIORGIO_ARMEIER}",
                               "oldText": "Placeholder to be overridden",
-                              "copied": true
+                              "translated": "{TXT_KEY_CORPORATION_TRADE_ROUTE_BONUS_GIORGIO_ARMEIER}"
                             },
                             {
                               "key": "TXT_KEY_BUILDING_FIRAXITE_MATERIALS_HQ_HELP",
@@ -5742,7 +5742,7 @@
                               "key": "TXT_KEY_BUILDING_FIRAXITE_MATERIALS_FRANCHISE_HELP",
                               "text": "{TXT_KEY_CORPORATION_TRADE_ROUTE_BONUS_FIRAXITE_MATERIALS}",
                               "oldText": "Placeholder to be overridden",
-                              "copied": true
+                              "translated": "{TXT_KEY_CORPORATION_TRADE_ROUTE_BONUS_FIRAXITE_MATERIALS}"
                             },
                             {
                               "key": "TXT_KEY_BUILDING_TWOKAY_FOODS_HQ_HELP",
@@ -5766,7 +5766,7 @@
                               "key": "TXT_KEY_BUILDING_TWOKAY_FOODS_FRANCHISE_HELP",
                               "text": "{TXT_KEY_CORPORATION_TRADE_ROUTE_BONUS_TWOKAY_FOODS}",
                               "oldText": "Placeholder to be overridden",
-                              "copied": true
+                              "translated": "{TXT_KEY_CORPORATION_TRADE_ROUTE_BONUS_TWOKAY_FOODS}"
                             },
                             {
                               "key": "TXT_KEY_BUILDING_CIVILIZED_JEWELERS_HQ_HELP",
@@ -5790,7 +5790,7 @@
                               "key": "TXT_KEY_BUILDING_CIVILIZED_JEWELERS_FRANCHISE_HELP",
                               "text": "{TXT_KEY_CORPORATION_TRADE_ROUTE_BONUS_CIVILIZED_JEWELERS}",
                               "oldText": "Placeholder to be overridden",
-                              "copied": true
+                              "translated": "{TXT_KEY_CORPORATION_TRADE_ROUTE_BONUS_CIVILIZED_JEWELERS}"
                             },
                             {
                               "key": "TXT_KEY_BUILDING_STUPA_HELP",
@@ -6082,7 +6082,7 @@
                             }
                           ],
                           "translationTotal": 193,
-                          "translationDone": 185
+                          "translationDone": 192
                         },
                         {
                           "type": "file",
@@ -6120,7 +6120,7 @@
                         }
                       ],
                       "translationTotal": 207,
-                      "translationDone": 192
+                      "translationDone": 206
                     },
                     {
                       "type": "directory",
@@ -13279,19 +13279,19 @@
                     }
                   ],
                   "translationTotal": 1357,
-                  "translationDone": 973
+                  "translationDone": 987
                 }
               ],
               "translationTotal": 1357,
-              "translationDone": 973
+              "translationDone": 987
             }
           ],
           "translationTotal": 1357,
-          "translationDone": 973
+          "translationDone": 987
         }
       ],
       "translationTotal": 1357,
-      "translationDone": 973
+      "translationDone": 987
     },
     {
       "type": "directory",
@@ -13422,5 +13422,5 @@
     }
   ],
   "translationTotal": 2126,
-  "translationDone": 1387
+  "translationDone": 1417
 }

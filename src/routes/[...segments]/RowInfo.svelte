@@ -19,6 +19,7 @@
   let suggestion = "";
   let author = ""; // 이름 입력 필드
   $: status = (() => {
+    if (item.translated === item.text) return "technical tag";
     if (item.translated !== undefined && item.movedFrom) return "rename applied";
     if (item.movedFrom) return "renamed";
     if (item.translated !== undefined) return "translated";
@@ -55,6 +56,7 @@
   .text-changed { background: #ffcdd2; color: #b71c1c; }
   .translated { background: #c8e6c9; color: #1b5e20; }
   .rename-applied { background: #c8e6c9; color: #1b5e20; }
+  .technical-tag { background:#e0e0e0; color:#424242; }
   .copied { background: #e0e0e0; color: #424242; }
   .new { background: #ffcdd2; color: #b71c1c; }
   .content { display: flex; gap: 1rem; }

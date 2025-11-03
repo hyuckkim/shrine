@@ -162,37 +162,96 @@ describe('annotateItems with buildIndexes', () => {
 
       expect(result[0].translated).toBe('안녕하세요');
     });
-  });describe('원문이 빈 문자열로 수정된 경우', () => {
-  it('번역본도 빈 문자열로 바뀐 경우 translated로 표시된다', () => {
-    const oldTree = makeTree({ a: 'Hello' });
-    const oldKrTree = makeTree({ a: '안녕' });
-    const krTree = makeTree({ a: '' }); // 번역도 빈 문자열
-    const newItems = [{ key: 'a', text: '' }]; // 원문이 빈 문자열로 수정됨
+  });
+  describe('원문이 빈 문자열로 수정된 경우', () => {
+    it('번역본도 빈 문자열로 바뀐 경우 translated로 표시된다', () => {
+      const oldTree = makeTree({ a: 'Hello' });
+      const oldKrTree = makeTree({ a: '안녕' });
+      const krTree = makeTree({ a: '' }); // 번역도 빈 문자열
+      const newItems = [{ key: 'a', text: '' }]; // 원문이 빈 문자열로 수정됨
 
-    const result = annotateItems(newItems, dirPath, {
-      oldIndexes: buildIndexes(oldTree),
-      krIndexes: buildIndexes(krTree),
-      oldKrIndexes: buildIndexes(oldKrTree)
+      const result = annotateItems(newItems, dirPath, {
+        oldIndexes: buildIndexes(oldTree),
+        krIndexes: buildIndexes(krTree),
+        oldKrIndexes: buildIndexes(oldKrTree)
+      });
+
+      expect(result[0].oldText).toBe('Hello');      // 원문 변경 기록
+      expect(result[0].translated).toBe(''); // 빈 문자열이 값으로 존재
     });
 
-    expect(result[0].oldText).toBe('Hello');      // 원문 변경 기록
-    expect(result[0].translated).toBe(''); // 빈 문자열이 값으로 존재
-  });
+    it('번역본은 남아있고 원문만 빈 문자열로 바뀐 경우', () => {
+      const oldTree = makeTree({ a: 'Hello' });
+      const oldKrTree = makeTree({ a: '안녕' });
+      const krTree = makeTree({ a: '안녕' }); // 번역은 그대로 유지
+      const newItems = [{ key: 'a', text: '' }]; // 원문이 빈 문자열로 수정됨
 
-  it('번역본은 남아있고 원문만 빈 문자열로 바뀐 경우', () => {
-    const oldTree = makeTree({ a: 'Hello' });
-    const oldKrTree = makeTree({ a: '안녕' });
-    const krTree = makeTree({ a: '안녕' }); // 번역은 그대로 유지
-    const newItems = [{ key: 'a', text: '' }]; // 원문이 빈 문자열로 수정됨
+      const result = annotateItems(newItems, dirPath, {
+        oldIndexes: buildIndexes(oldTree),
+        krIndexes: buildIndexes(krTree),
+        oldKrIndexes: buildIndexes(oldKrTree)
+      });
 
-    const result = annotateItems(newItems, dirPath, {
-      oldIndexes: buildIndexes(oldTree),
-      krIndexes: buildIndexes(krTree),
-      oldKrIndexes: buildIndexes(oldKrTree)
+      expect(result[0].oldText).toBe('Hello');       // 원문 변경 기록
+      expect(result[0].translated).toBeUndefined(); // 번역된 걸로 치지 않음
     });
-
-    expect(result[0].oldText).toBe('Hello');       // 원문 변경 기록
-    expect(result[0].translated).toBeUndefined(); // 번역된 걸로 치지 않음
   });
-});
+  describe('기술적 태그라서 번역된 걸로 표시하려고 함', () => {
+     it('중괄호 내부에만 텍스트가 있으면', () => {
+      const oldTree = makeTree({});
+      const oldKrTree = makeTree({});
+      const krTree = makeTree({ a: '{key_text_of_something}' });
+      const newItems = [{ key: 'a', text: '{key_text_of_something}' }];
+
+      const result = annotateItems(newItems, dirPath, {
+        oldIndexes: buildIndexes(oldTree),
+        krIndexes: buildIndexes(krTree),
+        oldKrIndexes: buildIndexes(oldKrTree)
+      });
+
+      expect(result[0].translated).toBe('{key_text_of_something}'); // 이건 translated
+     });
+     it('대괄호 내부에만 텍스트가 있으면', () => {
+      const oldTree = makeTree({});
+      const oldKrTree = makeTree({});
+      const krTree = makeTree({ a: '[some_icon]' });
+      const newItems = [{ key: 'a', text: '[some_icon]' }];
+
+      const result = annotateItems(newItems, dirPath, {
+        oldIndexes: buildIndexes(oldTree),
+        krIndexes: buildIndexes(krTree),
+        oldKrIndexes: buildIndexes(oldKrTree)
+      });
+
+      expect(result[0].translated).toBe('[some_icon]'); // 이건 translated
+     });
+   });
+     it('둘 사이에 다른 특수문자까지도 허용됨', () => {
+      const oldTree = makeTree({});
+      const oldKrTree = makeTree({});
+      const krTree = makeTree({ a: '{##.## 1: key}: [number_icon]' });
+      const newItems = [{ key: 'a', text: '{##.## 1: key}: [number_icon]' }];
+
+      const result = annotateItems(newItems, dirPath, {
+        oldIndexes: buildIndexes(oldTree),
+        krIndexes: buildIndexes(krTree),
+        oldKrIndexes: buildIndexes(oldKrTree)
+      });
+
+      expect(result[0].translated).toBe('{##.## 1: key}: [number_icon]'); // 이건 translated
+    });
+     it('단어가 있으면 이건 번역을 안 한 것', () => {
+      const oldTree = makeTree({});
+      const oldKrTree = makeTree({});
+      const krTree = makeTree({ a: '{##.## 1: key} icon: [number_icon]' });
+      const newItems = [{ key: 'a', text: '{##.## 1: key} icon: [number_icon]' }];
+
+      const result = annotateItems(newItems, dirPath, {
+        oldIndexes: buildIndexes(oldTree),
+        krIndexes: buildIndexes(krTree),
+        oldKrIndexes: buildIndexes(oldKrTree)
+      });
+
+      expect(result[0].copied).toBe(true); // 이건 허용되지 않음
+    });
 });
