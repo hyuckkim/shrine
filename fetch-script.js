@@ -154,7 +154,6 @@ export async function walkDirOneLevelFlat(dir, handlers = {}, root = dir) {
 
 // @ts-ignore
 async function walkDirMain(dir, handlers, indexesBundle, root = dir) {
-  console.log("[DIR] Enter:", path.relative(root, dir) || ".");
 
   const entries = await readdir(dir, { withFileTypes: true });
 
@@ -169,7 +168,6 @@ async function walkDirMain(dir, handlers, indexesBundle, root = dir) {
     } else if (entry.isFile()) {
       const ext = path.extname(entry.name).toLowerCase();
       if (!handlers[ext]) {
-        console.log("  [SKIP] unsupported ext:", fullPath);
         return null;
       }
       return await processFile(fullPath, ext, handlers, indexesBundle, root, path.relative(root, dir) || ".");
@@ -179,14 +177,12 @@ async function walkDirMain(dir, handlers, indexesBundle, root = dir) {
 
   // @ts-ignore
   const children = (await Promise.all(tasks)).filter(Boolean);
-  console.log("[DIR] Leave:", path.relative(root, dir) || ".", "children:", children.length);
   return { type: "directory", path: path.relative(root, dir) || ".", children };
 }
 
 
 // @ts-ignore
 async function processFile(fullPath, ext, handlers, indexesBundle, root, dirPath) {
-  console.log("  [FILE] Start:", fullPath);
   if (!handlers[ext]) return null;
 
   const text = await readFileWithEncoding(fullPath);
@@ -194,12 +190,9 @@ async function processFile(fullPath, ext, handlers, indexesBundle, root, dirPath
 
   if (content) {
     content = annotateItems(content, dirPath, indexesBundle);
-    console.log("  [FILE] Parsed:", fullPath, "items:", content.length);
     if (content.length > 0) {
       return { type: "file", path: path.relative(root, fullPath), content };
     }
-  } else {
-    console.log("  [FILE] Empty:", fullPath);
   }
   return null;
 }
@@ -448,13 +441,24 @@ export function parseRowsXML(xml) {
   console.log("parsing start");
 
   const olddata = await walkDirOneLevelFlat("./repos/old", extensions);
+  console.log("old data parsed.");
+
   const data_kr = await walkDirOneLevelFlat("./repos/current_kr", extensions);
+  console.log("kr data parsed.");
+
   const olddata_kr = await walkDirOneLevelFlat("./repos/old_kr", extensions);
+  console.log("old kr data parsed.");
 
   console.log("indexes building...");
+
   const oldIndexes = buildIndexes(olddata);
+  console.log(" old indexes built.");
+
   const krIndexes = buildIndexes(data_kr);
+  console.log(" kr indexes built.");
+
   const oldKrIndexes = buildIndexes(olddata_kr);
+  console.log(" old kr indexes built.");
 
   console.log("parsing current...");
   const data = await walkDirMain("./repos/current", extensions, { oldIndexes, krIndexes, oldKrIndexes });
