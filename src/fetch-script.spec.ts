@@ -1,16 +1,6 @@
 import { describe, it, expect } from 'vitest';
 import { annotateItems, buildIndexes } from '../fetch-script';
 
-// annotateItems 내부에서 쓰는 헬퍼
-function findTextByKey(indexes: ReturnType<typeof buildIndexes>, dirPath: string, key: string) {
-  return indexes.textByKey.get(`${dirPath}:${key}`) ?? null;
-}
-function findKeyByText(indexes: ReturnType<typeof buildIndexes>, dirPath: string, text: string) {
-  return indexes.keyByText.get(`${dirPath}:${text}`) ?? null;
-}
-(global as any).findTextByKey = findTextByKey;
-(global as any).findKeyByText = findKeyByText;
-
 describe('annotateItems with buildIndexes', () => {
   const dirPath = 'src';
 
