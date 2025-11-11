@@ -426,6 +426,34 @@ export function parseRowsXML(xml) {
   return results;
 }
 
+// @ts-ignore
+function calcTranslationCount(node) {
+  if (node.type === "file" && Array.isArray(node.content)) {
+    const total = node.content.length;
+    const translated = node.content.filter(
+      // @ts-ignore
+      item => item.translated !== undefined // 빈 문자열도 포함
+    ).length;
+    node.translationTotal = total;
+    node.translationDone = translated;
+    return { total, translated };
+  }
+
+  if (node.type === "directory" && Array.isArray(node.children)) {
+    let total = 0;
+    let translated = 0;
+    for (const child of node.children) {
+      const result = calcTranslationCount(child);
+      total += result.total;
+      translated += result.translated;
+    }
+    node.translationTotal = total;
+    node.translationDone = translated;
+    return { total, translated };
+  }
+
+  return { total: 0, translated: 0 };
+}
 
 // =====================
 // 실행
@@ -462,35 +490,6 @@ export function parseRowsXML(xml) {
 
   console.log("parsing current...");
   const data = await walkDirMain("./repos/current", extensions, { oldIndexes, krIndexes, oldKrIndexes });
-// @ts-ignore
-function calcTranslationCount(node) {
-  if (node.type === "file" && Array.isArray(node.content)) {
-    const total = node.content.length;
-    const translated = node.content.filter(
-      // @ts-ignore
-      item => item.translated !== undefined // 빈 문자열도 포함
-    ).length;
-    node.translationTotal = total;
-    node.translationDone = translated;
-    return { total, translated };
-  }
-
-  if (node.type === "directory" && Array.isArray(node.children)) {
-    let total = 0;
-    let translated = 0;
-    for (const child of node.children) {
-      const result = calcTranslationCount(child);
-      total += result.total;
-      translated += result.translated;
-    }
-    node.translationTotal = total;
-    node.translationDone = translated;
-    return { total, translated };
-  }
-
-  return { total: 0, translated: 0 };
-}
-
 
   calcTranslationCount(data);
 
