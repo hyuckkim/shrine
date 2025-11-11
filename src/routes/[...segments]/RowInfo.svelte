@@ -12,7 +12,7 @@
   };
 
   export let file_path: string;
-  export let suggestions: { id: number; suggested_text: string; author?: string; created_at: string }[] = [];
+  export let suggestions: { id: number; suggested_text: string; author?: string; created_at: string }[] | null = null;
   export let onSuggestionAdded: () => void;
 
   let showSuggestions = false;
@@ -121,7 +121,7 @@
       </div>
     </div>
   </div>
-
+  {#if suggestions}
   <div class="suggestion-block">
   {#if showSuggestions}
       <h4>번역 제안하기</h4>
@@ -138,4 +138,5 @@
     </ul>
   {/if}
   </div>
+  {/if}
 </div>
