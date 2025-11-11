@@ -1,4 +1,5 @@
 <script lang="ts">
+  import type { AnnotatedItem } from '../../../fetch-script';
   import File from './FilePage.svelte';
   import Folder from './FolderPage.svelte';
 
@@ -6,7 +7,7 @@
     file: {
       name: string;
       path: string;
-      content: any[];
+      content: AnnotatedItem[];
       parentHref: string | null;
     }
   };
@@ -19,7 +20,7 @@
   };
 
   export let data: FileData | FolderData;
-  function isFileData(data: any): data is FileData {
+  function isFileData(data: unknown): data is FileData {
     return (data as FileData).file !== undefined;
   }
 </script>

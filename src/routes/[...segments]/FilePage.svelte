@@ -1,31 +1,32 @@
 <script lang="ts">
+  import type { AnnotatedItem } from "../../../fetch-script";
   import RowInfo from "./RowInfo.svelte";
 
   export let file: {
     name: string;
     path: string;
     parentHref: string | null;
-    content: any[];
+    content: AnnotatedItem[];
   };
 
-  let allSuggestions: Record<
-    string,
-    Array<{
-      id: number;
-      suggested_text: string;
-      author?: string;
-      created_at: string;
-    }>
-  > | null = null;
+  type Suggestion = {
+    id: number;
+    key: string;
+    suggested_text: string;
+    author?: string;
+    created_at: string;
+  };
+
+  let allSuggestions: Record<string, Suggestion[]> | null = null;
 
   async function loadAllSuggestions() {
     const res = await fetch(
       `/api/suggestions?file=${encodeURIComponent(file.path)}`
     );
     if (res.ok) {
-      const suggestions = await res.json();
+      const suggestions: Suggestion[] = await res.json();
       // key별로 suggestions 그룹화
-      allSuggestions = suggestions.reduce((acc: any, s: any) => {
+      allSuggestions = suggestions.reduce<Record<string, Suggestion[]>>((acc, s) => {
         if (!acc[s.key]) acc[s.key] = [];
         acc[s.key].push(s);
         return acc;
