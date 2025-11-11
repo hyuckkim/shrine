@@ -289,11 +289,12 @@ function annotateTranslation(item, dirPath, oldIndexes, krIndexes, oldKrIndexes)
 
 /**
  * @param {string} text
+ * @returns {boolean}
  * Determines if a string is composed only of tag blocks ({...} or [...])
  * separated by allowed non-letter separators. Content inside tag blocks is unrestricted.
  * Allowed separators (outside tags): digits, whitespace, :, ., _, #, -, (), [], {}.
  */
-function isTechnicalTag(text) {
+export function isTechnicalTag(text) {
   const s = (text ?? '').trim();
   if (!s) return false;
 

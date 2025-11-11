@@ -1,5 +1,5 @@
 import { describe, it, expect } from 'vitest';
-import { annotateItems, buildIndexes } from '../fetch-script';
+import { annotateItems, buildIndexes, isTechnicalTag } from '../fetch-script';
 
 describe('annotateItems with buildIndexes', () => {
   const dirPath = 'src';
@@ -187,7 +187,7 @@ describe('annotateItems with buildIndexes', () => {
     });
   });
   describe('기술적 태그라서 번역된 걸로 표시하려고 함', () => {
-     it('중괄호 내부에만 텍스트가 있으면', () => {
+    it('중괄호 내부에만 텍스트가 있으면', () => {
       const oldTree = makeTree({});
       const oldKrTree = makeTree({});
       const krTree = makeTree({ a: '{key_text_of_something}' });
@@ -200,8 +200,8 @@ describe('annotateItems with buildIndexes', () => {
       });
 
       expect(result[0].translated).toBe('{key_text_of_something}'); // 이건 translated
-     });
-     it('대괄호 내부에만 텍스트가 있으면', () => {
+    });
+    it('대괄호 내부에만 텍스트가 있으면', () => {
       const oldTree = makeTree({});
       const oldKrTree = makeTree({});
       const krTree = makeTree({ a: '[some_icon]' });
@@ -214,48 +214,131 @@ describe('annotateItems with buildIndexes', () => {
       });
 
       expect(result[0].translated).toBe('[some_icon]'); // 이건 translated
-     });
-   });
-     it('둘 사이에 다른 특수문자까지도 허용됨', () => {
-      const oldTree = makeTree({});
-      const oldKrTree = makeTree({});
-      const krTree = makeTree({ a: '{##.## 1: key}: [number_icon]' });
-      const newItems = [{ key: 'a', text: '{##.## 1: key}: [number_icon]' }];
-
-      const result = annotateItems(newItems, dirPath, {
-        oldIndexes: buildIndexes(oldTree),
-        krIndexes: buildIndexes(krTree),
-        oldKrIndexes: buildIndexes(oldKrTree)
-      });
-
-      expect(result[0].translated).toBe('{##.## 1: key}: [number_icon]'); // 이건 translated
     });
-     it('안에 한글 있어도 기술적 태그로 인식해야 하는데', () => {
-      const oldTree = makeTree({});
-      const oldKrTree = makeTree({});
-      const krTree = makeTree({ a: '{한글 텍스트}: [number_icon]' });
-      const newItems = [{ key: 'a', text: '{한글 텍스트}: [number_icon]' }];
+  it('둘 사이에 다른 특수문자까지도 허용됨', () => {
+    const oldTree = makeTree({});
+    const oldKrTree = makeTree({});
+    const krTree = makeTree({ a: '{##.## 1: key}: [number_icon]' });
+    const newItems = [{ key: 'a', text: '{##.## 1: key}: [number_icon]' }];
 
-      const result = annotateItems(newItems, dirPath, {
-        oldIndexes: buildIndexes(oldTree),
-        krIndexes: buildIndexes(krTree),
-        oldKrIndexes: buildIndexes(oldKrTree)
-      });
-
-      expect(result[0].translated).toBe('{한글 텍스트}: [number_icon]'); // 이건 translated
+    const result = annotateItems(newItems, dirPath, {
+      oldIndexes: buildIndexes(oldTree),
+      krIndexes: buildIndexes(krTree),
+      oldKrIndexes: buildIndexes(oldKrTree)
     });
-     it('단어가 있으면 이건 번역을 안 한 것', () => {
-      const oldTree = makeTree({});
-      const oldKrTree = makeTree({});
-      const krTree = makeTree({ a: '{##.## 1: key} icon: [number_icon]' });
-      const newItems = [{ key: 'a', text: '{##.## 1: key} icon: [number_icon]' }];
 
-      const result = annotateItems(newItems, dirPath, {
-        oldIndexes: buildIndexes(oldTree),
-        krIndexes: buildIndexes(krTree),
-        oldKrIndexes: buildIndexes(oldKrTree)
-      });
+    expect(result[0].translated).toBe('{##.## 1: key}: [number_icon]'); // 이건 translated
+  });
+  it('안에 한글 있어도 기술적 태그로 인식해야 하는데', () => {
+    const oldTree = makeTree({});
+    const oldKrTree = makeTree({});
+    const krTree = makeTree({ a: '{한글 텍스트}: [number_icon]' });
+    const newItems = [{ key: 'a', text: '{한글 텍스트}: [number_icon]' }];
 
-      expect(result[0].copied).toBe(true); // 이건 허용되지 않음
+    const result = annotateItems(newItems, dirPath, {
+      oldIndexes: buildIndexes(oldTree),
+      krIndexes: buildIndexes(krTree),
+      oldKrIndexes: buildIndexes(oldKrTree)
     });
+
+    expect(result[0].translated).toBe('{한글 텍스트}: [number_icon]'); // 이건 translated
+  });
+  it('단어가 있으면 이건 번역을 안 한 것', () => {
+    const oldTree = makeTree({});
+    const oldKrTree = makeTree({});
+    const krTree = makeTree({ a: '{##.## 1: key} icon: [number_icon]' });
+    const newItems = [{ key: 'a', text: '{##.## 1: key} icon: [number_icon]' }];
+
+    const result = annotateItems(newItems, dirPath, {
+      oldIndexes: buildIndexes(oldTree),
+      krIndexes: buildIndexes(krTree),
+      oldKrIndexes: buildIndexes(oldKrTree)
+    });
+
+    expect(result[0].copied).toBe(true); // 이건 허용되지 않음
+  });
+  });
+});
+describe('isTechnicalTag', () => {
+  describe('정상적인 기술 태그', () => {
+    it('단일 태그', () => {
+      expect(isTechnicalTag('{PlayerName}')).toBe(true);
+    });
+
+    it('여러 태그 조합', () => {
+      expect(isTechnicalTag('{A}[B]{C}')).toBe(true);
+    });
+
+    it('태그 + 구분자', () => {
+      expect(isTechnicalTag('{Player}:{Enemy}')).toBe(true);
+    });
+
+    it('태그 내부에 한글 포함', () => {
+      expect(isTechnicalTag('{플레이어}')).toBe(true);
+    });
+
+    it('태그 + 숫자', () => {
+      expect(isTechnicalTag('{Name} 123')).toBe(true);
+    });
+
+    it('태그 + 허용된 구분자', () => {
+      expect(isTechnicalTag('{X} - {Y}')).toBe(true);
+    });
+
+    it('빈 태그', () => {
+      expect(isTechnicalTag('{}')).toBe(true);
+    });
+
+    it('공백만 있는 태그', () => {
+      expect(isTechnicalTag('{ }')).toBe(true);
+    });
+  });
+
+  describe('태그 외부에 문자가 있는 경우', () => {
+    it('태그 없이 한글만', () => {
+      expect(isTechnicalTag('플레이어')).toBe(false);
+    });
+
+    it('태그 + 외부 한글', () => {
+      expect(isTechnicalTag('{Name} 공격')).toBe(false);
+    });
+
+    it('태그 + 외부 영문', () => {
+      expect(isTechnicalTag('{Name}abc')).toBe(false);
+    });
+
+    it('허용되지 않은 구분자 포함', () => {
+      expect(isTechnicalTag('{Name}!{Enemy}')).toBe(false);
+    });
+
+    it('이모지 포함', () => {
+      expect(isTechnicalTag('{Name}💥')).toBe(false);
+    });
+
+    it('CJK 구분자 포함', () => {
+      expect(isTechnicalTag('{Name}、{Enemy}')).toBe(false);
+    });
+  });
+
+  describe('중첩 태그 및 문법 오류', () => {
+    it('닫는 괄호 없음', () => {
+      expect(isTechnicalTag('{Name')).toBe(false);
+    });
+
+    it('여는 괄호 없음', () => {
+      expect(isTechnicalTag('Name}')).toBe(false);
+    });
+
+    it('중첩된 태그 구조', () => {
+      expect(isTechnicalTag('{Name{Inner}}')).toBe(true);
+    });
+
+    it('연속 태그', () => {
+      expect(isTechnicalTag('{Name}{123}')).toBe(true);
+    });
+
+    it('태그 + 공백 + 태그', () => {
+      expect(isTechnicalTag('{Name} {123}')).toBe(true);
+    });
+  });
 });
