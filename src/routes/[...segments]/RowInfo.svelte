@@ -12,7 +12,7 @@
   };
 
   export let file_path: string;
-  export let suggestions: { id: number; suggested_text: string; author?: string; created_at: string }[] | null = null;
+  export let suggestions: { id: number; suggestedtext: string; author?: string; createdat: string }[] | null = null;
   export let onSuggestionAdded: () => void;
 
   let showSuggestions = false;
@@ -74,6 +74,28 @@
     margin-bottom: 0.5rem;
     padding: 0.4rem;
   }
+.status {
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+.header > div:first-child {
+  word-break: break-all;
+  flex-shrink: 1;
+  min-width: 0;
+}
+.header {
+  flex-wrap: wrap;
+}
+.text {
+  white-space: pre-wrap;
+  word-break: break-word;
+  overflow-wrap: break-word;
+}
+@media (max-width: 600px) {
+  .content {
+    flex-direction: column;
+  }
+}
 </style>
 
 <div class="row">
@@ -133,7 +155,7 @@
   {#if suggestions.length > 0}
     <ul>
       {#each suggestions as s}
-        <li>{s.suggested_text} <small>({s.author ?? "익명"}, {new Date(s.created_at).toLocaleString()})</small></li>
+        <li>{s.suggestedtext} <small>({s.author ?? "익명"}, {new Date(s.createdat).toLocaleString()})</small></li>
       {/each}
     </ul>
   {/if}
