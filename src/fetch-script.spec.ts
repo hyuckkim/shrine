@@ -230,6 +230,20 @@ describe('annotateItems with buildIndexes', () => {
 
       expect(result[0].translated).toBe('{##.## 1: key}: [number_icon]'); // 이건 translated
     });
+     it('안에 한글 있어도 기술적 태그로 인식해야 하는데', () => {
+      const oldTree = makeTree({});
+      const oldKrTree = makeTree({});
+      const krTree = makeTree({ a: '{한글 텍스트}: [number_icon]' });
+      const newItems = [{ key: 'a', text: '{한글 텍스트}: [number_icon]' }];
+
+      const result = annotateItems(newItems, dirPath, {
+        oldIndexes: buildIndexes(oldTree),
+        krIndexes: buildIndexes(krTree),
+        oldKrIndexes: buildIndexes(oldKrTree)
+      });
+
+      expect(result[0].translated).toBe('{한글 텍스트}: [number_icon]'); // 이건 translated
+    });
      it('단어가 있으면 이건 번역을 안 한 것', () => {
       const oldTree = makeTree({});
       const oldKrTree = makeTree({});
