@@ -5,7 +5,7 @@
 	"type": "module",
 	"scripts": {
 		"dev": "vite dev",
-		"build": "node clone-script.js; node fetch-script.js; vite build",
+		"build": "node clone-script.js && node fetch-script.js && vite build",
 		"clone": "node clone-script.js",
 		"fetch": "node fetch-script.js",
 		"preview": "vite preview",
@@ -30,8 +30,5 @@
 		"chardet": "^2.1.0",
 		"fast-xml-parser": "^5.3.0",
 		"iconv-lite": "^0.7.0"
-	},
-	"optionalDependencies": {
-		"@libsql/client": "^0.15.15"
 	}
 }

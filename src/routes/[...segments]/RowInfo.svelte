@@ -11,12 +11,6 @@
     newlyAdded?: boolean;
   };
 
-  export let file_path: string;
-  export let suggestions: { id: number; suggestedtext: string; author?: string; createdat: string }[] | null = null;
-  export let onSuggestionAdded: () => void;
-
-  let showSuggestions = false;
-  let suggestion = "";
   let author = ""; // 이름 입력 필드
   $: status = (() => {
     if (item.translated === item.text) return "technical tag";
@@ -28,23 +22,6 @@
     if (item.copied) return "copied";
   return "";
 })();
-
-  async function submitSuggestion() {
-    if (!suggestion.trim()) return;
-    await fetch("/api/suggestions", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({
-        file_path,
-        key: item.key,
-        suggested_text: suggestion,
-        author: author || "익명"
-      })
-    });
-    suggestion = "";
-    author = "";
-    onSuggestionAdded();
-  }
 </script>
 
 <style>
@@ -64,16 +41,6 @@
   .label { font-size: 0.8rem; color: #666; margin-bottom: 0.3rem; }
   .text { white-space: pre-wrap; }
   .toggle-btn { background: none; border: none; font-size: 18px; cursor: pointer; color: #1976d2; }
-  .suggestion-block { margin-top: 1rem; border-top: 1px solid #eee; padding-top: 0.8rem; }
-  .suggestion-block textarea { width: 100%; min-height: 60px; margin-bottom: 0.5rem; }
-  .suggestion-block button { background: #1976d2; color: white; border: none; padding: 0.4rem 0.8rem; border-radius: 4px; cursor: pointer; }
-  .suggestion-block ul { margin: 0.5rem 0 0; padding-left: 1.2rem; font-size: 0.9rem; }
-  .suggestion-block li { margin-bottom: 0.3rem; background: #f9f9f9; padding: 0.3rem 0.5rem; border-radius: 4px; }
-  .suggestion-block input {
-    width: 100%;
-    margin-bottom: 0.5rem;
-    padding: 0.4rem;
-  }
 .status {
   white-space: nowrap;
   flex-shrink: 0;
@@ -110,9 +77,6 @@
       {#if status}
         <div class="status {status.replace(' ', '-')}">{status}</div>
       {/if}
-      <button class="toggle-btn" on:click={() => { showSuggestions = !showSuggestions; }}>
-        {showSuggestions ? "−" : "+"}
-      </button>
     </div>
   </div>
 
@@ -143,22 +107,4 @@
       </div>
     </div>
   </div>
-  {#if suggestions}
-  <div class="suggestion-block">
-  {#if showSuggestions}
-      <h4>번역 제안하기</h4>
-      <input type="text" placeholder="이름 (선택)" bind:value={author} />
-      <textarea bind:value={suggestion} placeholder="제안할 번역을 입력하세요..."></textarea>
-      <button on:click={submitSuggestion}>저장</button>
-
-  {/if}
-  {#if suggestions.length > 0}
-    <ul>
-      {#each suggestions as s}
-        <li>{s.suggestedtext} <small>({s.author ?? "익명"}, {new Date(s.createdat).toLocaleString()})</small></li>
-      {/each}
-    </ul>
-  {/if}
-  </div>
-  {/if}
 </div>

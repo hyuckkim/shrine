@@ -16,31 +16,6 @@
     author?: string;
     created_at: string;
   };
-
-  let allSuggestions: Record<string, Suggestion[]> | null = null;
-
-  async function loadAllSuggestions() {
-    const res = await fetch(
-      `/api/suggestions?file=${encodeURIComponent(file.path)}`
-    );
-    if (res.ok) {
-      const suggestions: Suggestion[] = await res.json();
-      // key별로 suggestions 그룹화
-      allSuggestions = suggestions.reduce<Record<string, Suggestion[]>>((acc, s) => {
-        if (!acc[s.key]) acc[s.key] = [];
-        acc[s.key].push(s);
-        return acc;
-      }, {});
-    }
-    // 데이터베이스가 없을 때: null
-    return null;
-  }
-
-  // 컴포넌트 마운트 시 suggestions 로드
-  import { onMount } from "svelte";
-  onMount(() => {
-    loadAllSuggestions();
-  });
 </script>
 
 <div class="header">
@@ -55,9 +30,6 @@
     {#each file.content as item}
       <RowInfo
         {item}
-        file_path={file.path}
-        suggestions={allSuggestions ? (allSuggestions[item.key] ?? []) : null}
-        onSuggestionAdded={loadAllSuggestions}
       />
     {/each}
   </div>

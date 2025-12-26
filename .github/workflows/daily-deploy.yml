@@ -1,0 +1,14 @@
+name: Daily Vercel Deploy
+
+on:
+  schedule:
+    - cron: '0 15 * * *' # 매일 한국 시간(KST) 00:00에 실행 (UTC 15:00)
+  workflow_dispatch: # 필요할 때 수동으로 버튼 눌러서 실행 가능하게 함
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Trigger Vercel Deploy Hook
+        run:
+          curl -X POST "https://api.vercel.com/v1/integrations/deploy/prj_uTU8I2uahyrUsWrWl9HmqjS5mKqj/wLiXxjbtDV"
