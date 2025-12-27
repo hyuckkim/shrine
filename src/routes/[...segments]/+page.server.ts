@@ -54,18 +54,17 @@ function findNodeByPath(root: DirectoryNode, segments: string[]): DirectoryNode 
   return node;
 }
 
-function getDeepestHref(node: DirectoryNode, baseSegments: string[]): string {
-  if (!node.children) return '/' + baseSegments.join('/');
+function getDeepestHref(node: DirectoryNode): string {
+  if (!node.children) return '/' + node.path;
 
   const subDirs = node.children.filter((c): c is DirectoryNode => c.type === 'directory');
   const subFiles = node.children.filter((c): c is FileNode => c.type === 'file');
 
   if (subDirs.length === 1 && subFiles.length === 0) {
-    const subName = subDirs[0].path.split('/').pop()!;
-    return getDeepestHref(subDirs[0], [...baseSegments, subName]);
+    return getDeepestHref(subDirs[0]);
   }
 
-  return '/' + baseSegments.join('/');
+  return '/' + node.path;
 }
 
 /** 모든 \를 /로 바꾸고, 앞뒤 슬래시 제거 후 배열로 분리 */
@@ -106,7 +105,7 @@ export const load: PageServerLoad = async ({ params }) => {
       .filter((c): c is DirectoryNode => c.type === 'directory')
       .map((c) => {
         const name = extractNameFromPath(c.path);
-        const href = getDeepestHref(c, [...segments, name]);
+        const href = getDeepestHref(c);
         return {
           name,
           href,
