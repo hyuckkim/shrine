@@ -8,18 +8,10 @@
     parentHref: string | null;
     content: AnnotatedItem[];
   };
-
-  type Suggestion = {
-    id: number;
-    key: string;
-    suggested_text: string;
-    author?: string;
-    created_at: string;
-  };
 </script>
 
 <div class="header">
-  📄 {file.name}
+  <h3>📄 {file.name}</h3>
   {#if file.parentHref}
     <a class="back" href={file.parentHref}>⬆️ 상위 디렉토리로</a>
   {/if}
@@ -41,10 +33,13 @@
   .header {
     font-size: 2rem;
     font-weight: bold;
-    margin: 1.5rem 0;
-    position: sticky;
-    top: 84px;
-    background: #f9f9f9;
+    margin: 0.5rem;
+    padding: 0.5rem;
+    border-radius: 10px;
+    background: #fff9;
+  }
+  .header h3 {
+    margin: 0.5em 0;
   }
   .back {
     margin-bottom: 1rem;
@@ -56,6 +51,6 @@
   .rows {
     display: flex;
     flex-direction: column;
-    gap: 1rem;
+    gap: 0.5rem;
   }
 </style>

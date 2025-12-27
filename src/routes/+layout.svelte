@@ -33,10 +33,14 @@
     overflow-x: hidden;
   }
 
-  *,
-  *::before,
-  *::after {
-    box-sizing: inherit;
+  :global(body) {
+    background: linear-gradient(in oklch -45deg,
+    #042940,
+    #005C53,
+    #9FC131
+    );
+    background-attachment: fixed;
+    background-size: cover;
   }
 
   header {
@@ -46,7 +50,6 @@
     align-items: flex-start;
     position: sticky;
     top: 0;
-    background-color: #f9f9f9;
     padding: 8px; /* 모바일에서 너무 크면 줄임 */
     z-index: 1000;
   }
@@ -55,7 +58,7 @@
     flex: 1 1 auto; /* 필요 시 늘어나고 줄어들게 */
     min-width: 0; /* 중요한 설정: 자식이 줄바꿈 못하는 문제 해결 */
     color: #333;
-    background-color: #f9f9f9;
+    background-color: #f9f9f988;
     border-radius: 5px;
     padding: 8px;
     margin: 0; /* header의 gap으로 간격 조절 */
