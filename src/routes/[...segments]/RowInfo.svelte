@@ -11,7 +11,6 @@
     newlyAdded?: boolean;
   };
 
-  let author = ""; // 이름 입력 필드
   $: status = (() => {
     if (item.translated === item.text) return "technical tag";
     if (item.translated !== undefined && item.movedFrom)
