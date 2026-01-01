@@ -1,6 +1,7 @@
 <script lang="ts">
   import DiffRow from "./DiffRow.svelte";
   import FormattedText from "./FormattedText.svelte";
+  import type { RowStatus } from "./types";
 
   type Item = {
     key: string;
@@ -11,24 +12,13 @@
     oldText_kr?: string;
     copied?: boolean;
     newlyAdded?: boolean;
-  };
+  } & ProcessedFields;
+  interface ProcessedFields {
+  computedStatus: RowStatus;
+  koreanDisplay: string;
+}
 
   let { item, displayMode = "text" }: { item: Item, displayMode?: "text" | "rendered" | "diff" } = $props();
-
-  // 상태 계산 로직
-  const status = $derived.by(() => {
-    if (item.translated === item.text) return "technical tag";
-    if (item.translated !== undefined && item.movedFrom) return "rename applied";
-    if (item.movedFrom) return "renamed";
-    if (item.translated !== undefined) return "translated";
-    if (item.newlyAdded) return "new";
-    if (item.oldText) return "text changed";
-    if (item.copied) return "copied";
-    return "";
-  });
-
-  // 한국어 표시용 계산
-  const koreanDisplay = $derived(item.copied ? "영어와 같음" : (item.translated || item.oldText_kr || ""));
 </script>
 
 {#snippet textView(text: string, isOld: boolean = false)}
@@ -51,8 +41,8 @@
       {item.key}
       {#if item.movedFrom}<i class="old">← {item.movedFrom}</i>{/if}
     </div>
-    {#if status}
-      <div class="status {status.replace(' ', '-')}">{status}</div>
+    {#if item.computedStatus}
+      <div class="status {item.computedStatus.replace(' ', '-')}">{item.computedStatus}</div>
     {/if}
   </div>
   <div class="content">
@@ -70,9 +60,9 @@
       <div class="label">Korean</div>
       <div class:copied-text={item.copied}>
         {#if displayMode === "rendered" && !item.copied}
-          <FormattedText text={koreanDisplay} />
+          <FormattedText text={item.koreanDisplay} />
         {:else}
-          <div class="text">{koreanDisplay}</div>
+          <div class="text">{item.koreanDisplay}</div>
         {/if}
       </div>
     </div>
