@@ -1,4 +1,7 @@
 <script lang="ts">
+  import DiffRow from "./DiffRow.svelte";
+  import FormattedText from "./FormattedText.svelte";
+
   export let item: {
     key: string;
     text: string;
@@ -10,6 +13,8 @@
     copied?: boolean;
     newlyAdded?: boolean;
   };
+
+  export let displayMode: "text" | "rendered" | "diff" = "text";
 
   $: status = (() => {
     if (item.translated === item.text) return "technical tag";
@@ -42,28 +47,51 @@
   <div class="content">
     <div class="col">
       <div class="label">English</div>
-      <div class="text">
-        {item.text}
-      </div>
+      {#if displayMode === "text"}
+        <div class="text">
+          {item.text}
+        </div>
+      {:else if displayMode === "rendered"}
+        <FormattedText text={item.text} />
+      {:else if displayMode === "diff"}
+        {#if item.oldText}
+          <DiffRow from={item.oldText ?? ""} to={item.text} mode="added" />
+        {:else}
+          <div class="text">
+            {item.text}
+          </div>
+        {/if}
+      {/if}
       {#if item.oldText}
         <div class="label">English - old</div>
-        <div class="text">{item.oldText}</div>
+        {#if displayMode === "text"}
+          <div class="text">
+            {item.oldText}
+          </div>
+        {:else if displayMode === "rendered"}
+          <FormattedText text={item.oldText} />
+        {:else if displayMode === "diff"}
+          <DiffRow from={item.oldText ?? ""} to={item.text} mode="removed" />
+        {/if}
       {/if}
     </div>
     <div class="col">
       <div class="label">Korean</div>
-      <div class="text">
-        {#if item.newlyAdded && item.translated}
-          <!-- 새로 추가된 항목이고 번역이 있으면 우선 표시 -->
-          {item.translated}
-        {:else if item.translated}
-          {item.translated}
-        {:else if item.oldText_kr}
-          {item.oldText_kr}
-        {:else if item.copied}
-          <span class="copied">영어와 같음</span>
-        {/if}
-      </div>
+      {#if item.copied}
+        <div class="text">
+          영어와 같음
+        </div>
+      {:else if displayMode === "text"}
+        <div class="text">
+          {item.translated ? item.translated : item.oldText_kr ?? ''}
+        </div>
+      {:else if displayMode === "rendered"}
+        <FormattedText text={item.translated ? item.translated : item.oldText_kr ?? ''} />
+      {:else if displayMode === "diff"}
+        <div class="text">
+          {item.translated ? item.translated : item.oldText_kr ?? ''}
+        </div>
+      {/if}
     </div>
   </div>
 </div>

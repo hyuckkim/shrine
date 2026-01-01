@@ -1,7 +1,7 @@
 <script lang="ts">
   import { onMount } from "svelte";
   import { replaceState } from "$app/navigation";
-  import FormattedText from "./FormattedText.svelte";
+  import FormattedText from "../[...segments]/FormattedText.svelte";
   import { page } from "$app/state";
 
   let valueA = "This is a [COLOR_RED]red text[ENDCOLOR] with an [ICON_TEAM_2] icon.";

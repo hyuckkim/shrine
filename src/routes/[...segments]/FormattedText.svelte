@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { renderCiv5Text } from './formatter';
+  import { renderCiv5Text } from '../render/formatter';
 
   export let text: string;
 </script>
