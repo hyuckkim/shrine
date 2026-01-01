@@ -2,11 +2,10 @@
   import DiffRow from "./DiffRow.svelte";
   import FormattedText from "./FormattedText.svelte";
 
-  export let item: {
+  type Item = {
     key: string;
     text: string;
     oldText?: string;
-    oldKey?: string;
     movedFrom?: string;
     translated?: string;
     oldText_kr?: string;
@@ -14,84 +13,68 @@
     newlyAdded?: boolean;
   };
 
-  export let displayMode: "text" | "rendered" | "diff" = "text";
+  let { item, displayMode = "text" }: { item: Item, displayMode?: "text" | "rendered" | "diff" } = $props();
 
-  $: status = (() => {
+  // 상태 계산 로직
+  const status = $derived.by(() => {
     if (item.translated === item.text) return "technical tag";
-    if (item.translated !== undefined && item.movedFrom)
-      return "rename applied";
+    if (item.translated !== undefined && item.movedFrom) return "rename applied";
     if (item.movedFrom) return "renamed";
     if (item.translated !== undefined) return "translated";
     if (item.newlyAdded) return "new";
     if (item.oldText) return "text changed";
     if (item.copied) return "copied";
     return "";
-  })();
+  });
+
+  // 한국어 표시용 계산
+  const koreanDisplay = $derived(item.copied ? "영어와 같음" : (item.translated || item.oldText_kr || ""));
 </script>
+
+{#snippet textView(text: string, isOld: boolean = false)}
+  {#if displayMode === "text"}
+    <div class="text">{text}</div>
+  {:else if displayMode === "rendered"}
+    <FormattedText {text} />
+  {:else if displayMode === "diff"}
+    {#if item.oldText}
+      <DiffRow from={item.oldText} to={item.text} mode={isOld ? "removed" : "added"} />
+    {:else}
+      <div class="text">{text}</div>
+    {/if}
+  {/if}
+{/snippet}
 
 <div class="row">
   <div class="header">
     <div>
       {item.key}
-      {#if item.movedFrom}
-        <i class="old">← {item.movedFrom}</i>
-      {/if}
+      {#if item.movedFrom}<i class="old">← {item.movedFrom}</i>{/if}
     </div>
-    <div style="display:flex; gap:0.5rem; align-items:center;">
-      {#if status}
-        <div class="status {status.replace(' ', '-')}">{status}</div>
-      {/if}
-    </div>
+    {#if status}
+      <div class="status {status.replace(' ', '-')}">{status}</div>
+    {/if}
   </div>
-
   <div class="content">
     <div class="col">
       <div class="label">English</div>
-      {#if displayMode === "text"}
-        <div class="text">
-          {item.text}
-        </div>
-      {:else if displayMode === "rendered"}
-        <FormattedText text={item.text} />
-      {:else if displayMode === "diff"}
-        {#if item.oldText}
-          <DiffRow from={item.oldText ?? ""} to={item.text} mode="added" />
-        {:else}
-          <div class="text">
-            {item.text}
-          </div>
-        {/if}
-      {/if}
+      {@render textView(item.text)}
+
       {#if item.oldText}
         <div class="label">English - old</div>
-        {#if displayMode === "text"}
-          <div class="text">
-            {item.oldText}
-          </div>
-        {:else if displayMode === "rendered"}
-          <FormattedText text={item.oldText} />
-        {:else if displayMode === "diff"}
-          <DiffRow from={item.oldText ?? ""} to={item.text} mode="removed" />
-        {/if}
+        {@render textView(item.oldText, true)}
       {/if}
     </div>
+
     <div class="col">
       <div class="label">Korean</div>
-      {#if item.copied}
-        <div class="text">
-          영어와 같음
-        </div>
-      {:else if displayMode === "text"}
-        <div class="text">
-          {item.translated ? item.translated : item.oldText_kr ?? ''}
-        </div>
-      {:else if displayMode === "rendered"}
-        <FormattedText text={item.translated ? item.translated : item.oldText_kr ?? ''} />
-      {:else if displayMode === "diff"}
-        <div class="text">
-          {item.translated ? item.translated : item.oldText_kr ?? ''}
-        </div>
-      {/if}
+      <div class:copied-text={item.copied}>
+        {#if displayMode === "rendered" && !item.copied}
+          <FormattedText text={koreanDisplay} />
+        {:else}
+          <div class="text">{koreanDisplay}</div>
+        {/if}
+      </div>
     </div>
   </div>
 </div>
