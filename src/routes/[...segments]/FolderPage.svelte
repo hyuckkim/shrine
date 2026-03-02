@@ -71,7 +71,7 @@
   <h3>📂 {data.currentDir}</h3>
 {#if typeof data.translationTotal === 'number' && typeof data.translationDone === 'number'}
   <div>
-    번역 완료: {data.translationDone} / {data.translationTotal}
+    🎇 번역이 완료되었습니다. 감사합니다!
   </div>
 {/if}
 {#if data.parentHref}
