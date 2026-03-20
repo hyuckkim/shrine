@@ -19,7 +19,7 @@
   if (item.translated === item.text) status = "technical tag";
   else if (item.translated !== undefined && item.movedFrom) status = "rename applied";
   else if (item.movedFrom) status = "renamed";
-  else if (item.translated !== undefined) status = "translated";
+  else if (item.translated) status = "translated";
   else if (item.newlyAdded) status = "new";
   else if (item.oldText) status = "text changed";
   else if (item.copied) status = "copied";
