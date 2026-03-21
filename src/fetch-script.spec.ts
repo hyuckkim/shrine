@@ -1,5 +1,5 @@
 import { describe, it, expect } from 'vitest';
-import { annotateItems, buildIndexes, isTechnicalTag } from '../fetch-script';
+import { annotateItems, buildIndexes, isTechnicalTag, calcTranslationCount } from '../fetch-script';
 
 describe('annotateItems with buildIndexes', () => {
   const dirPath = 'src';
@@ -340,5 +340,23 @@ describe('isTechnicalTag', () => {
     it('태그 + 공백 + 태그', () => {
       expect(isTechnicalTag('{Name} {123}')).toBe(true);
     });
+  });
+});
+
+describe('calcTranslationCount', () => {
+  it('translated 빈 문자열은 원문이 빈 문자열일 때만 번역 완료로 셈', () => {
+    const node = {
+      type: 'file',
+      content: [
+        { key: 'a', text: 'A', translated: '안녕' },
+        { key: 'b', text: 'B', translated: '' },
+        { key: 'c', text: '', translated: '' },
+        { key: 'd', text: '', translated: undefined }
+      ]
+    };
+
+    const result = calcTranslationCount(node);
+    expect(result.total).toBe(4);
+    expect(result.translated).toBe(2); // a, c (b은 포함X, d도 포함X)
   });
 });

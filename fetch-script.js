@@ -428,12 +428,17 @@ export function parseRowsXML(xml) {
 }
 
 // @ts-ignore
-function calcTranslationCount(node) {
+export function calcTranslationCount(node) {
   if (node.type === "file" && Array.isArray(node.content)) {
     const total = node.content.length;
     const translated = node.content.filter(
       // @ts-ignore
-      item => item.translated !== undefined // 빈 문자열도 포함
+      item => {
+        if (item.translated === undefined) return false;
+        if (item.translated !== "") return true;
+        // 빈 문자열인 경우, 원문도 빈 문자열인 경우에만 번역 완료로 간주
+        return item.text === "";
+      }
     ).length;
     node.translationTotal = total;
     node.translationDone = translated;
