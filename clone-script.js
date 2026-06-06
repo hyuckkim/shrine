@@ -63,12 +63,12 @@ async function cloneEveryRepos() {
     console.log("=== 🛠️ 전체 클론/업데이트 시작 ===");
     console.log(await cloneOrUpdateRepo(
       "https://github.com/LoneGazebo/Community-Patch-DLL",
-      "Release-5.2",
+      "Release-5.3.1",
       "repos/current"
     ));
     console.log(await cloneOrUpdateRepo(
       "https://github.com/LoneGazebo/Community-Patch-DLL",
-      "Release-5.1.4",
+      "Release-5.2",
       "repos/old"
     ));
     console.log(await cloneOrUpdateRepo(
@@ -78,7 +78,7 @@ async function cloneEveryRepos() {
     ));
     console.log(await cloneOrUpdateRepo(
       "https://github.com/hyuckkim/vp_kr",
-      "v5.1.4",
+      "v5.2",
       "repos/old_kr"
     ));
     console.log("=== 🎉 전체 클론/업데이트 완료 ===");
